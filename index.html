@@ -337,8 +337,10 @@
             text-transform: uppercase;
         }
 
-        .nav-links a:hover {
-            color: var(--gold);
+        @media (hover: hover) {
+            .nav-links a:hover {
+                color: var(--gold);
+            }
         }
 
         /* Dropdown Menu Styles */
@@ -378,15 +380,19 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .nav-links li:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+        @media (hover: hover) {
+            .nav-links li:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
         }
 
-        /* Keep parent link yellow when hovering over dropdown */
-        .nav-links li:hover > a {
-            color: var(--gold);
+        /* Keep parent link yellow when hovering over dropdown - desktop only */
+        @media (hover: hover) {
+            .nav-links li:hover > a {
+                color: var(--gold);
+            }
         }
 
         .dropdown-menu a {
@@ -406,9 +412,11 @@
             border-bottom: none;
         }
 
-        .dropdown-menu a:hover {
-            background: var(--blue-primary);
-            color: var(--white);
+        @media (hover: hover) {
+            .dropdown-menu a:hover {
+                background: var(--blue-primary);
+                color: var(--white);
+            }
         }
 
         .dropdown-menu.dropdown-small {
@@ -464,10 +472,12 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .has-submenu:hover .submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
+        @media (hover: hover) {
+            .has-submenu:hover .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
         }
 
         .submenu a {
@@ -475,9 +485,11 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .submenu a:hover {
-            background: var(--blue-medium);
-            color: var(--white);
+        @media (hover: hover) {
+            .submenu a:hover {
+                background: var(--blue-medium);
+                color: var(--white);
+            }
         }
 
         .nav-actions {
