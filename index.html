@@ -3945,8 +3945,11 @@
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
 
-            .nav-links > li:hover {
-                background: rgba(31, 84, 140, 0.08);
+            /* Hover only for non-touch devices */
+            @media (hover: hover) {
+                .nav-links > li:hover {
+                    background: rgba(31, 84, 140, 0.08);
+                }
             }
 
             .nav-links > li > a {
@@ -3957,12 +3960,15 @@
                 font-size: 1.1rem;
                 width: 100%;
                 color: var(--charcoal);
-                transition: color 0.3s ease, padding-left 0.3s ease;
+                transition: color 0.3s ease;
             }
 
-            .nav-links > li > a:hover {
-                color: #1F548C;
-                padding-left: 2.3rem;
+            /* Hover only for non-touch devices */
+            @media (hover: hover) {
+                .nav-links > li > a:hover {
+                    color: #1F548C;
+                    padding-left: 2.3rem;
+                }
             }
 
             .nav-links > li.current-page > a,
@@ -3976,6 +3982,7 @@
                 font-weight: 600;
                 transition: transform 0.3s ease;
                 color: #1F548C;
+                line-height: 1;
             }
 
             .nav-links > li.active:has(.dropdown-menu) > a::after {
@@ -4027,13 +4034,16 @@
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
                 width: 100%;
                 display: block;
-                transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+                transition: background 0.3s ease, color 0.3s ease;
             }
 
-            .dropdown-menu a:hover {
-                background: rgba(31, 84, 140, 0.15);
-                color: #1F548C;
-                padding-left: 2.8rem;
+            /* Hover effects disabled on touch - only apply on devices with hover */
+            @media (hover: hover) {
+                .dropdown-menu a:hover {
+                    background: rgba(31, 84, 140, 0.15);
+                    color: #1F548C;
+                    padding-left: 2.8rem;
+                }
             }
 
             .dropdown-menu.dropdown-small {
@@ -4095,10 +4105,13 @@
                 color: var(--charcoal);
             }
 
-            .submenu a:hover {
-                background: rgba(31, 84, 140, 0.18);
-                color: #1F548C;
-                padding-left: 3.8rem;
+            /* Hover effects disabled on touch */
+            @media (hover: hover) {
+                .submenu a:hover {
+                    background: rgba(31, 84, 140, 0.18);
+                    color: #1F548C;
+                    padding-left: 3.8rem;
+                }
             }
 
             /* 1000-1200px MENU CLOSED: Show nav-actions (phone + CTA) next to hamburger */
@@ -4532,8 +4545,11 @@
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
 
-            .nav-links > li:hover {
-                background: rgba(31, 84, 140, 0.08);
+            /* Hover only for non-touch devices */
+            @media (hover: hover) {
+                .nav-links > li:hover {
+                    background: rgba(31, 84, 140, 0.08);
+                }
             }
 
             .nav-links > li.current-page > a {
@@ -4552,12 +4568,15 @@
                 font-size: 1.1rem;
                 width: 100%;
                 color: var(--charcoal);
-                transition: color 0.3s ease, padding-left 0.3s ease;
+                transition: color 0.3s ease;
             }
 
-            .nav-links > li > a:hover {
-                color: #1F548C;
-                padding-left: 1.3rem;
+            /* Hover only for non-touch devices */
+            @media (hover: hover) {
+                .nav-links > li > a:hover {
+                    color: #1F548C;
+                    padding-left: 1.3rem;
+                }
             }
 
             /* Add carat to dropdown parents - matching submenu style */
@@ -4567,6 +4586,7 @@
                 font-weight: 600;
                 transition: transform 0.3s ease;
                 color: #1F548C;
+                line-height: 1;
             }
 
             .nav-links > li.active:has(.dropdown-menu) > a::after {
@@ -4612,13 +4632,16 @@
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
                 width: 100%;
                 display: block;
-                transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+                transition: background 0.3s ease, color 0.3s ease;
             }
 
-            .dropdown-menu a:hover {
-                background: rgba(31, 84, 140, 0.15);
-                color: #1F548C;
-                padding-left: 2.8rem;
+            /* Hover effects disabled on touch - only apply on devices with hover */
+            @media (hover: hover) {
+                .dropdown-menu a:hover {
+                    background: rgba(31, 84, 140, 0.15);
+                    color: #1F548C;
+                    padding-left: 2.8rem;
+                }
             }
 
             .dropdown-menu.dropdown-small {
@@ -4678,10 +4701,13 @@
                 color: var(--charcoal);
             }
 
-            .submenu a:hover {
-                background: rgba(31, 84, 140, 0.18);
-                color: #1F548C;
-                padding-left: 3.8rem;
+            /* Hover effects disabled on touch */
+            @media (hover: hover) {
+                .submenu a:hover {
+                    background: rgba(31, 84, 140, 0.18);
+                    color: #1F548C;
+                    padding-left: 3.8rem;
+                }
             }
 
             /* Hide nav-actions on mobile */
