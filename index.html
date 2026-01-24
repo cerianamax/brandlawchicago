@@ -3856,6 +3856,9 @@
 
             body.menu-open {
                 overflow: hidden;
+                position: fixed;
+                width: 100%;
+                height: 100%;
             }
 
             .nav-links {
@@ -3871,9 +3874,17 @@
                 margin: 0;
                 padding-bottom: 140px;
                 transition: left 0.3s ease, box-shadow 0.3s ease;
+                overflow-x: hidden;
                 overflow-y: auto;
+                overscroll-behavior: contain;
                 z-index: 1000;
                 box-shadow: none;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none;
             }
 
             .nav-links.active {
@@ -3888,6 +3899,9 @@
                 gap: 0.8rem;
                 padding: 1.5rem 2rem;
                 background: var(--charcoal);
+                position: sticky;
+                top: 0;
+                z-index: 10;
             }
 
             /* Keep logo white in mobile menu header */
@@ -4459,6 +4473,9 @@
             /* Prevent body scroll when menu is open */
             body.menu-open {
                 overflow: hidden;
+                position: fixed;
+                width: 100%;
+                height: 100%;
             }
 
             /* Mobile navigation */
@@ -4474,9 +4491,17 @@
                 margin: 0;
                 padding-bottom: 140px;
                 transition: left 0.3s ease, box-shadow 0.3s ease;
+                overflow-x: hidden;
                 overflow-y: auto;
+                overscroll-behavior: contain;
                 z-index: 1000;
                 box-shadow: none;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none;
             }
 
             .nav-links.active {
@@ -4491,6 +4516,9 @@
                 gap: 0.8rem;
                 padding: 1rem;
                 background: var(--charcoal);
+                position: sticky;
+                top: 0;
+                z-index: 10;
             }
 
             /* Keep logo white in mobile menu header */
@@ -6695,6 +6723,11 @@
             const navbar = document.getElementById('navbar');
             const currentScrollY = window.scrollY;
             
+            // Don't process scroll when mobile menu is open
+            if (document.body.classList.contains('menu-open')) {
+                return;
+            }
+            
             // Add/remove scrolled class
             if (currentScrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -6751,6 +6784,8 @@
         console.log('Hamburger element:', hamburger); // DEBUG
         console.log('Nav links element:', navLinksMenu); // DEBUG
 
+        let savedScrollPosition = 0;
+
         if (hamburger) {
             hamburger.addEventListener('click', function(e) {
                 console.log('HAMBURGER CLICKED!', e); // DEBUG
@@ -6759,7 +6794,20 @@
                 this.classList.toggle('active');
                 navLinksMenu.classList.toggle('active');
                 navActions.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
+                
+                // Save scroll position before opening, restore after closing
+                if (!document.body.classList.contains('menu-open')) {
+                    // Opening menu - save position
+                    savedScrollPosition = window.scrollY;
+                    document.body.style.top = `-${savedScrollPosition}px`;
+                    document.body.classList.add('menu-open');
+                } else {
+                    // Closing menu - restore position
+                    document.body.classList.remove('menu-open');
+                    document.body.style.top = '';
+                    window.scrollTo(0, savedScrollPosition);
+                }
+                
                 console.log('Nav links active:', navLinksMenu.classList.contains('active')); // DEBUG
             });
             console.log('Event listener attached successfully'); // DEBUG
