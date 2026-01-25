@@ -2103,7 +2103,6 @@
 
         .testimonials-track {
             display: flex;
-            flex-direction: row-reverse;
             transition: transform 0.5s ease-in-out;
         }
 
@@ -5708,9 +5707,31 @@
         }
 
         @media (max-width: 900px) {
+            .footer-top-row {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .footer-logo {
+                justify-content: flex-start;
+            }
+
             .footer-contact-info {
                 flex-direction: column;
                 gap: 0.75rem;
+                align-items: flex-start;
+            }
+
+            .footer-newsletter {
+                align-items: flex-start;
+            }
+
+            .footer-newsletter-form {
+                width: 100%;
+            }
+
+            .footer-newsletter-form input {
+                flex: 1;
             }
         }
 
@@ -5747,7 +5768,7 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
                 gap: 2rem;
-                text-align: center;
+                text-align: left;
             }
 
             .footer-column:nth-child(2),
@@ -5760,25 +5781,26 @@
             .footer-info {
                 grid-column: 1;
                 grid-row: auto;
+                text-align: left;
             }
 
             .footer-info .footer-social {
-                justify-content: center;
+                justify-content: flex-start;
             }
 
             .footer-bottom-row {
                 flex-direction: column;
                 gap: 1rem;
-                text-align: center;
+                text-align: left;
             }
 
             .footer-disclaimer-text {
-                text-align: center;
+                text-align: left;
             }
 
             .footer-legal-links {
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
             }
 
             .footer-newsletter-form {
@@ -5792,6 +5814,31 @@
             .footer-privacy-text {
                 text-align: left;
             }
+        }
+
+        /* ==============================================
+           FORCE VISIBILITY - Override animation defaults
+           This ensures content shows even if JS fails
+           ============================================== */
+        .about-text,
+        .about-image,
+        .believe-phrase,
+        .contact-form-container,
+        .contact-message,
+        .contact-container,
+        .testimonials-heading-wrapper,
+        .testimonials-watermark,
+        .testimonials-quote-left,
+        .testimonials-quote-right {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .contact-container::before,
+        .contact-message::after,
+        .testimonials-watermark::after {
+            opacity: 1 !important;
+            transform: none !important;
         }
     </style>
 </head>
@@ -6142,7 +6189,7 @@
         <div class="believe-container">
             <h2 class="believe-label">We <span class="believe-word">believe</span>...</h2>
             <div class="believe-rotating">
-                <p class="believe-phrase"></p>
+                <p class="believe-phrase">in <span class="highlight">straightforward advice</span>, honest assessments, and strategies built for the real world—not billable hours.</p>
             </div>
         </div>
     </section>
@@ -7009,7 +7056,7 @@
 
         // Start at slide 1 (because we prepended a clone)
         currentSlide = 1;
-        testimonialsTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+        testimonialsTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
         
         // Set first dot as active
         if (dots.length > 0) {
@@ -7022,7 +7069,7 @@
             
             currentSlide = index;
             testimonialsTrack.style.transition = 'transform 0.5s ease-in-out';
-            testimonialsTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+            testimonialsTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             
             // Update dots (accounting for the prepended clone)
             const dotIndex = (currentSlide - 1 + totalSlides) % totalSlides;
@@ -7039,14 +7086,14 @@
             if (currentSlide >= totalSlides + 1) {
                 testimonialsTrack.style.transition = 'none';
                 currentSlide = 1;
-                testimonialsTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+                testimonialsTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             }
             
             // If we're on the last clone (before first real slide), jump to last real slide
             if (currentSlide <= 0) {
                 testimonialsTrack.style.transition = 'none';
                 currentSlide = totalSlides;
-                testimonialsTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+                testimonialsTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             }
         });
 
