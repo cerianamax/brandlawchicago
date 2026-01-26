@@ -2527,11 +2527,9 @@
             }
             
             /* Hide OLD mobile elements */
-            .mobile-menu-cta,
             .mobile-phone-icon:not(.mobile-header-actions .mobile-phone-icon),
             .hamburger:not(.mobile-header-actions .hamburger),
-            .mobile-bottom-bar,
-            .mobile-menu-header {
+            .mobile-bottom-bar {
                 display: none !important;
             }
             
@@ -2954,6 +2952,118 @@
             
             .mobile-menu-header {
                 padding: 0.75rem 15px;
+            }
+        }
+        
+        /* Mobile menu full width and hamburger X animation */
+        @media (max-width: 1280px) {
+            .mobile-header-actions {
+                z-index: 1100;
+                position: relative;
+            }
+            
+            .mobile-phone-icon {
+                display: flex !important;
+                visibility: visible !important;
+                order: 1 !important;
+                align-items: center;
+                justify-content: center;
+                color: white !important;
+                padding: 8px;
+                z-index: 1100;
+            }
+            
+            .mobile-phone-icon svg {
+                fill: white !important;
+            }
+            
+            .mobile-header-actions .mobile-phone-icon {
+                display: flex !important;
+                visibility: visible !important;
+            }
+            
+            .hamburger {
+                display: flex !important;
+                visibility: visible !important;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 28px;
+                height: 22px;
+                margin-left: 0;
+                order: 2 !important;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+            }
+            
+            .hamburger span {
+                display: block !important;
+                visibility: visible !important;
+                width: 100%;
+                height: 2px;
+                background: white !important;
+                border-radius: 2px;
+                opacity: 1 !important;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            /* Hamburger active X state */
+            .hamburger.active {
+                gap: 0 !important;
+            }
+            
+            .hamburger.active span {
+                position: absolute !important;
+                left: 50% !important;
+                top: 50% !important;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(45deg) !important;
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0 !important;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(-45deg) !important;
+            }
+            
+            /* Mobile menu panel - full width */
+            .mobile-menu {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            /* Force show CTA button in mobile menu header */
+            .mobile-menu .mobile-menu-cta {
+                display: inline !important;
+                visibility: visible !important;
+            }
+        }
+        
+        /* Narrower menu on smaller screens */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            /* Force consistent header padding to align with menu links */
+            .mobile-menu-header {
+                padding: 1rem 20px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            
+            /* Ensure CTA has no extra padding/margin */
+            .mobile-menu-cta {
+                padding: 0 !important;
+                margin: 0 !important;
             }
         }
     </style>
