@@ -196,6 +196,20 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        /* Global anchor reset - remove default browser underlines and focus outlines */
+        a,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:focus {
+            outline: none;
+        }
+
+        a:focus-visible {
+            outline: 2px solid transparent;
+        }
+
         body {
             font-family: 'Work Sans', sans-serif;
             color: var(--charcoal);
@@ -216,6 +230,30 @@
             z-index: 1002;
             transition: all 0.4s ease;
             overflow: visible;
+        }
+
+        /* Nav link reset - remove any browser default styles */
+        nav a,
+        nav a:visited,
+        .logo,
+        .logo:visited,
+        .logo-text,
+        .logo-text a {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+        }
+
+        nav a:focus,
+        .logo:focus,
+        .logo-text a:focus {
+            outline: none !important;
+            text-decoration: none !important;
+        }
+
+        .logo-text p {
+            text-decoration: none !important;
+            border-bottom: none !important;
         }
 
         .nav-wrapper.scrolled {
@@ -310,16 +348,6 @@
             bottom: -8px;
             left: var(--left, 0);
             width: var(--width, 0);
-        }
-
-        /* Hide mobile menu header on desktop */
-        .mobile-menu-header {
-            display: none;
-        }
-
-        /* Hide mobile menu header on desktop */
-        .mobile-menu-header {
-            display: none;
         }
 
         .nav-links > li:hover ~ .line {
@@ -498,45 +526,507 @@
             align-items: center;
         }
 
-        /* Mobile menu CTA - hidden by default */
-        .mobile-menu-cta {
-            display: none;
-        }
-
-        /* Mobile bottom bar - hidden by default */
-        .mobile-bottom-bar {
-            display: none;
-        }
-
         /* Hero mobile CTA - hidden by default */
         .hero-mobile-cta {
             display: none;
         }
 
-        /* Mobile bottom CTA - completely hidden by default */
-        .mobile-bottom-cta {
+        /* ========================================
+           MOBILE MENU SYSTEM - Clean Rebuild
+           ======================================== */
+        
+        /* Hide mobile elements by default (desktop) */
+        .mobile-header-actions {
             display: none;
         }
-
-        /* Mobile phone icon - hidden by default on desktop */
+        
+        .mobile-menu-overlay {
+            display: none;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
         .mobile-phone-icon {
             display: none;
-            color: var(--white);
-            padding: 8px;
-            border-radius: 4px;
-            transition: color 0.3s ease;
         }
-
-        .mobile-phone-icon:hover {
-            color: var(--gold);
-        }
-
-        /* Hide hamburger on desktop */
+        
+        /* Hamburger base styles - hidden on desktop */
         .hamburger {
             display: none;
-            position: relative;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 28px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
             z-index: 1100;
+            outline: none;
         }
+        
+        .hamburger:focus {
+            outline: none;
+        }
+        
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        /* Hamburger active state (X) */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        /* ========================================
+           MOBILE BREAKPOINT (1280px and below)
+           ======================================== */
+        @media (max-width: 1280px) {
+            /* Hide desktop nav elements */
+            .nav-links {
+                display: none !important;
+            }
+            
+            .nav-actions {
+                display: none !important;
+            }
+            
+            /* Show hero CTA since nav CTA is hidden */
+            .hero-mobile-cta {
+                display: inline-block;
+                background: #FFDE21;
+                color: var(--charcoal);
+                padding: 0.85rem 2rem;
+                border-radius: 4px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: none;
+                text-align: center;
+                margin-top: calc(2.5rem + 30px);
+            }
+            
+            /* Hide hero CTA when menu is open */
+            body.menu-open .hero-mobile-cta {
+                display: none;
+            }
+            
+            /* Show mobile header actions on the right */
+            .mobile-header-actions {
+                display: flex !important;
+                align-items: center;
+                gap: 15px;
+                margin-left: auto;
+            }
+            
+            .mobile-phone-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--white);
+                padding: 8px;
+                transition: color 0.3s ease;
+            }
+            
+            .mobile-phone-icon:hover {
+                color: var(--gold);
+            }
+            
+            .hamburger {
+                display: flex !important;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            
+            /* Mobile Menu Overlay */
+            .mobile-menu-overlay {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+                z-index: 999;
+            }
+            
+            .mobile-menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            /* Mobile Menu Panel */
+            .mobile-menu {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                max-width: 450px;
+                height: 100vh;
+                height: 100dvh;
+                background: rgb(242, 246, 250);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 1000;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+            
+            /* Mobile Menu Header */
+            .mobile-menu-header {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.25rem 20px 1rem 20px;
+                background: var(--charcoal);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .mobile-menu-logo {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+                text-decoration: none;
+                margin-bottom: 0.75rem;
+            }
+            
+            .mobile-menu-logo img {
+                height: 70px;
+                width: auto;
+                filter: brightness(0) invert(1);
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 70px;
+                padding: 2px 0 5px 0;
+            }
+            
+            .mobile-menu .mobile-menu-logo .logo-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 2.8rem;
+                font-weight: 500;
+                color: var(--white);
+                letter-spacing: 0.5px;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
+                font-family: 'Inter', sans-serif;
+                font-size: 0.82rem;
+                font-weight: 400;
+                text-transform: lowercase;
+                color: var(--white);
+                letter-spacing: 0.115em;
+                margin: 0;
+                padding: 0;
+                line-height: 1;
+            }
+            
+            .mobile-menu-cta {
+                display: inline;
+                background: none;
+                color: var(--gold);
+                padding: 0;
+                border-radius: 0;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .mobile-menu-cta:hover {
+                color: var(--white);
+            }
+            
+            .mobile-menu-cta:active {
+                transform: none;
+            }
+            
+            /* Mobile Menu Links */
+            .mobile-menu-links {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .mobile-menu-links > li {
+                border-bottom: 1px solid #eee;
+            }
+            
+            .mobile-menu-links > li > a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 18px 20px;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: var(--charcoal);
+                text-decoration: none;
+                letter-spacing: 1px;
+                transition: background 0.2s ease, color 0.2s ease;
+            }
+            
+            .mobile-menu-links > li > a:hover {
+                background: #f8f8f8;
+                color: var(--blue-primary);
+            }
+            
+            .dropdown-arrow {
+                font-size: 1.5rem;
+                color: var(--charcoal);
+                transition: transform 0.3s ease;
+                display: inline-block;
+                transform: rotate(90deg);
+            }
+            
+            .mobile-menu-links > li.has-dropdown.open > a .dropdown-arrow {
+                transform: rotate(-90deg);
+            }
+            
+            /* Mobile Dropdown */
+            .mobile-dropdown {
+                display: none;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                background: rgb(232, 238, 244);
+            }
+            
+            .mobile-menu-links > li.has-dropdown.open .mobile-dropdown {
+                display: block;
+            }
+            
+            .mobile-dropdown li a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 20px 14px 35px;
+                font-family: 'Inter', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--charcoal);
+                text-decoration: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                transition: background 0.2s ease, color 0.2s ease;
+            }
+            
+            .mobile-dropdown li:last-child a {
+                border-bottom: none;
+            }
+            
+            .mobile-dropdown li a:hover {
+                background: rgba(0, 0, 0, 0.05);
+                color: var(--blue-primary);
+            }
+            
+            /* Nested subdropdown */
+            .mobile-dropdown .has-subdropdown {
+                position: relative;
+            }
+            
+            .mobile-subdropdown {
+                display: none;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                background: rgb(222, 230, 238);
+            }
+            
+            .mobile-dropdown .has-subdropdown.open .mobile-subdropdown {
+                display: block;
+            }
+            
+            .mobile-subdropdown li a {
+                padding: 12px 20px 12px 50px;
+                font-size: 13px;
+            }
+            
+            .mobile-dropdown .has-subdropdown > a .dropdown-arrow {
+                font-size: 1.3rem;
+            }
+            
+            .mobile-dropdown .has-subdropdown.open > a .dropdown-arrow {
+                transform: rotate(-90deg);
+            }
+            
+            /* Prevent body scroll when menu is open */
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+        
+        /* ========================================
+           SMALLER MOBILE (768px and below)
+           ======================================== */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-width: 100%;
+            }
+            
+            .mobile-menu .mobile-menu-logo img {
+                height: 65px;
+                width: auto;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 65px;
+                padding: 5px 0 4px 0;
+            }
+            
+            .mobile-menu .mobile-menu-logo .logo-title {
+                font-size: 2.4rem;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
+                font-size: 0.7rem;
+            }
+            
+            .mobile-menu-cta {
+                font-size: 0.9rem;
+                padding: 0;
+            }
+            
+            .mobile-menu-links > li > a {
+                padding: 16px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .mobile-dropdown li a {
+                padding: 12px 20px 12px 30px;
+                font-size: 14px;
+            }
+            
+            .mobile-subdropdown li a {
+                padding: 10px 20px 10px 45px;
+                font-size: 13px;
+            }
+        }
+        
+        /* 540px and below - scale down mobile menu */
+        @media (max-width: 540px) {
+            .mobile-menu .mobile-menu-logo img {
+                height: 55px;
+                width: auto;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 55px;
+                padding: 4px 0 3px 0;
+            }
+            
+            .mobile-menu .mobile-menu-logo .logo-title {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
+                font-size: 0.58rem;
+            }
+            
+            .mobile-menu-logo {
+                gap: 0.75rem;
+            }
+        }
+        
+        /* 430px and below - smaller mobile menu */
+        @media (max-width: 430px) {
+            .mobile-menu .mobile-menu-logo img {
+                height: 45px;
+                width: auto;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 45px;
+                padding: 3px 0 2px 0;
+            }
+            
+            .mobile-menu .mobile-menu-logo .logo-title {
+                font-size: 1.6rem;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
+                font-size: 0.47rem;
+            }
+            
+            .mobile-menu-logo {
+                gap: 0.6rem;
+            }
+        }
+        
+        /* 375px and below - smallest mobile menu */
+        @media (max-width: 375px) {
+            .mobile-menu .mobile-menu-logo img {
+                height: 40px;
+                width: auto;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 40px;
+                padding: 3px 0 2px 0;
+            }
+            
+            .mobile-menu .mobile-menu-logo .logo-title {
+                font-size: 1.4rem;
+            }
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
+                font-size: 0.41rem;
+            }
+            
+            .mobile-menu-logo {
+                gap: 0.5rem;
+            }
+            
+            .mobile-menu-header {
+                padding: 0.75rem 15px;
+            }
+        }
+        
+        /* ========================================
+           END MOBILE MENU SYSTEM
+           ======================================== */
 
         .cta-nav-btn {
             background: #FFDE21;
@@ -580,44 +1070,33 @@
         .phone-btn {
             background: transparent;
             color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
             border-radius: 4px;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 1.25rem;
             text-decoration: none;
-            transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             letter-spacing: 0.3px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             position: relative;
-            overflow: hidden;
             z-index: 1;
+            line-height: 1.2;
+            box-sizing: border-box;
+            box-shadow: inset 0 0 0 2px var(--white);
         }
-
-        .phone-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: #1F548C;
-            transition: width 0.3s ease;
-            z-index: -1;
+        
+        .phone-btn svg {
+            flex-shrink: 0;
         }
 
         .phone-btn:hover {
-            border-color: #1F548C;
+            background: #1F548C;
             color: var(--white);
-            text-shadow: none;
-            box-shadow: 0 0 15px rgba(31, 84, 140, 0.6);
-        }
-
-        .phone-btn:hover::before {
-            width: 100%;
+            box-shadow: inset 0 0 0 2px #1F548C, 0 0 15px rgba(31, 84, 140, 0.6);
         }
 
         /* Hero Section */
@@ -3908,7 +4387,7 @@
                 display: flex;
                 align-items: flex-start;
                 gap: 0.6rem;
-                padding: 1rem 1.5rem;
+                padding: 1rem 20px;
                 background: var(--charcoal);
                 position: sticky;
                 top: 0;
@@ -3923,6 +4402,7 @@
                 filter: brightness(0) invert(1);
             }
 
+            /* OLD MOBILE MENU STYLES - DISABLED - using new system
             .mobile-menu-header .logo-text {
                 display: flex;
                 flex-direction: column;
@@ -3950,6 +4430,7 @@
                 margin-top: auto;
                 letter-spacing: 0.115em;
             }
+            */
 
             .nav-links > li {
                 width: 100%;
@@ -4125,7 +4606,8 @@
                 }
             }
 
-            /* 1000-1200px MENU CLOSED: Show nav-actions (phone + CTA) next to hamburger */
+            /* OLD MOBILE SYSTEM - DISABLED
+            1000-1200px MENU CLOSED: Show nav-actions (phone + CTA) next to hamburger
             .nav-actions {
                 display: flex !important;
                 position: static;
@@ -4135,12 +4617,14 @@
                 margin-right: 0.5rem;
                 order: 1;
             }
+            */
 
             .hamburger {
                 order: 2;
                 margin-left: 1rem;
             }
 
+            /* OLD MOBILE SYSTEM - DISABLED
             .phone-btn {
                 font-size: 1rem;
                 padding: 0.6rem 1rem;
@@ -4150,11 +4634,10 @@
                 font-size: 1rem;
                 padding: 0.7rem 1rem;
             }
+            */
 
-            /* Hide mobile phone icon at this breakpoint - using nav-actions phone */
-            .mobile-phone-icon {
-                display: none;
-            }
+            /* Mobile phone icon - keep visible for new mobile menu system */
+            /* .mobile-phone-icon - no longer hiding this */
 
             /* Always hide mobile-menu-cta - we use mobile-bottom-bar */
             .mobile-menu-cta {
@@ -4265,26 +4748,20 @@
 
         /* Tablet - larger mobile menu logo */
         @media (max-width: 1280px) and (min-width: 769px) {
-            .mobile-menu-header img {
+            .mobile-menu .mobile-menu-logo img {
                 height: 70px;
             }
-
-            .mobile-menu-header .logo-text {
-                height: 70px;
-            }
-
-            .mobile-menu-header .logo-text .logo-title {
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text .logo-title {
                 font-size: 2.8rem;
             }
-
-            .mobile-menu-header .logo-text p {
-                font-size: 0.815rem;
-                letter-spacing: 0.115em;
+            
+            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
+                font-size: 0.82rem;
             }
 
             .mobile-menu-header {
-                padding: 2rem 2.5rem;
-                gap: 1rem;
+                padding: 1.25rem 20px 1rem 20px;
             }
         }
 
@@ -4331,7 +4808,7 @@
                 font-size: 1rem;
                 text-decoration: none;
                 text-align: center;
-                margin-top: 2.5rem;
+                margin-top: calc(2.5rem + 30px);
             }
 
             /* MENU OPEN: Hide hero-mobile-cta, show mobile-bottom-bar */
@@ -4508,7 +4985,7 @@
                 display: flex;
                 align-items: flex-start;
                 gap: 0.8rem;
-                padding: 1rem;
+                padding: 1rem 20px;
                 background: var(--charcoal);
                 position: sticky;
                 top: 0;
@@ -4523,6 +5000,7 @@
                 filter: brightness(0) invert(1);
             }
 
+            /* OLD MOBILE MENU STYLES - DISABLED - using new system
             .mobile-menu-header .logo-text {
                 display: flex;
                 flex-direction: column;
@@ -4550,6 +5028,7 @@
                 margin-top: auto;
                 letter-spacing: 0.115em;
             }
+            */
 
             .nav-links > li {
                 width: 100%;
@@ -4860,32 +5339,32 @@
             }
         }
 
-        /* 375-400px - larger logo */
         /* 520-768px - Larger logo for wider mobile/small tablet */
         @media (min-width: 520px) and (max-width: 768px) {
             nav .logo img {
-                height: 65px;
+                height: 60px;
                 width: auto;
                 margin-top: 3px;
             }
 
             nav .logo-text {
-                height: 65px;
+                height: 60px;
                 padding: 3px 0 1px 0;
             }
 
             nav .logo-text .logo-title {
-                font-size: 2.7rem;
+                font-size: 2.5rem;
                 margin-bottom: 4px;
             }
 
             nav .logo-text p {
-                font-size: 0.786rem;
+                font-size: 0.73rem;
                 letter-spacing: 0.115em;
             }
         }
 
-        @media (min-width: 375px) and (max-width: 400px) {
+        /* 430-519px - medium mobile */
+        @media (min-width: 430px) and (max-width: 519px) {
             nav .logo img {
                 height: 50px;
                 width: auto;
@@ -4893,7 +5372,7 @@
 
             nav .logo-text {
                 height: 50px;
-                padding: 3px 0 1px 0;
+                padding: 2px 0 1px 0;
             }
 
             nav .logo-text .logo-title {
@@ -4902,14 +5381,13 @@
             }
 
             nav .logo-text p {
-                font-size: 0.582rem;
+                font-size: 0.58rem;
                 letter-spacing: 0.115em;
             }
         }
 
-        /* Below 375px - smallest logo */
-        /* 430px and under - smaller logo for small phones */
-        @media (max-width: 430px) {
+        /* 375-429px - smaller mobile */
+        @media (min-width: 375px) and (max-width: 429px) {
             nav .logo img {
                 height: 45px;
                 width: auto;
@@ -4921,34 +5399,17 @@
             }
 
             nav .logo-text .logo-title {
-                font-size: 1.85rem;
+                font-size: 1.8rem;
                 margin-bottom: 3px;
             }
 
             nav .logo-text p {
-                font-size: 0.54rem;
-            }
-
-            .mobile-menu-header img {
-                height: 45px;
-                width: auto;
-            }
-
-            .mobile-menu-header .logo-text {
-                height: 45px;
-                padding: 2px 0 1px 0;
-            }
-
-            .mobile-menu-header .logo-text .logo-title {
-                font-size: 1.85rem;
-                margin-bottom: 3px;
-            }
-
-            .mobile-menu-header .logo-text p {
-                font-size: 0.54rem;
+                font-size: 0.52rem;
+                letter-spacing: 0.115em;
             }
         }
 
+        /* Below 375px - smallest mobile */
         @media (max-width: 374px) {
             nav .logo img {
                 height: 40px;
@@ -4962,7 +5423,7 @@
 
             nav .logo-text .logo-title {
                 font-family: 'Playfair Display', serif;
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 font-weight: 500;
                 color: var(--white);
                 margin: 0;
@@ -4972,30 +5433,10 @@
 
             nav .logo-text p {
                 font-family: 'Inter', sans-serif;
-                font-size: 0.466rem;
+                font-size: 0.44rem;
                 text-transform: lowercase;
                 color: var(--white);
                 margin: 0;
-                letter-spacing: 0.115em;
-            }
-
-            .mobile-menu-header img {
-                height: 40px;
-                width: auto;
-            }
-
-            .mobile-menu-header .logo-text {
-                height: 40px;
-                padding: 2px 0 1px 0;
-            }
-
-            .mobile-menu-header .logo-text .logo-title {
-                font-size: 1.6rem;
-                margin-bottom: 3px;
-            }
-
-            .mobile-menu-header .logo-text p {
-                font-size: 0.466rem;
                 letter-spacing: 0.115em;
             }
         }
@@ -5037,7 +5478,7 @@
             }
 
             .hero-mobile-cta {
-                margin-top: 3rem;
+                margin-top: calc(3rem + 30px) !important;
                 display: block;
                 text-align: center;
             }
@@ -5076,7 +5517,7 @@
             }
 
             .hero-mobile-cta {
-                margin-top: 1.5rem;
+                margin-top: calc(1.5rem + 30px);
             }
         }
 
@@ -5115,7 +5556,7 @@
             }
 
             .hero-mobile-cta {
-                margin-top: 1rem;
+                margin-top: calc(1rem + 30px);
             }
 
             .hero-mobile-cta .cta-btn {
@@ -5840,6 +6281,137 @@
             opacity: 1 !important;
             transform: none !important;
         }
+        /* ========================================
+           FINAL MOBILE MENU OVERRIDES
+           These MUST be at the end to take precedence
+           ======================================== */
+        @media (max-width: 1280px) {
+            /* Force hide desktop nav elements */
+            .nav-links {
+                display: none !important;
+                visibility: hidden !important;
+            }
+            
+            .nav-actions {
+                display: none !important;
+                visibility: hidden !important;
+            }
+            
+            /* Force show mobile header actions on the right */
+            .mobile-header-actions {
+                display: flex !important;
+                visibility: visible !important;
+                align-items: center;
+                gap: 15px;
+                margin-left: auto;
+                z-index: 1100;
+                position: relative;
+            }
+            
+            .mobile-phone-icon {
+                display: flex !important;
+                visibility: visible !important;
+                order: 1 !important;
+                align-items: center;
+                justify-content: center;
+                color: white !important;
+                padding: 8px;
+                z-index: 1100;
+            }
+            
+            .mobile-phone-icon svg {
+                fill: white !important;
+            }
+            
+            .mobile-header-actions .mobile-phone-icon {
+                display: flex !important;
+                visibility: visible !important;
+            }
+            
+            .hamburger {
+                display: flex !important;
+                visibility: visible !important;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 28px;
+                height: 22px;
+                margin-left: 0;
+                order: 2 !important;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+            }
+            
+            .hamburger span {
+                display: block !important;
+                visibility: visible !important;
+                width: 100%;
+                height: 2px;
+                background: white !important;
+                border-radius: 2px;
+                opacity: 1 !important;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            /* Hamburger active X state */
+            .hamburger.active {
+                gap: 0 !important;
+            }
+            
+            .hamburger.active span {
+                position: absolute !important;
+                left: 50% !important;
+                top: 50% !important;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(45deg) !important;
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0 !important;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(-45deg) !important;
+            }
+            
+            /* Mobile menu panel - full width at larger mobile sizes */
+            .mobile-menu {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            /* Force show CTA button in mobile menu header */
+            .mobile-menu .mobile-menu-cta {
+                display: inline !important;
+                visibility: visible !important;
+            }
+        }
+        
+        /* Narrower menu on smaller screens */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            /* Force consistent header padding to align with menu links */
+            .mobile-menu-header {
+                padding: 1rem 20px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            
+            /* Ensure CTA has no extra padding/margin */
+            .mobile-menu-cta {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -5851,70 +6423,55 @@
     <!-- Navigation - Blended over hero -->
     <div class="nav-wrapper" id="navbar">
         <nav>
-            <div class="logo">
+            <!-- Desktop logo -->
+            <a href="/" class="logo">
                 <img src="brand-law-logo.png" alt="Brand Law">
                 <div class="logo-text">
                     <span class="logo-title">BRAND LAW</span>
                     <p>construction + real estate counsel</p>
                 </div>
-            </div>
+            </a>
+            
+            <!-- Desktop nav links -->
             <ul class="nav-links">
-                <div class="mobile-menu-header">
-                    <img src="brand-law-logo.png" alt="Brand Law">
-                    <div class="logo-text">
-                        <span class="logo-title">BRAND LAW</span>
-                        <p>construction + real estate counsel</p>
-                    </div>
-                </div>
-                <li class="current-page"><a href="#home">Home</a></li>
+                <li class="current-page"><a href="/">Home</a></li>
                 <li>
-                    <a href="#about">About</a>
+                    <a href="/about">About</a>
                     <div class="dropdown-menu dropdown-small">
-                        <a href="#about-firm">About the Firm</a>
-                        <a href="#meet-todd">Meet Todd R. Brand</a>
+                        <a href="/about-the-firm">About the Firm</a>
+                        <a href="/meet-todd-r-brand">Meet Todd R. Brand</a>
                     </div>
                 </li>
                 <li>
-                    <a href="#practice">Practice Areas</a>
+                    <a href="/practice-areas">Practice Areas</a>
                     <div class="dropdown-menu">
-                        <a href="#construction-disputes">Construction Disputes</a>
-                        <a href="#mechanics-liens">Mechanics Liens</a>
-                        <a href="#contract-drafting">Contract Drafting & Negotiation</a>
-                        <a href="#property-damage">Property Damage Repair Disputes</a>
-                        <a href="#title-disputes">Title Disputes</a>
-                        <a href="#hoa-condo">HOA & Condo Law</a>
+                        <a href="/construction-disputes">Construction Disputes</a>
+                        <a href="/mechanics-liens">Mechanics Liens</a>
+                        <a href="/construction-contract-drafting-negotiation">Contract Drafting & Negotiation</a>
+                        <a href="/property-damage-repair-disputes">Property Damage Repair Disputes</a>
+                        <a href="/title-disputes">Title Disputes</a>
+                        <a href="/hoa-condo-law">HOA & Condo Law</a>
                         <div class="has-submenu">
-                            <a href="#real-estate-litigation">Real Estate Litigation</a>
+                            <a href="/real-estate-litigation">Real Estate Litigation</a>
                             <div class="submenu">
-                                <a href="#quiet-title">Quiet Title Actions</a>
-                                <a href="#breach-contract">Real Estate Breach of Contract</a>
-                                <a href="#partition">Partition Actions</a>
-                                <a href="#property-line">Property Line Disputes</a>
-                                <a href="#easement">Easement Disputes</a>
+                                <a href="/quiet-title-actions">Quiet Title Actions</a>
+                                <a href="/real-estate-breach-of-contract">Real Estate Breach of Contract</a>
+                                <a href="/partition-actions">Partition Actions</a>
+                                <a href="/property-line-disputes">Property Line Disputes</a>
+                                <a href="/easement-disputes">Easement Disputes</a>
                             </div>
                         </div>
-                        <a href="#real-estate-closings">Real Estate Closings</a>
-                        <a href="#business-law">Business Law</a>
+                        <a href="/real-estate-closings">Real Estate Closings</a>
+                        <a href="/business-law">Business Law</a>
                     </div>
                 </li>
-                <li><a href="#faq">FAQs</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/faqs">FAQs</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
                 <div class="line"></div>
             </ul>
-            <div class="mobile-menu-cta">
-                <a href="#contact" class="mobile-cta-btn">Schedule a Free Consultation</a>
-            </div>
-            <a href="tel:312-535-9221" class="mobile-phone-icon" aria-label="Call 312-535-9221">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-            </a>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            
+            <!-- Desktop actions (phone + CTA) -->
             <div class="nav-actions">
                 <a href="tel:312-535-9221" class="phone-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -5922,18 +6479,75 @@
                     </svg>
                     312.535.9221
                 </a>
-                <a href="#contact" class="cta-nav-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-nav-btn">Schedule a Free Consultation</a>
+            </div>
+            
+            <!-- Mobile header actions (phone icon + hamburger) -->
+            <div class="mobile-header-actions">
+                <a href="tel:312-535-9221" class="mobile-phone-icon" aria-label="Call 312-535-9221">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </a>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
-        <!-- Mobile bottom bar - shows phone + CTA when menu is open (0-1200px) -->
-        <div class="mobile-bottom-bar">
-            <a href="tel:312-535-9221" class="mobile-bottom-phone">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                312.535.9221
-            </a>
-            <a href="#contact" class="mobile-bottom-cta-btn">Schedule a Free Consultation</a>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay"></div>
+        
+        <!-- Mobile Menu Panel -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <a href="/" class="mobile-menu-logo">
+                    <img src="brand-law-logo.png" alt="Brand Law">
+                    <div class="mobile-logo-text">
+                        <span class="logo-title">BRAND LAW</span>
+                        <p>construction + real estate counsel</p>
+                    </div>
+                </a>
+                <a href="/contact" class="mobile-menu-cta">Schedule a Free Consultation</a>
+            </div>
+            <ul class="mobile-menu-links">
+                <li><a href="/">HOME</a></li>
+                <li class="has-dropdown">
+                    <a href="/about">ABOUT <span class="dropdown-arrow">›</span></a>
+                    <ul class="mobile-dropdown">
+                        <li><a href="/about-the-firm">About the Firm</a></li>
+                        <li><a href="/meet-todd-r-brand">Meet Todd R. Brand</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="/practice-areas">PRACTICE AREAS <span class="dropdown-arrow">›</span></a>
+                    <ul class="mobile-dropdown">
+                        <li><a href="/construction-disputes">Construction Disputes</a></li>
+                        <li><a href="/mechanics-liens">Mechanics Liens</a></li>
+                        <li><a href="/construction-contract-drafting-negotiation">Contract Drafting & Negotiation</a></li>
+                        <li><a href="/property-damage-repair-disputes">Property Damage Repair Disputes</a></li>
+                        <li><a href="/title-disputes">Title Disputes</a></li>
+                        <li><a href="/hoa-condo-law">HOA & Condo Law</a></li>
+                        <li class="has-subdropdown">
+                            <a href="/real-estate-litigation">Real Estate Litigation <span class="dropdown-arrow">›</span></a>
+                            <ul class="mobile-subdropdown">
+                                <li><a href="/quiet-title-actions">Quiet Title Actions</a></li>
+                                <li><a href="/real-estate-breach-of-contract">Real Estate Breach of Contract</a></li>
+                                <li><a href="/partition-actions">Partition Actions</a></li>
+                                <li><a href="/property-line-disputes">Property Line Disputes</a></li>
+                                <li><a href="/easement-disputes">Easement Disputes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/real-estate-closings">Real Estate Closings</a></li>
+                        <li><a href="/business-law">Business Law</a></li>
+                    </ul>
+                </li>
+                <li><a href="/faqs">FAQS</a></li>
+                <li><a href="/blog">BLOG</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+            </ul>
         </div>
     </div>
 
@@ -5953,7 +6567,7 @@
                 </a>
             </div>
             <!-- Mobile hero CTA - only shows at 999px and below when menu is closed -->
-            <a href="#contact" class="hero-mobile-cta">Schedule a Free Consultation</a>
+            <a href="#contact" class="hero-mobile-cta" style="margin-top: 4.5rem;">Schedule a Free Consultation</a>
         </div>
     </section>
 
@@ -6588,7 +7202,7 @@
                     </div>
                     <div class="form-group full-width footer-form-bottom">
                         <button type="submit" class="footer-submit">Submit</button>
-                        <p class="footer-privacy-text">Your privacy is our priority. All consultations are 100% confidential, and any information you provide is securely protected. We never share your data without your explicit consent. By clicking 'Submit', you agree to our <a href="#">Privacy Policy</a> and consent to receive communications, including SMS, for case-related purposes.</p>
+                        <p class="footer-privacy-text">Your privacy is our priority. All consultations are 100% confidential, and any information you provide is securely protected. We never share your data without your explicit consent. By clicking 'Submit', you agree to our <a href="/privacy-policy">Privacy Policy</a> and consent to receive communications, including SMS, for case-related purposes.</p>
                     </div>
                 </form>
             </div>
@@ -6651,34 +7265,34 @@
                     <div class="footer-column">
                         <h4>About</h4>
                         <ul>
-                            <li><a href="#">About the Firm</a></li>
-                            <li><a href="#">Meet Todd R. Brand</a></li>
+                            <li><a href="/about-the-firm">About the Firm</a></li>
+                            <li><a href="/meet-todd-r-brand">Meet Todd R. Brand</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Practice Areas</h4>
                         <ul>
-                            <li><a href="#">Construction Disputes</a></li>
-                            <li><a href="#">Mechanics Liens</a></li>
-                            <li><a href="#">Contract Drafting & Negotiation</a></li>
-                            <li><a href="#">Property Damage Repair Disputes</a></li>
-                            <li><a href="#">Title Disputes</a></li>
-                            <li><a href="#">HOA & Condo Law</a></li>
-                            <li><a href="#">Real Estate Litigation</a></li>
-                            <li><a href="#">Real Estate Closings</a></li>
-                            <li><a href="#">Business Law</a></li>
+                            <li><a href="/construction-disputes">Construction Disputes</a></li>
+                            <li><a href="/mechanics-liens">Mechanics Liens</a></li>
+                            <li><a href="/construction-contract-drafting-negotiation">Contract Drafting & Negotiation</a></li>
+                            <li><a href="/property-damage-repair-disputes">Property Damage Repair Disputes</a></li>
+                            <li><a href="/title-disputes">Title Disputes</a></li>
+                            <li><a href="/hoa-condo-law">HOA & Condo Law</a></li>
+                            <li><a href="/real-estate-litigation">Real Estate Litigation</a></li>
+                            <li><a href="/real-estate-closings">Real Estate Closings</a></li>
+                            <li><a href="/business-law">Business Law</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>FAQs</h4>
                         <ul>
-                            <li><a href="#">Mechanics Liens</a></li>
-                            <li><a href="#">Construction Contracts</a></li>
-                            <li><a href="#">HOA & Condo</a></li>
-                            <li><a href="#">Quiet Title Actions</a></li>
-                            <li><a href="#">Public Adjuster</a></li>
-                            <li><a href="#">Mediation</a></li>
-                            <li><a href="#">Arbitration</a></li>
+                            <li><a href="/mechanics-liens">Mechanics Liens</a></li>
+                            <li><a href="/construction-contracts-faqs">Construction Contracts</a></li>
+                            <li><a href="/hoa-condo-faqs">HOA & Condo</a></li>
+                            <li><a href="/quiet-title-actions">Quiet Title Actions</a></li>
+                            <li><a href="/public-adjuster-faqs">Public Adjuster</a></li>
+                            <li><a href="/mediation-faqs">Mediation</a></li>
+                            <li><a href="/arbitration-faqs">Arbitration</a></li>
                         </ul>
                     </div>
                 </div>
@@ -6689,9 +7303,9 @@
                     <div class="footer-bottom-row">
                         <span class="footer-copyright">© 2026 T Brand Law LLC. All rights reserved.</span>
                         <div class="footer-legal-links">
-                            <a href="#">Disclaimer</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Sitemap</a>
+                            <a href="/disclaimer">Disclaimer</a>
+                            <a href="/privacy-policy">Privacy Policy</a>
+                            <a href="/sitemap">Sitemap</a>
                         </div>
                     </div>
                 </div>
@@ -6798,93 +7412,112 @@
             });
         });
 
-        // Mobile hamburger menu
+        // ========================================
+        // NEW MOBILE MENU SYSTEM
+        // ========================================
         const hamburger = document.querySelector('.hamburger');
-        const navLinksMenu = document.querySelector('.nav-links');
-        const navActions = document.querySelector('.nav-actions');
-
-        console.log('Hamburger element:', hamburger); // DEBUG
-        console.log('Nav links element:', navLinksMenu); // DEBUG
-
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileDropdownParents = document.querySelectorAll('.mobile-menu-links .has-dropdown > a');
+        
         let savedScrollPosition = 0;
-
+        
+        function openMobileMenu() {
+            savedScrollPosition = window.scrollY;
+            document.body.style.top = `-${savedScrollPosition}px`;
+            document.body.classList.add('menu-open');
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+        }
+        
+        function closeMobileMenu() {
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+            window.scrollTo(0, savedScrollPosition);
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            // Close all dropdowns and subdropdowns
+            document.querySelectorAll('.mobile-menu-links .has-dropdown').forEach(item => {
+                item.classList.remove('open');
+            });
+            document.querySelectorAll('.mobile-dropdown .has-subdropdown').forEach(item => {
+                item.classList.remove('open');
+            });
+        }
+        
         if (hamburger) {
             hamburger.addEventListener('click', function(e) {
-                console.log('HAMBURGER CLICKED!', e); // DEBUG
                 e.preventDefault();
                 e.stopPropagation();
-                this.classList.toggle('active');
-                navLinksMenu.classList.toggle('active');
-                navActions.classList.toggle('active');
                 
-                // Save scroll position before opening, restore after closing
-                if (!document.body.classList.contains('menu-open')) {
-                    // Opening menu - save position
-                    savedScrollPosition = window.scrollY;
-                    document.body.style.top = `-${savedScrollPosition}px`;
-                    document.body.classList.add('menu-open');
+                if (mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
                 } else {
-                    // Closing menu - restore position
-                    document.body.classList.remove('menu-open');
-                    document.body.style.top = '';
-                    window.scrollTo(0, savedScrollPosition);
+                    openMobileMenu();
                 }
-                
-                console.log('Nav links active:', navLinksMenu.classList.contains('active')); // DEBUG
             });
-            console.log('Event listener attached successfully'); // DEBUG
-        } else {
-            console.error('HAMBURGER ELEMENT NOT FOUND!'); // DEBUG
         }
-
+        
+        // Close on overlay click
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+        
         // Mobile dropdown toggles
-        const dropdownParents = document.querySelectorAll('.nav-links > li:has(.dropdown-menu) > a');
-        dropdownParents.forEach(parent => {
+        mobileDropdownParents.forEach(parent => {
             parent.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1200) {
-                    e.preventDefault();
-                    const parentLi = this.parentElement;
-                    const wasActive = parentLi.classList.contains('active');
-                    
-                    // Remove active and current-page from all li elements
-                    document.querySelectorAll('.nav-links > li').forEach(li => {
-                        li.classList.remove('active', 'current-page');
-                    });
-                    
-                    // Toggle active on clicked item
-                    if (!wasActive) {
-                        parentLi.classList.add('active');
-                    }
-                }
+                e.preventDefault();
+                const parentLi = this.parentElement;
+                parentLi.classList.toggle('open');
             });
         });
-
-        // Regular menu items (Home, FAQ, Contact, Blog) - make them yellow when clicked
-        const regularMenuItems = document.querySelectorAll('.nav-links > li:not(:has(.dropdown-menu)) > a');
-        regularMenuItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    // Remove active and current-page from all li elements
-                    document.querySelectorAll('.nav-links > li').forEach(li => {
-                        li.classList.remove('active', 'current-page');
-                    });
-                    
-                    // Add current-page to clicked item
-                    this.parentElement.classList.add('current-page');
-                }
-            });
+        
+        // Close menu when clicking a non-dropdown link
+        document.querySelectorAll('.mobile-menu-links > li:not(.has-dropdown) > a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
-
-        // Mobile submenu toggle
-        const submenuParents = document.querySelectorAll('.has-submenu > a');
-        submenuParents.forEach(parent => {
+        
+        // Close menu when clicking a dropdown sub-link
+        document.querySelectorAll('.mobile-dropdown a').forEach(link => {
+            // Don't close menu when clicking subdropdown parent
+            if (!link.parentElement.classList.contains('has-subdropdown')) {
+                link.addEventListener('click', closeMobileMenu);
+            }
+        });
+        
+        // Mobile subdropdown toggles
+        document.querySelectorAll('.mobile-dropdown .has-subdropdown > a').forEach(parent => {
             parent.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1200) {
-                    e.preventDefault();
-                    this.parentElement.classList.toggle('active');
-                }
+                e.preventDefault();
+                e.stopPropagation();
+                const parentLi = this.parentElement;
+                parentLi.classList.toggle('open');
             });
         });
+        
+        // Close menu when clicking subdropdown links
+        document.querySelectorAll('.mobile-subdropdown a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Close menu on resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1280 && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        // ========================================
+        // END MOBILE MENU SYSTEM
+        // ========================================
 
         // Scroll animation for about section
         const aboutObserver = new IntersectionObserver((entries) => {
