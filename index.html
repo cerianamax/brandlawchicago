@@ -13,14 +13,14 @@
     <meta property="og:url" content="https://www.brandlawchicago.com/">
     <meta property="og:title" content="Chicago Construction & Real Estate Attorney | Brand Law">
     <meta property="og:description" content="Construction and real estate attorney serving Chicago and surrounding counties. Helping contractors, property owners, and builders protect their investments.">
-    <meta property="og:image" content="https://www.brandlawchicago.com/brand-law-og-image.jpg">
+    <meta property="og:image" content="https://www.brandlawchicago.com/brand-law-og-image.webp">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.brandlawchicago.com/">
     <meta name="twitter:title" content="Chicago Construction & Real Estate Attorney | Brand Law">
     <meta name="twitter:description" content="Construction and real estate attorney serving Chicago and surrounding counties. Helping contractors, property owners, and builders protect their investments.">
-    <meta name="twitter:image" content="https://www.brandlawchicago.com/brand-law-og-image.jpg">
+    <meta name="twitter:image" content="https://www.brandlawchicago.com/brand-law-og-image.webp">
     
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -159,7 +159,7 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 1001;
-            background: var(--charcoal);
+            background: #1f548c;
             padding: 1rem 0.6rem;
             border-radius: 0 8px 8px 0;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -168,7 +168,7 @@
         }
 
         .call-us-tab:hover {
-            background: var(--blue-primary);
+            background: var(--charcoal);
         }
 
         .call-us-tab span {
@@ -217,7 +217,19 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: env(safe-area-inset-top);
+            background: var(--white);
+        }
+        
+        /* Safe area background color for iOS */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: env(safe-area-inset-top);
             background: var(--charcoal);
+            z-index: 9999;
         }
 
         html {
@@ -260,15 +272,80 @@
         }
 
         .nav-wrapper.scrolled {
-            background: var(--charcoal);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            background: rgb(245, 245, 245);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hide nav on scroll down (desktop only) */
-        @media (min-width: 1281px) {
-            .nav-wrapper.nav-hidden {
-                transform: translateY(-100%);
-            }
+        /* Scrolled state - change colors to blue */
+        .nav-wrapper.scrolled .logo img {
+            filter: none;
+        }
+
+        .nav-wrapper.scrolled .logo-text,
+        .nav-wrapper.scrolled .logo-text .logo-title,
+        .nav-wrapper.scrolled .logo-text p {
+            color: #1F548C !important;
+        }
+
+        .nav-wrapper.scrolled .nav-links > li > a {
+            color: #1F548C;
+            font-weight: 500;
+        }
+
+        .nav-wrapper.scrolled .dropdown-menu a {
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .nav-wrapper.scrolled .dropdown-menu a:hover {
+            background: var(--blue-primary);
+            color: #fff;
+        }
+
+        .nav-wrapper.scrolled .submenu a {
+            color: var(--white);
+        }
+
+        .nav-wrapper.scrolled .submenu a:hover {
+            background: var(--blue-medium);
+            color: #fff;
+        }
+
+        .nav-wrapper.scrolled .phone-btn {
+            color: #1F548C;
+        }
+
+        .nav-wrapper.scrolled .phone-btn svg {
+            fill: #1F548C;
+        }
+
+        .nav-wrapper.scrolled .phone-btn:hover {
+            color: var(--charcoal);
+        }
+
+        .nav-wrapper.scrolled .phone-btn:hover svg {
+            fill: var(--charcoal);
+        }
+
+        .nav-wrapper.scrolled .cta-nav-btn {
+            background: #1F548C;
+            color: var(--gold);
+            border: none;
+        }
+
+        .nav-wrapper.scrolled .cta-nav-btn::before {
+            display: none;
+        }
+
+        .nav-wrapper.scrolled .cta-nav-btn:hover {
+            color: #fff;
+            background: #1F548C;
+            box-shadow: 0 0 20px rgba(31, 84, 140, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .nav-wrapper.scrolled .nav-links .line {
+            background: #1F548C;
         }
 
         nav {
@@ -292,10 +369,6 @@
             filter: brightness(0) invert(1);
             transition: filter 0.3s ease;
             margin-top: 3px;
-        }
-
-        .nav-wrapper.scrolled .logo img {
-            filter: brightness(0) invert(1);
         }
 
         .logo-text {
@@ -332,7 +405,7 @@
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.25rem;
             list-style: none;
             margin-top: 8px;
             margin-left: auto;
@@ -360,8 +433,8 @@
             font-family: 'Inter', sans-serif;
             color: var(--white);
             text-decoration: none;
-            font-weight: 400;
-            font-size: 1.4rem;
+            font-weight: 500;
+            font-size: 1.25rem;
             transition: color 0.3s ease;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -404,7 +477,7 @@
             left: 15px;
             right: 15px;
             bottom: 15px;
-            background: var(--white);
+            background: rgb(245, 245, 245);
             border-radius: 4px;
             z-index: -1;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -524,7 +597,7 @@
 
         .nav-actions {
             display: flex;
-            gap: 1rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
@@ -650,6 +723,32 @@
                 color: var(--gold);
             }
             
+            /* Scrolled state - blue icons */
+            .nav-wrapper.scrolled .mobile-phone-icon {
+                color: #1F548C;
+            }
+            
+            .nav-wrapper.scrolled .mobile-phone-icon svg {
+                fill: #1F548C;
+            }
+            
+            .nav-wrapper.scrolled .hamburger span {
+                background: #1F548C;
+            }
+            
+            /* Keep white when menu is open */
+            body.menu-open .nav-wrapper.scrolled .mobile-phone-icon {
+                color: var(--white);
+            }
+            
+            body.menu-open .nav-wrapper.scrolled .mobile-phone-icon svg {
+                fill: var(--white);
+            }
+            
+            body.menu-open .nav-wrapper.scrolled .hamburger span {
+                background: var(--white);
+            }
+            
             .hamburger {
                 display: flex !important;
                 flex-direction: column;
@@ -686,7 +785,7 @@
                 max-width: 450px;
                 height: 100vh;
                 height: 100dvh;
-                background: rgb(242, 246, 250);
+                background: rgb(245, 245, 245);
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
                 z-index: 1000;
@@ -1032,15 +1131,16 @@
            ======================================== */
 
         .cta-nav-btn {
-            background: #FFDE21;
+            background: var(--gold);
             color: var(--charcoal);
             padding: 0.85rem 1.5rem;
+            border: none;
             border-radius: 4px;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 1.25rem;
             text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            transition: color 0.3s ease;
             letter-spacing: 0.3px;
             white-space: nowrap;
             position: relative;
@@ -1051,55 +1151,55 @@
         .cta-nav-btn::before {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 0;
-            height: 100%;
-            background: #1F548C;
-            transition: width 0.3s ease;
+            width: 100%;
+            height: 0;
+            background: var(--charcoal);
+            transition: height 0.3s ease;
             z-index: -1;
         }
 
         .cta-nav-btn:hover {
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(31, 84, 140, 0.6);
+            color: var(--gold);
         }
 
         .cta-nav-btn:hover::before {
-            width: 100%;
+            height: 100%;
         }
 
         .phone-btn {
             background: transparent;
             color: var(--white);
-            padding: 0.8rem 1.5rem;
+            padding: 0.5rem 0;
             border: none;
-            border-radius: 4px;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             text-decoration: none;
-            transition: color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            transition: all 0.3s ease;
             letter-spacing: 0.3px;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             position: relative;
             z-index: 1;
             line-height: 1.2;
-            box-sizing: border-box;
-            box-shadow: inset 0 0 0 2px var(--white);
         }
         
         .phone-btn svg {
             flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            transition: fill 0.3s ease;
         }
 
         .phone-btn:hover {
-            background: #1F548C;
-            color: var(--white);
-            box-shadow: inset 0 0 0 2px #1F548C, 0 0 15px rgba(31, 84, 140, 0.6);
+            color: var(--gold);
+        }
+
+        .phone-btn:hover svg {
+            fill: var(--gold);
         }
 
         /* Hero Section */
@@ -1118,7 +1218,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('hero-image.jpg');
+            background-image: url('hero-image.webp');
             background-size: cover;
             background-position: center 30%;
             transition: transform 0.6s ease;
@@ -1338,123 +1438,134 @@
 
         /* About Section */
         /* Service Cards - Overlapping */
-        .service-cards-wrapper {
+        /* Blog Ticker Section */
+        .blog-ticker-wrapper {
             position: relative;
             z-index: 20;
             margin-top: 0;
             margin-bottom: -60px;
-        }
-
-        .service-cards {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 0;
-            width: 100%;
-        }
-
-        .service-card {
             background: var(--charcoal);
-            padding: 1.75rem 1.5rem;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            min-height: 110px;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
         }
 
-        .service-card::before {
-            content: '';
+        .blog-ticker {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 5%;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .blog-ticker-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .blog-ticker-content {
+            flex: 1;
+            margin: 0 2rem;
+            overflow: hidden;
+            position: relative;
+            height: 1.5em;
+        }
+
+        .blog-ticker-item {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        .service-card:last-child {
-            border-right: none;
+        .blog-ticker-item.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .service-card:hover {
-            /* No background change */
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card-icon {
-            color: var(--white);
-            transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-card-icon svg {
-            width: 32px;
-            height: 32px;
-        }
-
-        .service-card:hover .service-card-icon {
-            transform: scale(1.15);
-        }
-
-        .service-card-title {
-            font-family: 'Zalando Sans SemiExpanded', sans-serif;
-            font-size: 1.1rem;
+        .blog-ticker-item a {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
             font-weight: 400;
             color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            line-height: 1.4;
-            margin: 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        /* Service cards responsive */
+        .blog-ticker-item a:hover {
+            color: var(--gold);
+        }
+
+        .blog-ticker-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+
+        .blog-ticker-link:hover {
+            color: var(--gold);
+        }
+
+        /* Blog ticker responsive */
         @media (max-width: 1280px) {
-            .service-cards {
-                grid-template-columns: repeat(3, 1fr);
+            .blog-ticker {
+                padding: 1.5rem 5%;
             }
 
-            .service-card:nth-child(3) {
-                border-right: none;
-            }
-
-            .service-card:nth-child(4) {
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            /* Service cards strip - reduce vertical space on tablet */
-            .service-card {
-                padding: 1.25rem 1rem;
-                min-height: auto;
-                gap: 0.5rem;
-            }
-
-            .service-card-icon {
-                display: none;
-            }
-
-            .service-card-title {
+            .blog-ticker-label {
                 font-size: 0.9rem;
             }
 
-            /* Add horizontal divider between rows */
-            .service-card:nth-child(1),
-            .service-card:nth-child(2),
-            .service-card:nth-child(3) {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            .blog-ticker-item a {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-ticker {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.25rem 5%;
+                text-align: center;
+            }
+
+            .blog-ticker-content {
+                margin: 0;
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .blog-ticker-item {
+                position: relative;
+                display: none;
+            }
+            
+            .blog-ticker-item.active {
+                display: block;
+                opacity: 1;
+                transform: none;
+            }
+
+            .blog-ticker-item a {
+                font-size: 0.85rem;
+            }
+            
+            .blog-ticker-link {
+                display: none;
             }
         }
 
@@ -1462,7 +1573,7 @@
         .about-section {
             background: #FFFFFF;
             padding: 0;
-            padding-top: 120px;
+            padding-top: 80px;
             overflow: visible;
             position: relative;
             z-index: 2;
@@ -1553,17 +1664,6 @@
             justify-content: center;
             padding: 5rem 6rem 5rem 8%;
             position: relative;
-        }
-
-        /* Horizontal line at bottom of about section */
-        .about-text::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: var(--charcoal);
         }
 
         .about-section p {
@@ -1703,7 +1803,7 @@
         }
 
         .believe-phrase.animate {
-            animation: slideUp 3s ease-in-out;
+            animation: slideUp 3s ease-in-out both;
         }
 
         /* We Believe responsive */
@@ -1722,299 +1822,454 @@
 
 
         /* Services Section */
+        /* ========================================
+           PRACTICE AREAS SECTION - Panel Design
+           ======================================== */
         .services-section {
-            background: linear-gradient(to bottom, #fff 0%, #fff 70%, #F2F6FA 100%);
-            padding: 8rem 4% 6rem 4%;
             position: relative;
+            z-index: 1;
+            overflow: hidden;
+            margin-top: 10rem;
+        }
+
+        .services-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('practice-areas-bg.webp');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .services-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 55, 90, 0.82);
             z-index: 1;
         }
 
         .services-container {
-            max-width: 1400px;
-            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            margin: 0;
         }
 
         .services-headline {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.2rem, 4vw, 3.5rem);
             font-weight: 500;
-            color: var(--blue-primary);
-            text-align: left;
-            margin-bottom: 3rem;
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 4% 1rem 4%;
+            margin: 0;
+        }
+
+        .services-headline strong {
+            font-weight: 700;
         }
 
         .services-subheadline {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            color: #101111;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
             text-align: center;
-            margin-bottom: 4rem;
-            display: none;
+            padding: 0 4% 3rem 4%;
+            margin: 0;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
 
-        .service-card-hover {
+        .service-panel {
             position: relative;
-            height: 380px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            display: block;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            overflow: hidden;
+            transition: background 0.4s ease;
         }
 
-        .service-slide-top {
+        /* Remove right border on last column */
+        .service-panel:nth-child(4n) {
+            border-right: none;
+        }
+
+        /* Remove bottom border on last row */
+        .service-panel:nth-child(n+5) {
+            border-bottom: none;
+        }
+
+        .service-panel-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-align: center;
+            padding: 1.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-panel-content {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            transition: transform 0.5s ease;
-        }
-
-        .service-slide-top::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.55) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .service-slide-top img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .service-slide-top .service-slide-content {
-            position: absolute;
-            bottom: 0;
             left: 0;
             right: 0;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-            color: var(--white);
-            z-index: 2;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #1f548c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
-        .service-slide-top h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin: 0 0 0.5rem 0;
-            color: var(--white);
+        .service-panel:hover .service-panel-content {
+            opacity: 1;
         }
 
-        .service-learn-more {
+        .service-panel:hover .service-panel-title {
+            opacity: 0;
+        }
+
+        .service-panel-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .service-panel-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 0 1.5rem 0;
+            max-width: 320px;
+        }
+
+        .service-panel-link {
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
+            font-weight: 600;
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
         }
 
-        .service-card-hover:hover .service-slide-top {
-            transform: translateY(-65%);
+        .service-panel-link:hover {
+            gap: 0.75rem;
         }
 
-        .service-slide-bottom {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #f8f9fa;
-            z-index: 1;
-            padding: 2rem;
-            padding-top: 40%;
-            box-sizing: border-box;
+        /* Large screens 2400px+ */
+        @media (min-width: 2400px) {
+            .service-panel-content h3 {
+                font-size: 1.1rem;
+                margin: 0 0 1.5rem 0;
+            }
+
+            .service-panel-content p {
+                font-size: 1.15rem;
+                max-width: 380px;
+            }
+
+            .service-panel-link {
+                font-size: 1rem;
+            }
         }
 
-        .service-slide-bottom p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #101111;
-            margin: 0;
-            text-align: left;
+        /* Practice Areas Responsive */
+        @media (max-width: 1100px) {
+            .service-panel {
+                min-height: 280px;
+            }
+            
+            .service-panel-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .services-section {
+                margin-top: 6rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+            
+            .service-panel {
+                min-height: 250px;
+            }
+            
+            /* Adjust borders for 2-column layout */
+            .service-panel:nth-child(4n) {
+                border-right: 1px solid rgba(255, 255, 255, 0.25);
+            }
+            
+            .service-panel:nth-child(2n) {
+                border-right: none;
+            }
+            
+            .service-panel:nth-child(n+5) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            }
+            
+            .service-panel:nth-child(n+7) {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                margin-top: 4rem;
+                padding: 4rem 0 !important;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 1fr);
+                gap: 0 !important;
+            }
+            
+            .service-panel {
+                min-height: 200px;
+                border-right: none !important;
+                border-left: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                width: 100%;
+            }
+            
+            .service-panel:nth-child(2n),
+            .service-panel:nth-child(4n) {
+                border-right: none !important;
+            }
+            
+            .service-panel:last-child {
+                border-bottom: none;
+            }
+            
+            .service-panel-content {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 1.5rem !important;
+                box-sizing: border-box !important;
+            }
+            
+            .service-panel-content h3 {
+                margin: 0 0 0.75rem 0;
+            }
+            
+            .service-panel-content p {
+                margin: 0 0 1rem 0;
+                font-size: 0.9rem;
+                line-height: 1.6;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 404px) {
+            .service-panel {
+                min-height: 220px;
+                border-left: none !important;
+            }
+            
+            .service-panel-content {
+                padding: 1rem !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                box-sizing: border-box !important;
+            }
+            
+            .service-panel-content h3 {
+                font-size: 0.8rem;
+                letter-spacing: 0.1em;
+                margin: 0 0 0.5rem 0;
+            }
+            
+            .service-panel-content p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin: 0 0 0.75rem 0;
+                max-width: 100%;
+            }
+            
+            .service-panel-link {
+                font-size: 0.75rem;
+                letter-spacing: 0.05em;
+            }
         }
 
         /* Contact Section */
         .contact-section {
-            padding: 0;
+            padding: 4rem 0;
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             z-index: 10;
         }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: 58% 1fr;
-            min-height: 680px;
-            position: relative;
-        }
-
-        /* Right side background image */
-        .contact-container::before {
-            content: '';
+        /* Background image with overlay - full width */
+        .contact-bg {
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
             bottom: 0;
-            width: 42%;
-            background-image: url('contact-image.jpg');
+            background-image: url('contact-bg.webp');
             background-size: cover;
             background-position: center;
             z-index: 0;
-            transform: translateX(100%);
-            transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
         }
 
-        /* Image slide in animation */
-        .contact-container.animate-in::before {
-            transform: translateX(0);
-        }
-
-        /* Gradient blend from blue gray into image */
-        .contact-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 42%;
-            background: linear-gradient(to right, rgb(47, 60, 77) 0%, rgba(47, 60, 77, 0.7) 15%, rgba(47, 60, 77, 0) 40%);
-            z-index: 1;
-        }
-
-        .contact-message {
-            background: rgb(47, 60, 77);
-            padding: 0;
-            display: flex;
-            align-items: stretch;
-            position: relative;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        /* Custom texture overlay */
-        .contact-message::before {
+        .contact-bg::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            /* PLACEHOLDER: Add your custom texture image here */
-            /* background-image: url('your-texture.png'); */
-            /* background-size: cover; */
-            /* opacity: 0.3; */
-            pointer-events: none;
+            background: rgba(30, 55, 90, 0.84);
+            z-index: 1;
         }
 
-        /* Large decorative CONNECT text at top */
-        .contact-message::after {
-            content: 'CONNECT';
-            position: absolute;
-            top: -0.35em;
-            left: 5%;
+        /* Centered headline at top */
+        .contact-headline {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 0 4% 3rem 4%;
+        }
+
+        .contact-headline h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(8rem, 12vw, 14rem);
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.04);
-            line-height: 1;
-            pointer-events: none;
-            z-index: 0;
+            font-size: clamp(2.4rem, 4vw, 3.5rem);
+            font-weight: 500;
+            color: var(--white);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .contact-headline h2 .headline-script {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 500;
+            text-transform: none;
             letter-spacing: 0.02em;
-            transform: translateX(-100px);
+            font-size: 0.5em;
+            color: var(--gold);
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4%;
+            position: relative;
+            z-index: 3;
+            align-items: start;
+        }
+
+        /* Form on left - wider */
+        .contact-form-wrapper {
+            position: relative;
+            z-index: 100;
+        }
+
+        .contact-form-container {
+            width: 100%;
+            max-width: 600px;
+            background: rgb(245, 245, 245);
+            padding: 2.5rem 2.5rem 3rem 2.5rem;
+            border-radius: 0;
+            position: relative;
             opacity: 0;
-            transition: transform 0.8s ease-out, opacity 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
         }
 
-        /* CONNECT animate in */
-        .contact-message.animate-in::after {
-            transform: translateX(0);
+        /* Form fade in animation */
+        .contact-form-container.animate-in {
             opacity: 1;
+            transform: translateY(0);
         }
 
-        /* CONNECT scroll direction animation */
-        .contact-message.scroll-down::after {
-            transform: translateX(40px);
-        }
-
-        .contact-message.scroll-up::after {
-            transform: translateX(-40px);
-        }
-
-        /* Vertical gold accent bar */
-        .contact-accent-bar {
-            width: 1px;
-            background: var(--gold);
-            flex-shrink: 0;
-            margin-left: 15%;
+        /* Content on right */
+        .contact-message {
+            padding: 1rem 0;
+            position: relative;
+            overflow: visible;
+            z-index: 2;
         }
 
         .contact-message-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 3.5rem 3rem 3.5rem 2.5rem;
             position: relative;
             z-index: 1;
         }
 
         .contact-message-inner {
-            max-width: 650px;
-        }
-
-        .contact-eyebrow {
-            font-family: 'Zalando Sans SemiExpanded', 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .contact-message h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.4rem, 3.5vw, 3.2rem);
-            font-weight: 500;
-            color: var(--white);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-message h2 .headline-script {
-            font-style: italic;
-            color: var(--gold);
-            display: block;
+            max-width: 550px;
+            position: relative;
+            padding-top: 1rem;
         }
 
         .contact-message-text {
-            margin-top: 1.5rem;
-            width: 100%;
+            margin-bottom: 2rem;
         }
 
         .contact-message p {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.25rem;
         }
 
         .contact-message p:last-of-type {
@@ -2025,9 +2280,7 @@
         .contact-quote-box {
             background: var(--gold);
             padding: 1.5rem 2rem;
-            margin-top: 2rem;
-            margin-left: -2.5rem;
-            margin-right: 2rem;
+            margin-top: 2.5rem;
             position: relative;
             clip-path: inset(0 100% 0 0);
             transition: clip-path 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
@@ -2048,35 +2301,6 @@
             margin: 0;
         }
 
-        .contact-form-wrapper {
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            position: relative;
-            z-index: 100;
-            padding: 2.5rem 3rem 0 0;
-        }
-
-        .contact-form-container {
-            width: 100%;
-            max-width: 480px;
-            background: rgb(245, 245, 245);
-            padding: 3.5rem 2.5rem 4rem 2.5rem;
-            border-radius: 0;
-            position: relative;
-            margin-left: -220px;
-            margin-bottom: -80px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
-        }
-
-        /* Form fade in animation */
-        .contact-form-container.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .contact-form-header {
             text-align: center;
             margin-bottom: 1.25rem;
@@ -2084,15 +2308,15 @@
 
         .contact-form-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.4rem, 2vw, 1.6rem);
+            font-size: clamp(1.75rem, 2.5vw, 2rem);
             font-weight: 500;
             color: var(--charcoal);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
         }
 
         .contact-form-header .form-free {
             font-family: 'Zalando Sans SemiExpanded', 'Inter', sans-serif;
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: var(--blue-primary);
             font-weight: 600;
             letter-spacing: 0.15em;
@@ -2277,27 +2501,120 @@
         }
 
         /* Contact section responsive */
+        @media (max-width: 2400px) {
+            .contact-container {
+                max-width: 1300px;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(2.2rem, 3.5vw, 3rem);
+            }
+            
+            .contact-message p {
+                font-size: 1.15rem;
+            }
+            
+            .contact-quote-box p {
+                font-size: 1.35rem;
+            }
+        }
+        
         @media (max-width: 2100px) {
+            .contact-container {
+                max-width: 1200px;
+            }
+            
             .contact-form-container {
-                margin-left: -120px;
+                margin-left: -80px;
+                max-width: 550px;
+                padding: 2.25rem 2.25rem 2.75rem 2.25rem;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(2rem, 3vw, 2.75rem);
+            }
+            
+            .contact-message-inner {
+                max-width: 500px;
+            }
+            
+            .contact-message p {
+                font-size: 1.1rem;
+                line-height: 1.75;
+            }
+            
+            .contact-quote-box p {
+                font-size: 1.25rem;
+            }
+            
+            .contact-form-header h2 {
+                font-size: clamp(1.5rem, 2vw, 1.75rem);
             }
         }
 
         @media (max-width: 1920px) {
+            .contact-container {
+                max-width: 1100px;
+            }
+            
             .contact-form-container {
-                margin-left: -80px;
+                margin-left: -40px;
+                max-width: 520px;
+                padding: 2rem 2rem 2.5rem 2rem;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+            }
+            
+            .contact-message-inner {
+                max-width: 480px;
+            }
+            
+            .contact-message p {
+                font-size: 1.05rem;
+            }
+            
+            .contact-quote-box {
+                padding: 1.25rem 1.75rem;
+            }
+            
+            .contact-quote-box p {
+                font-size: 1.15rem;
             }
         }
 
         @media (max-width: 1700px) {
+            .contact-container {
+                max-width: 1000px;
+            }
+            
             .contact-form-container {
-                margin-left: -40px;
+                margin-left: 0;
+                max-width: 500px;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(1.8rem, 2.5vw, 2.25rem);
+            }
+            
+            .contact-message-inner {
+                max-width: 450px;
+            }
+            
+            .contact-message p {
+                font-size: 1rem;
+            }
+            
+            .contact-quote-box p {
+                font-size: 1.1rem;
             }
         }
 
         @media (max-width: 1500px) {
             .contact-container {
                 grid-template-columns: 55% 1fr;
+                max-width: 950px;
             }
 
             .contact-container::before,
@@ -2308,6 +2625,14 @@
             .contact-form-container {
                 margin-left: 0;
                 max-width: 460px;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(1.7rem, 2.2vw, 2rem);
+            }
+            
+            .contact-message-inner {
+                max-width: 420px;
             }
 
             .contact-message::after {
@@ -2339,9 +2664,19 @@
             .contact-section {
                 padding: 0;
             }
+            
+            .contact-headline {
+                padding-top: 4rem;
+                padding-bottom: 1.5rem;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(1.75rem, 5vw, 2.4rem);
+            }
 
             .contact-container {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
                 min-height: auto;
             }
 
@@ -2349,9 +2684,15 @@
             .contact-container::after {
                 display: none;
             }
-
+            
+            /* Reorder: message/text first, then form */
             .contact-message {
+                order: 1;
                 padding: 0;
+            }
+            
+            .contact-form-wrapper {
+                order: 2;
             }
 
             .contact-accent-bar {
@@ -2359,7 +2700,7 @@
             }
 
             .contact-message-content {
-                padding: 3rem 5%;
+                padding: 1rem 5% 2rem 5%;
             }
 
             .contact-message-inner {
@@ -2381,19 +2722,35 @@
 
             .contact-form-wrapper {
                 padding: 3rem 5%;
-                background: linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%);
+                background: transparent;
+                display: flex;
                 justify-content: center;
+                width: 100%;
             }
 
             .contact-form-container {
                 max-width: 600px;
-                margin-left: 0;
+                width: 100%;
+                margin: 0 auto;
             }
         }
 
         @media (max-width: 768px) {
+            .contact-headline {
+                padding-top: 3rem;
+                padding-bottom: 1rem;
+            }
+            
+            .contact-headline h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
+            
+            .contact-headline h2 .headline-script {
+                margin-top: 0.5rem;
+            }
+            
             .contact-message-content {
-                padding: 2.5rem 5%;
+                padding: 0.5rem 5% 1.5rem 5%;
             }
 
             .contact-message h2 {
@@ -2429,6 +2786,65 @@
             }
         }
 
+        @media (max-width: 579px) {
+            .contact-section {
+                padding: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            .contact-headline {
+                padding-top: 2rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+            
+            .contact-headline h2 {
+                font-size: 1.4rem !important;
+            }
+            
+            .contact-headline h2 .headline-script {
+                margin-top: 0.4rem !important;
+                font-size: 0.6em !important;
+            }
+            
+            .contact-container {
+                padding: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                padding-bottom: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            .contact-form-wrapper {
+                padding: 0 !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                display: block !important;
+                margin: 0 !important;
+            }
+            
+            .contact-form-container {
+                margin: 0 !important;
+                padding: 1.5rem 1rem !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                border-radius: 0 !important;
+                box-sizing: border-box !important;
+            }
+            
+            .contact-form-header h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            .contact-message-content {
+                padding: 0.5rem 1rem 1.5rem 1rem !important;
+            }
+        }
+
         /* ======================== */
         /* TESTIMONIALS SECTION     */
         /* ======================== */
@@ -2447,7 +2863,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('construction-site-texture.png');
+            background-image: url('construction-site-texture.webp');
             background-size: cover;
             background-position: center;
             opacity: 0.07;
@@ -2469,7 +2885,7 @@
         /* Large heading above testimonials */
         .testimonials-heading-wrapper {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             padding-left: 0;
             padding-right: 0;
             margin-bottom: 3rem;
@@ -2480,34 +2896,17 @@
         .testimonials-watermark {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 7vw, 5.625rem);
-            font-weight: 700;
+            font-weight: 500;
             color: var(--charcoal);
-            opacity: 0.7;
-            text-align: left;
+            opacity: 1;
+            text-align: center;
             letter-spacing: 0.03em;
             white-space: nowrap;
             display: inline-flex;
             align-items: baseline;
-            justify-content: flex-start;
+            justify-content: center;
             gap: 0.3em;
             position: relative;
-        }
-
-        .testimonials-watermark::after {
-            content: '';
-            position: absolute;
-            bottom: -0.1em;
-            left: 0;
-            width: 100vw;
-            height: 2px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.8s ease 0.6s;
-        }
-
-        .testimonials-watermark.animate-in::after {
-            transform: scaleX(1);
         }
 
         .testimonials-watermark .stagger-word {
@@ -2525,17 +2924,32 @@
         .testimonials-watermark .stagger-word:nth-child(2) { transition-delay: 0.2s; }
         .testimonials-watermark .stagger-word:nth-child(3) { transition-delay: 0.3s; }
         .testimonials-watermark .stagger-word:nth-child(4) { transition-delay: 0.4s; }
+        .testimonials-watermark .stagger-word:nth-child(5) { transition-delay: 0.5s; }
 
         .testimonials-watermark .script-word {
             font-family: 'Playfair Display', serif;
-            font-weight: 800;
+            font-weight: 500;
             font-size: 1em;
             color: var(--charcoal);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .testimonials-watermark .script-word::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -5%;
+            width: 110%;
+            height: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 15' preserveAspectRatio='none'%3E%3Cpath d='M2,12 Q100,0 198,12' stroke='%23FFDE21' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
 
         .testimonials-heading-wrapper {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             gap: 1rem;
             margin-bottom: 3rem;
@@ -2547,7 +2961,7 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(5rem, 10vw, 8rem);
             font-weight: 700;
-            color: rgba(31, 84, 140, 0.1);
+            color: rgba(61, 72, 82, 0.15);
             line-height: 1;
             user-select: none;
             opacity: 0;
@@ -3515,7 +3929,8 @@
         }
 
         .owner-name {
-            color: #1F548C;
+            color: var(--charcoal);
+            font-weight: 700;
         }
 
         .owner-btn {
@@ -3751,10 +4166,6 @@
                 height: 320px;
             }
 
-            .services-grid {
-                gap: 1.5rem;
-            }
-
             .service-slide-bottom {
                 padding-top: 33%;
             }
@@ -3866,6 +4277,33 @@
 
         /* Responsive - Comprehensive Scaling */
         
+        /* 2400px - Initial scaling */
+        @media (max-width: 2400px) {
+            .nav-links {
+                gap: 2rem;
+                margin-right: 5rem;
+            }
+            
+            .nav-links a {
+                font-size: 1.15rem;
+                letter-spacing: 1.2px;
+            }
+            
+            .phone-btn {
+                font-size: 1.35rem;
+            }
+            
+            .phone-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .cta-nav-btn {
+                font-size: 1.15rem;
+                padding: 0.8rem 1.4rem;
+            }
+        }
+        
         /* 2100px - Before first squish zone */
         @media (max-width: 2100px) {
             nav {
@@ -3873,13 +4311,13 @@
             }
 
             .nav-links {
-                gap: 2rem;
-                margin-right: 2.5rem;
+                gap: 1.75rem;
+                margin-right: 4rem;
             }
 
             .nav-links a {
-                font-size: 1.15rem;
-                letter-spacing: 0.8px;
+                font-size: 1.05rem;
+                letter-spacing: 1px;
             }
 
             .logo img {
@@ -3899,17 +4337,21 @@
             }
 
             .cta-nav-btn {
-                font-size: 0.95rem;
-                padding: 0.65rem 1.1rem;
+                font-size: 1.05rem;
+                padding: 0.7rem 1.2rem;
             }
 
             .phone-btn {
-                font-size: 0.95rem;
-                padding: 0.55rem 1rem;
+                font-size: 1.25rem;
+            }
+            
+            .phone-btn svg {
+                width: 22px;
+                height: 22px;
             }
 
             .nav-actions {
-                gap: 0.8rem;
+                gap: 1rem;
             }
         }
 
@@ -3920,43 +4362,47 @@
             }
 
             .nav-links {
-                gap: 2rem;
-                margin-right: 2.5rem;
+                gap: 1.5rem;
+                margin-right: 3rem;
             }
 
             .nav-links a {
-                font-size: 1.15rem;
+                font-size: 1rem;
                 letter-spacing: 0.8px;
             }
 
             .logo img {
-                height: 85px;
+                height: 80px;
             }
 
             .logo-text {
-                height: 85px;
+                height: 80px;
             }
 
             .logo-text .logo-title {
-                font-size: 3.4rem;
+                font-size: 3.2rem;
             }
 
             .logo-text p {
-                font-size: 0.989rem;
+                font-size: 0.95rem;
             }
 
             .cta-nav-btn {
-                font-size: 0.95rem;
+                font-size: 1rem;
                 padding: 0.65rem 1.1rem;
             }
 
             .phone-btn {
-                font-size: 0.95rem;
-                padding: 0.55rem 1rem;
+                font-size: 1.15rem;
+            }
+            
+            .phone-btn svg {
+                width: 20px;
+                height: 20px;
             }
 
             .nav-actions {
-                gap: 0.8rem;
+                gap: 0.9rem;
             }
 
             /* Scale down dropdowns */
@@ -3979,7 +4425,6 @@
         @media (max-width: 1650px) {
             .nav-links {
                 gap: 1.6rem;
-                margin-right: 1.8rem;
             }
 
             .nav-links a {
@@ -3996,7 +4441,6 @@
 
             .nav-links {
                 gap: 1.7rem;
-                margin-right: 2rem;
             }
 
             .nav-links a {
@@ -4029,6 +4473,11 @@
                 font-size: 0.92rem;
                 padding: 0.52rem 0.95rem;
             }
+            
+            .phone-btn svg {
+                width: 18px;
+                height: 18px;
+            }
 
             .dropdown-menu a {
                 font-size: 0.92rem;
@@ -4051,7 +4500,6 @@
 
             .nav-links {
                 gap: 1.5rem;
-                margin-right: 1.5rem;
             }
 
             .nav-links a {
@@ -4084,6 +4532,11 @@
                 font-size: 0.9rem;
                 padding: 0.5rem 0.9rem;
             }
+            
+            .phone-btn svg {
+                width: 17px;
+                height: 17px;
+            }
 
             .nav-actions {
                 gap: 0.7rem;
@@ -4109,7 +4562,6 @@
         @media (max-width: 1350px) {
             .nav-links {
                 gap: 1.2rem;
-                margin-right: 1rem;
             }
 
             .nav-links a {
@@ -4120,6 +4572,11 @@
             .phone-btn {
                 font-size: 0.9rem;
                 padding: 0.5rem 0.8rem;
+            }
+            
+            .phone-btn svg {
+                width: 16px;
+                height: 16px;
             }
 
             .cta-nav-btn {
@@ -4135,7 +4592,6 @@
 
             .nav-links {
                 gap: 1.3rem;
-                margin-right: 1.2rem;
             }
 
             .nav-links a {
@@ -4168,7 +4624,6 @@
 
             .nav-links {
                 gap: 1.1rem;
-                margin-right: 1rem;
             }
 
             .nav-links a {
@@ -4236,7 +4691,6 @@
 
             .nav-links {
                 gap: 0.9rem;
-                margin-right: 0.8rem;
             }
 
             .nav-links a {
@@ -5247,9 +5701,9 @@
 
             /* === CONTENT SECTIONS AT 768px === */
             
-            /* Service cards strip (below hero) - hide on mobile */
-            .service-cards-wrapper {
-                display: none;
+            /* Blog ticker strip (below hero) */
+            .blog-ticker-wrapper {
+                margin-bottom: -30px;
             }
 
             /* About section */
@@ -5269,9 +5723,7 @@
             }
 
             .about-image {
-                order: 2;
-                min-height: 300px;
-                max-height: 400px;
+                display: none;
             }
 
             .about-headline {
@@ -5301,12 +5753,12 @@
 
             /* Services section (9 hover cards) */
             .services-section {
-                padding: 4rem 5%;
+                padding: 4rem 0;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 0;
             }
 
             .service-card-hover {
@@ -6266,7 +6718,6 @@
            ============================================== */
         .about-text,
         .about-image,
-        .believe-phrase,
         .contact-form-container,
         .contact-message,
         .contact-container,
@@ -6326,6 +6777,14 @@
                 fill: white !important;
             }
             
+            .nav-wrapper.scrolled .mobile-phone-icon svg {
+                fill: #1F548C !important;
+            }
+            
+            body.menu-open .nav-wrapper.scrolled .mobile-phone-icon svg {
+                fill: white !important;
+            }
+            
             .mobile-header-actions .mobile-phone-icon {
                 display: flex !important;
                 visibility: visible !important;
@@ -6357,6 +6816,14 @@
                 opacity: 1 !important;
                 transition: all 0.3s ease;
                 position: relative;
+            }
+            
+            .nav-wrapper.scrolled .hamburger span {
+                background: #1F548C !important;
+            }
+            
+            body.menu-open .nav-wrapper.scrolled .hamburger span {
+                background: white !important;
             }
             
             /* Hamburger active X state */
@@ -6477,7 +6944,7 @@
             <!-- Desktop actions (phone + CTA) -->
             <div class="nav-actions">
                 <a href="tel:312-535-9221" class="phone-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" stroke="none">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                     312.535.9221
@@ -6575,75 +7042,28 @@
     </section>
 
     <!-- Service Cards - Overlapping Hero/About -->
-    <div class="service-cards-wrapper">
-        <div class="service-cards">
-            <a href="#construction-disputes" class="service-card">
-                <span class="service-card-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Crane icon -->
-                        <path d="M6 22V4c0-.5.5-1 1-1h2c.5 0 1 .5 1 1v18"/>
-                        <path d="M2 22h20"/>
-                        <path d="M10 6l8-3v4l-8 3"/>
-                        <path d="M18 7v8"/>
-                        <path d="M16 19a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/>
-                        <path d="M18 15v2"/>
-                    </svg>
-                </span>
-                <h3 class="service-card-title">Construction Disputes</h3>
-            </a>
-            <a href="#mechanics-liens" class="service-card">
-                <span class="service-card-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Padlock/lien icon -->
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                    </svg>
-                </span>
-                <h3 class="service-card-title">Mechanics Liens</h3>
-            </a>
-            <a href="#contract-services" class="service-card">
-                <span class="service-card-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Document/contract icon -->
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                        <polyline points="10 9 9 9 8 9"/>
-                    </svg>
-                </span>
-                <h3 class="service-card-title">Contract Services</h3>
-            </a>
-            <a href="#property-damage" class="service-card">
-                <span class="service-card-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- House with lightning bolt -->
-                        <path d="M3 10.5L12 3l9 7.5"/>
-                        <path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/>
-                        <path d="M13 8l-2 5h3l-2 5"/>
-                    </svg>
-                </span>
-                <h3 class="service-card-title">Property Damage</h3>
-            </a>
-            <a href="#title-disputes" class="service-card">
-                <span class="service-card-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- House icon -->
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-                    </svg>
-                </span>
-                <h3 class="service-card-title">Title Disputes</h3>
-            </a>
-            <a href="#real-estate-litigation" class="service-card">
-                <span class="service-card-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <!-- Keys icon -->
-                        <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
-                    </svg>
-                </span>
-                <h3 class="service-card-title">Real Estate Litigation</h3>
-            </a>
+    <!-- Blog Ticker Section -->
+    <div class="blog-ticker-wrapper">
+        <div class="blog-ticker">
+            <span class="blog-ticker-label">Latest Blog Posts</span>
+            <div class="blog-ticker-content">
+                <div class="blog-ticker-item active" data-url="/blog/mechanics-lien-deadlines-illinois">
+                    <a href="/blog/mechanics-lien-deadlines-illinois">Mechanics Lien Deadlines in Illinois: What You Need to Know</a>
+                </div>
+                <div class="blog-ticker-item" data-url="/blog/construction-contract-red-flags">
+                    <a href="/blog/construction-contract-red-flags">5 Red Flags in Construction Contracts That Could Cost You</a>
+                </div>
+                <div class="blog-ticker-item" data-url="/blog/property-damage-claims-guide">
+                    <a href="/blog/property-damage-claims-guide">Property Damage Claims: A Step-by-Step Guide for Homeowners</a>
+                </div>
+                <div class="blog-ticker-item" data-url="/blog/hoa-disputes-illinois">
+                    <a href="/blog/hoa-disputes-illinois">HOA Disputes in Illinois: Know Your Rights as a Homeowner</a>
+                </div>
+                <div class="blog-ticker-item" data-url="/blog/construction-delay-claims">
+                    <a href="/blog/construction-delay-claims">Construction Delay Claims: Protecting Your Project Timeline</a>
+                </div>
+            </div>
+            <a href="/blog/mechanics-lien-deadlines-illinois" class="blog-ticker-link" id="blog-ticker-read-more">Read More</a>
         </div>
     </div>
 
@@ -6660,7 +7080,7 @@
                     <a href="#about" class="about-btn">About the Firm</a>
                 </div>
                 <div class="about-image">
-                    <img src="chicago-river-skyline.png" alt="Chicago River skyline with construction">
+                    <img src="chicago-river-skyline.webp" alt="Chicago River skyline with construction">
                 </div>
             </div>
         </div>
@@ -6668,133 +7088,89 @@
 
     <!-- Services Section -->
     <section class="services-section" id="services">
+        <div class="services-bg"></div>
         <div class="services-container">
-            <h2 class="services-headline">Our Practice Areas</h2>
+            <h2 class="services-headline">How We <strong>Help</strong></h2>
+            <p class="services-subheadline">Construction & Real Estate Legal Services in Chicago and Surrounding Counties</p>
             
             <div class="services-grid">
                 <!-- Construction Disputes -->
-                <a href="#construction-disputes" class="service-card-hover">
-                    <div class="service-slide-bottom">
+                <a href="/construction-disputes" class="service-panel">
+                    <span class="service-panel-title">Construction Disputes</span>
+                    <div class="service-panel-content">
+                        <h3>Construction Disputes</h3>
                         <p>We resolve payment disputes, defective work claims, project delays, and other conflicts through strategic negotiation, litigation, and practical construction law experience.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-construction-disputes.jpg" alt="Construction Disputes">
-                        <div class="service-slide-content">
-                            <h3>Construction Disputes</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
 
                 <!-- Mechanics Liens -->
-                <a href="#mechanics-liens" class="service-card-hover">
-                    <div class="service-slide-bottom">
+                <a href="/mechanics-liens" class="service-panel">
+                    <span class="service-panel-title">Mechanics Liens</span>
+                    <div class="service-panel-content">
+                        <h3>Mechanics Liens</h3>
                         <p>Whether filing or defending a lien, we help contractors, suppliers, and property owners navigate Illinois' complex mechanics lien laws to protect payment and property rights.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-mechanics-liens.jpg" alt="Mechanics Liens">
-                        <div class="service-slide-content">
-                            <h3>Mechanics Liens</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
 
                 <!-- Contract Drafting -->
-                <a href="#contract-drafting" class="service-card-hover">
-                    <div class="service-slide-bottom">
-                        <p>We draft and negotiate construction contracts that allocate risk clearly, prevent disputes, and protect your bottom line.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-contract-drafting.jpg" alt="Contract Drafting & Negotiation">
-                        <div class="service-slide-content">
-                            <h3>Contract Drafting & Negotiation</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                <a href="/construction-contract-drafting-negotiation" class="service-panel">
+                    <span class="service-panel-title">Contract Drafting & Negotiation</span>
+                    <div class="service-panel-content">
+                        <h3>Contract Drafting & Negotiation</h3>
+                        <p>We draft, review and negotiate industry standard and custom construction contracts to properly allocate risk, prevent disputes and protect your bottom line.</p>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
 
                 <!-- Property Damage -->
-                <a href="#property-damage" class="service-card-hover">
-                    <div class="service-slide-bottom">
+                <a href="/property-damage-repair-disputes" class="service-panel">
+                    <span class="service-panel-title">Property Damage Repair Disputes</span>
+                    <div class="service-panel-content">
+                        <h3>Property Damage Repair Disputes</h3>
                         <p>We represent property owners facing insurance delays or contractor disputes after damage—ensuring fair treatment and full restoration.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-property-damage.jpg" alt="Property Damage Repair Disputes">
-                        <div class="service-slide-content">
-                            <h3>Property Damage Repair Disputes</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Title Disputes -->
-                <a href="#title-disputes" class="service-card-hover">
-                    <div class="service-slide-bottom">
-                        <p>We handle title disputes and quiet title actions involving liens, ownership claims, and record defects—working to establish clear, marketable title.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-title-disputes.jpg" alt="Title Disputes">
-                        <div class="service-slide-content">
-                            <h3>Title Disputes</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
 
                 <!-- HOA & Condo Law -->
-                <a href="#hoa-condo" class="service-card-hover">
-                    <div class="service-slide-bottom">
+                <a href="/hoa-condo-law" class="service-panel">
+                    <span class="service-panel-title">HOA & Condo Law</span>
+                    <div class="service-panel-content">
+                        <h3>HOA & Condo Law</h3>
                         <p>We stand up for homeowners in disputes with associations over assessments, repairs, or mismanagement—protecting your rights and peace of mind.</p>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
-                    <div class="service-slide-top">
-                        <img src="service-hoa-condo.jpg" alt="HOA & Condo Law">
-                        <div class="service-slide-content">
-                            <h3>HOA & Condo Law</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                </a>
+
+                <!-- Title Disputes -->
+                <a href="/title-disputes" class="service-panel">
+                    <span class="service-panel-title">Title Disputes</span>
+                    <div class="service-panel-content">
+                        <h3>Title Disputes</h3>
+                        <p>We handle title disputes and quiet title actions involving liens, ownership claims, and record defects—working to establish clear, marketable title.</p>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
 
                 <!-- Real Estate Litigation -->
-                <a href="#real-estate-litigation" class="service-card-hover">
-                    <div class="service-slide-bottom">
-                        <p>We represent property owners in real estate disputes including quiet title actions, breach of contract, partition actions, and boundary disputes—resolving conflicts while protecting your ownership rights.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-real-estate-litigation.jpg" alt="Real Estate Litigation">
-                        <div class="service-slide-content">
-                            <h3>Real Estate Litigation</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                <a href="/real-estate-litigation" class="service-panel">
+                    <span class="service-panel-title">Real Estate Litigation</span>
+                    <div class="service-panel-content">
+                        <h3>Real Estate Litigation</h3>
+                        <p>We represent property owners in real estate disputes including quiet title actions, breach of contract, partition actions, and boundary disputes.</p>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
 
                 <!-- Real Estate Closings -->
-                <a href="#real-estate-closings" class="service-card-hover">
-                    <div class="service-slide-bottom">
-                        <p>We guide buyers and sellers through residential and commercial closings, handling contracts, title review, and closing logistics to ensure a smooth transaction.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-real-estate-closings.jpg" alt="Real Estate Closings">
-                        <div class="service-slide-content">
-                            <h3>Real Estate Closings</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Business Law -->
-                <a href="#business-law" class="service-card-hover">
-                    <div class="service-slide-bottom">
-                        <p>We help small business owners form, operate, and protect their companies—providing practical legal guidance when disputes arise.</p>
-                    </div>
-                    <div class="service-slide-top">
-                        <img src="service-business-law.jpg" alt="Business Law">
-                        <div class="service-slide-content">
-                            <h3>Business Law</h3>
-                            <span class="service-learn-more">Learn More</span>
-                        </div>
+                <a href="/real-estate-closings" class="service-panel">
+                    <span class="service-panel-title">Real Estate Closings</span>
+                    <div class="service-panel-content">
+                        <h3>Real Estate Closings</h3>
+                        <p>We guide buyers and sellers through residential and commercial closings, handling contracts, title review, and closing logistics.</p>
+                        <span class="service-panel-link">Learn More →</span>
                     </div>
                 </a>
             </div>
@@ -6813,23 +7189,15 @@
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
+        <div class="contact-bg"></div>
+        
+        <!-- Centered headline -->
+        <div class="contact-headline">
+            <h2>Owners and Contractors Face Different Legal Challenges<span class="headline-script">We Help Both</span></h2>
+        </div>
+        
         <div class="contact-container">
-            <div class="contact-message">
-                <div class="contact-accent-bar"></div>
-                <div class="contact-message-content">
-                    <div class="contact-message-inner">
-                        <p class="contact-eyebrow">Let's Work Together</p>
-                        <h2>Owners and Contractors Face Different Risks<span class="headline-script">— We Help Both</span></h2>
-                        <div class="contact-message-text">
-                            <p>Whether you're a project owner dealing with a construction dispute or a contractor waiting to get paid, you don't have to navigate it alone.</p>
-                            <p>If you think you may have a legal claim - or just want answers - we are here to help you understand your options. We've provided construction and real estate legal services throughout Illinois — from Chicago and Cook County to Lake, Will, DuPage, Kane, McHenry, Kendall and Champaign Counties.</p>
-                        </div>
-                        <div class="contact-quote-box">
-                            <p>Grounded advice for real-world problems.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Form on LEFT -->
             <div class="contact-form-wrapper">
                 <div class="contact-form-container">
                     <div class="contact-form-header">
@@ -6837,17 +7205,21 @@
                         <p class="form-free">FREE AND CONFIDENTIAL</p>
                     </div>
                     <form class="contact-form" action="#" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Full Name*" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Full Name*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="company" placeholder="Company Name">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="company" placeholder="Company Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email*" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address">
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number*" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email*" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone Number*" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <textarea name="message" placeholder="Tell us how we can help*" required></textarea>
@@ -6869,6 +7241,21 @@
                         <h3>Thank You!</h3>
                         <p>Your message has been received. We'll review your information and get back to you within 24 hours.</p>
                         <button type="button" class="confirmation-close-btn">Close</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content on RIGHT -->
+            <div class="contact-message">
+                <div class="contact-message-content">
+                    <div class="contact-message-inner">
+                        <div class="contact-message-text">
+                            <p>Whether you're a project owner dealing with a construction dispute or a contractor waiting to get paid, you don't have to navigate it alone.</p>
+                            <p>If you think you may have a legal claim - or just want answers - we are here to help you understand your options. We've provided construction and real estate legal services throughout Illinois — from Chicago and Cook County to Lake, Will, DuPage, Kane, McHenry, Kendall and Champaign Counties.</p>
+                        </div>
+                        <div class="contact-quote-box">
+                            <p>See how we can help protect your investment.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -6953,7 +7340,8 @@
                     <span class="stagger-word">What</span>
                     <span class="stagger-word">Our</span>
                     <span class="stagger-word">Clients</span>
-                    <span class="stagger-word script-word">Say</span>
+                    <span class="stagger-word">Are</span>
+                    <span class="stagger-word script-word">Saying</span>
                 </div>
             </div>
             <div class="testimonials-slider-wrapper">
@@ -7117,7 +7505,7 @@
             <!-- Top row - 2 large cards -->
             <div class="blog-grid">
                 <a href="#" class="blog-card blog-card-large">
-                    <img src="blog-1.jpg" alt="Blog post image" class="blog-card-image">
+                    <img src="blog-1.webp" alt="Blog post image" class="blog-card-image">
                     <div class="blog-card-meta">
                         <span class="blog-card-category">Construction Law</span>
                         <span class="blog-card-tag">Mechanics Liens</span>
@@ -7127,7 +7515,7 @@
                 </a>
                 
                 <a href="#" class="blog-card blog-card-large">
-                    <img src="blog-2.jpg" alt="Blog post image" class="blog-card-image">
+                    <img src="blog-2.webp" alt="Blog post image" class="blog-card-image">
                     <div class="blog-card-meta">
                         <span class="blog-card-category">Real Estate</span>
                         <span class="blog-card-tag">HOA Disputes</span>
@@ -7140,7 +7528,7 @@
             <!-- Bottom row - 3 small cards -->
             <div class="blog-grid-bottom">
                 <a href="#" class="blog-card blog-card-small">
-                    <img src="blog-3.jpg" alt="Blog post image" class="blog-card-image">
+                    <img src="blog-3.webp" alt="Blog post image" class="blog-card-image">
                     <div class="blog-card-meta">
                         <span class="blog-card-category">Construction Law</span>
                         <span class="blog-card-tag">Contracts</span>
@@ -7150,7 +7538,7 @@
                 </a>
                 
                 <a href="#" class="blog-card blog-card-small">
-                    <img src="blog-4.jpg" alt="Blog post image" class="blog-card-image">
+                    <img src="blog-4.webp" alt="Blog post image" class="blog-card-image">
                     <div class="blog-card-meta">
                         <span class="blog-card-category">Construction Law</span>
                         <span class="blog-card-tag">Payment Disputes</span>
@@ -7160,7 +7548,7 @@
                 </a>
                 
                 <a href="#" class="blog-card blog-card-small">
-                    <img src="blog-5.jpg" alt="Blog post image" class="blog-card-image">
+                    <img src="blog-5.webp" alt="Blog post image" class="blog-card-image">
                     <div class="blog-card-meta">
                         <span class="blog-card-category">Real Estate</span>
                         <span class="blog-card-tag">Title Issues</span>
@@ -7230,12 +7618,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#8ee7e0e8e1ceecfcefe0eae2eff9ede6e7edefe9e1a0ede1e3" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="167f7870795674647778727a7761757e7f757771793875797b">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -7251,7 +7639,7 @@
                 <div class="footer-columns">
                     <div class="footer-info">
                         <p>
-                            <strong>T BRAND LAW LLC</strong><br>
+                            T Brand Law LLC<br>
                             444 W Lake St., Suite 1700<br>
                             Chicago, Illinois 60606
                         </p>
@@ -7316,7 +7704,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Eyebrow split text animation
         document.addEventListener('DOMContentLoaded', function() {
             const eyebrow = document.querySelector('.hero-eyebrow');
@@ -7374,28 +7762,7 @@
                 navbar.classList.remove('scrolled');
             }
             
-            // Hide/show on scroll direction (desktop only - 1281px+)
-            if (window.innerWidth >= 1281) {
-                if (currentScrollY > lastNavScrollY && currentScrollY > 1000) {
-                    // Scrolling down & past threshold
-                    navbar.classList.add('nav-hidden');
-                } else {
-                    // Scrolling up
-                    navbar.classList.remove('nav-hidden');
-                }
-            } else {
-                // Always show on mobile/tablet
-                navbar.classList.remove('nav-hidden');
-            }
-            
             lastNavScrollY = currentScrollY;
-        });
-
-        // Ensure nav shows when resizing to mobile
-        window.addEventListener('resize', function() {
-            if (window.innerWidth < 1281) {
-                document.getElementById('navbar').classList.remove('nav-hidden');
-            }
         });
 
         // Magic line animation
@@ -7574,23 +7941,22 @@
 
         // CONNECT text scroll direction animation
         let lastScrollY = window.scrollY;
-        const contactMessage = document.querySelector('.contact-message');
+        const contactSection = document.querySelector('.contact-section');
         
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
-            const contactSection = document.querySelector('.contact-section');
             const rect = contactSection.getBoundingClientRect();
             
             // Only animate when contact section is in view
             if (rect.top < window.innerHeight && rect.bottom > 0) {
                 if (currentScrollY > lastScrollY) {
                     // Scrolling down
-                    contactMessage.classList.remove('scroll-up');
-                    contactMessage.classList.add('scroll-down');
+                    contactSection.classList.remove('scroll-up');
+                    contactSection.classList.add('scroll-down');
                 } else {
                     // Scrolling up
-                    contactMessage.classList.remove('scroll-down');
-                    contactMessage.classList.add('scroll-up');
+                    contactSection.classList.remove('scroll-down');
+                    contactSection.classList.add('scroll-up');
                 }
             }
             
@@ -7619,7 +7985,7 @@
         }
 
         cyclePhrases();
-        setInterval(cyclePhrases, 3000);
+        setInterval(cyclePhrases, 2400);
 
         // Contact form submission and confirmation
         const contactForm = document.querySelector('.contact-form');
@@ -7827,6 +8193,33 @@
             
             // Note: lastScrollY is already updated in the contact section scroll handler
         });
+
+        // Blog Ticker Rotation
+        const blogTickerItems = document.querySelectorAll('.blog-ticker-item');
+        const blogTickerReadMore = document.getElementById('blog-ticker-read-more');
+        let currentBlogIndex = 0;
+
+        function rotateBlogTicker() {
+            if (blogTickerItems.length === 0) return;
+            
+            // Remove active class from current item
+            blogTickerItems[currentBlogIndex].classList.remove('active');
+            
+            // Move to next item
+            currentBlogIndex = (currentBlogIndex + 1) % blogTickerItems.length;
+            
+            // Add active class to new item
+            blogTickerItems[currentBlogIndex].classList.add('active');
+            
+            // Update Read More link
+            if (blogTickerReadMore) {
+                const newUrl = blogTickerItems[currentBlogIndex].getAttribute('data-url');
+                blogTickerReadMore.href = newUrl;
+            }
+        }
+
+        // Rotate every 4 seconds
+        setInterval(rotateBlogTicker, 4000);
     </script>
 </body>
 </html>
