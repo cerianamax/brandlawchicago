@@ -1390,7 +1390,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1503,7 +1504,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3946,7 +3947,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="project-delivery-methods-hero.webp" alt="Construction Project Delivery Methods" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="project-delivery-methods-hero.webp" alt="Construction Project Delivery Methods" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Construction Project Delivery Methods</h1>
@@ -4269,7 +4270,7 @@
             <div class="service-cta-box">
                 <h2>Need Help Structuring a Construction Project?</h2>
                 <p>Whether you're evaluating delivery methods for a new project or dealing with a dispute that arose from how a project was structured, we can help you understand your options and protect your interests.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->

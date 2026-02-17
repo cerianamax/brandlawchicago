@@ -1427,7 +1427,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1540,7 +1541,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3983,7 +3984,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="mechanics-liens-hero.webp" alt="Chicago Mechanics Liens Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="mechanics-liens-hero.webp" alt="Chicago Mechanics Liens Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Mechanics Liens Lawyer</h1>
@@ -4110,7 +4111,7 @@
                 <h2>Ready to Talk to a Chicago Mechanics Liens Attorney?</h2>
                 <p>Whether you need to file a mechanics lien, enforce one through foreclosure, or challenge an invalid lien claim, you need someone who understands both Illinois lien law and construction project realities.</p>
                 <p>Schedule a free, confidential consultation to discuss your situation and determine the best path forward—whether that's securing your payment rights, clearing title, or protecting your transaction.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->

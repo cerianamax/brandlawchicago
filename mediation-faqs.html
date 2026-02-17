@@ -1489,7 +1489,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1606,7 +1607,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -4682,7 +4683,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="mediation-faqs-hero.webp" alt="Understanding Mediation in Chicago Construction and Real Estate Disputes" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="mediation-faqs-hero.webp" alt="Understanding Mediation in Chicago Construction and Real Estate Disputes" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <span class="hero-title">Mediation FAQs</span>
@@ -4846,7 +4847,7 @@
                 <h2>Need Help With a Mediation?</h2>
                 <p>Whether you are preparing for an upcoming mediation, evaluating whether mediation is the right approach for your dispute, or need representation during the process, we can help you understand your options and protect your interests.</p>
                 <p>We represent contractors, subcontractors, property owners, and developers in mediation and other dispute resolution proceedings involving construction, contract, and real estate matters throughout the Chicago area.</p>
-                <a href="#contact" class="faq-cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="faq-cta-btn">Schedule a Free Consultation</a>
                 <p class="faq-related-link">For more information about mediation in construction disputes, see our <a href="/construction-mediation">Construction Mediation</a> page. For questions about arbitration as an alternative, see our <a href="/arbitration-faqs">Arbitration FAQs</a>. For a complete overview of our <a href="/construction-law">construction law</a> services, see our Construction Law page. For an overview of all dispute resolution options, read our blog post on <a href="/blog/construction-dispute-resolution-illinois">how construction disputes are resolved in Illinois</a>.</p>
             </div>
         </main>

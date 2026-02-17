@@ -1433,7 +1433,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1550,7 +1551,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -4626,7 +4627,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="hoa-condo-faqs-hero.webp" alt="Understanding HOA & Condo Disputes in Chicago" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="hoa-condo-faqs-hero.webp" alt="Understanding HOA & Condo Disputes in Chicago" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <span class="hero-title">HOA & Condo FAQs</span>
@@ -4758,7 +4759,7 @@
                 <h2>Need Help With Your HOA or Condo Dispute?</h2>
                 <p>If your HOA or condominium board is refusing to make required repairs, misusing assessments, restricting your access to records, or treating you differently than other owners, we can help you understand your rights and take action.</p>
                 <p>We represent condominium unit owners and HOA members in disputes with boards and associations throughout the Chicago area, including Cook, DuPage, Lake, and Will Counties. Our focus is on enforcing your rights under the governing documents and Illinois law.</p>
-                <a href="#contact" class="faq-cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="faq-cta-btn">Schedule a Free Consultation</a>
                 <p class="faq-related-link">For more information about your rights as a unit owner, see our <a href="/hoa-condo-disputes">HOA & Condo Disputes</a> page. For questions about construction-related disputes involving your building, see our <a href="/construction-disputes">Construction Disputes</a> page.</p>
             </div>
         </main>
