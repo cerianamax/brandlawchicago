@@ -35,7 +35,7 @@
         popupScheduled = false;
 
         // Gather field values
-        var textInputs = form.querySelectorAll('input[type="text"]');
+        var textInputs = form.querySelectorAll('input[type="text"]:not([name="company_fax"])');
         var emailInput = form.querySelector('input[type="email"]');
         var phoneInput = form.querySelector('input[type="tel"]');
         var textarea = form.querySelector('textarea');
