@@ -1387,7 +1387,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1500,7 +1501,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3943,7 +3944,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="real-estate-litigation-hero.webp" alt="Chicago Real Estate Litigation Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="real-estate-litigation-hero.webp" alt="Chicago Real Estate Litigation Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Real Estate Litigation Lawyer</h1>
@@ -4101,7 +4102,7 @@
                 <h2>Ready to Resolve Your Real Estate Dispute?</h2>
                 <p>If you're facing a real estate dispute or anticipate litigation, we can help you evaluate your options and develop a strategy aligned with your goals.</p>
                 <p>Real estate disputes often involve significant financial stakes and time-sensitive decisions. Early consultation helps preserve your rights and strengthen your position.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->
