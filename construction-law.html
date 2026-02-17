@@ -209,13 +209,6 @@
             src: url('/fonts/red-hat-display-700.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'Red Hat Display';
-            font-style: normal;
-            font-weight: 800;
-            font-display: swap;
-            src: url('/fonts/red-hat-display-800.woff2') format('woff2');
-        }
-        @font-face {
             font-family: 'Inter';
             font-style: normal;
             font-weight: 400;
@@ -1447,7 +1440,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1474,7 +1468,7 @@
         .hub-hero .hero-headline {
             font-family: 'Red Hat Display', sans-serif;
             font-size: clamp(3.2rem, 7vw, 8rem);
-            font-weight: 800;
+            font-weight: 700;
             color: var(--white);
             line-height: 1.1;
             margin: 0;
@@ -5882,7 +5876,7 @@
 
     <!-- Hub Hero -->
     <section class="hub-hero">
-        <img src="construction-law-hero.webp" alt="CHICAGO CONSTRUCTION LAWYER" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="construction-law-hero.webp" alt="CHICAGO CONSTRUCTION LAWYER" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="hub-hero-content">
             <h1 class="hero-headline">CHICAGO<br>CONSTRUCTION LAWYER</h1>
