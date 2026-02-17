@@ -156,7 +156,7 @@
     <link rel="preload" as="image" href="payment-disputes-hero.webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Cinzel:wght@700&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500;1,700;1,800&family=Inter:wght@300;400;500;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Red+Hat+Display:wght@400;500;600;700;800&family=Roboto:wght@400;500;600&family=Saira:wght@700;800;900&family=Satisfy&family=Work+Sans:wght@400;500;600;700&family=Zalando+Sans+SemiExpanded:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,500;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <style>
         :root {
@@ -1316,18 +1316,18 @@
             overflow: hidden;
         }
 
-        .service-hero-bg {
+        .service-hero-bg-img {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('payment-disputes-hero.webp') center center / cover no-repeat;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: 1;
         }
 
-        .service-hero-bg::after {
-            content: '';
+        .service-hero-overlay {
+            z-index: 1;
             position: absolute;
             top: 0;
             left: 0;
@@ -3879,7 +3879,8 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <div class="service-hero-bg" style="background-image: url('payment-disputes-hero.webp');"></div>
+        <img src="payment-disputes-hero.webp" alt="Chicago Construction Payment Disputes Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Construction Payment Disputes Lawyer</h1>
         </div>
