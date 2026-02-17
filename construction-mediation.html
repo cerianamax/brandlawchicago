@@ -1436,7 +1436,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1549,7 +1550,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3992,7 +3993,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="construction-mediation-hero.webp" alt="Chicago Construction Mediation Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="construction-mediation-hero.webp" alt="Chicago Construction Mediation Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Construction Mediation Lawyer</h1>
@@ -4095,7 +4096,7 @@
                 <h2>Considering Mediation for a Construction Dispute in Chicago?</h2>
                 <p>Whether you're facing a <a href="/payment-disputes">payment dispute</a>, <a href="/construction-delays">delay claim</a>, <a href="/construction-defects">construction defect</a> allegation, or another construction conflict, mediation may offer a faster, more cost-effective path to resolution.</p>
                 <p>Contact us for a free consultation to discuss whether mediation makes sense for your situation.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->

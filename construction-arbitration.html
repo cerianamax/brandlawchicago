@@ -1436,7 +1436,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1549,7 +1550,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3992,7 +3993,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="construction-arbitration-hero.webp" alt="Chicago Construction Arbitration Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="construction-arbitration-hero.webp" alt="Chicago Construction Arbitration Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Construction Arbitration Lawyer</h1>
@@ -4109,7 +4110,7 @@
                 <h2>Considering Arbitration for a Construction Dispute in Chicago?</h2>
                 <p>Whether you're facing a contractually required arbitration or evaluating whether to pursue arbitration for a construction dispute, understanding the process and its implications is essential.</p>
                 <p>Contact us for a free consultation to discuss your situation and determine the best path forward.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->

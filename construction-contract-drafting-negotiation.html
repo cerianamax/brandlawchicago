@@ -1428,7 +1428,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1541,7 +1542,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3984,7 +3985,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="contract-services-hero.webp" alt="Chicago Construction Contract Drafting & Negotiation Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="contract-services-hero.webp" alt="Chicago Construction Contract Drafting & Negotiation Lawyer" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Construction Contract<br>Drafting & Negotiation Lawyer</h1>
@@ -4141,7 +4142,7 @@
                 <h2>Does Your Construction Contract Protect Your Build?</h2>
                 <p>Construction contract law in Illinois involves state-specific statutes on mechanics liens, retainage, indemnification, and contractor licensing. We focus our practice on Illinois <a href="/construction-law">construction law</a> and work with clients throughout Chicago and statewide on contract drafting, negotiation, and dispute prevention.</p>
                 <p>If you're negotiating or revising a construction agreement, or if you've been presented with a contract and need to understand what you're signing, contact us to discuss how we can help.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->

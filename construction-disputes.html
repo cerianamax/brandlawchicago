@@ -1428,7 +1428,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1541,7 +1542,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -1564,26 +1565,26 @@
             align-items: center;
             justify-content: space-between;
             padding: 1rem 1.25rem;
-            background: linear-gradient(135deg, #245d9a 0%, #163d66 100%);
-            color: #fff;
+            background: #f5f6f8;
+            color: var(--blue-primary);
             text-decoration: none;
             border-radius: 6px;
-            border-bottom: none;
+            border: 1px solid rgba(30, 55, 90, 0.2);
             font-family: 'Poppins', sans-serif;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
         }
 
         @media (hover: hover) {
             .dispute-grid a:hover {
-                box-shadow: 0 4px 15px rgba(31, 84, 140, 0.3);
+                box-shadow: 0 4px 15px rgba(31, 84, 140, 0.15);
                 transform: translateY(-2px);
-                border-bottom: none;
-                color: var(--gold);
+                background: #ebedf1;
+                color: var(--blue-primary);
             }
             .dispute-grid a:hover svg {
-                stroke: var(--gold);
+                stroke: var(--blue-primary);
                 transform: translateX(3px);
             }
         }
@@ -1593,7 +1594,7 @@
             height: 20px;
             flex-shrink: 0;
             margin-left: 1rem;
-            stroke: rgba(255, 255, 255, 0.5);
+            stroke: rgba(30, 55, 90, 0.4);
             transition: stroke 0.3s ease, transform 0.3s ease;
         }
 
@@ -4036,7 +4037,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="construction-disputes-hero.webp" alt="Chicago Construction Dispute Attorney" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="construction-disputes-hero.webp" alt="Chicago Construction Dispute Attorney" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Chicago Construction Dispute Attorney</h1>
@@ -4154,7 +4155,7 @@
                 <h2>Ready to Talk to a Chicago Construction Dispute Lawyer?</h2>
                 <p>If you're dealing with a construction dispute in Chicago, Cook County, or the surrounding area, or see one coming, you don't have to figure this out alone.</p>
                 <p>Schedule a free, confidential consultation with an experienced construction litigation attorney to discuss your situation and what makes sense as a next step.</p>
-                <a href="#contact" class="cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
             </div>
 
             <!-- Final Section -->

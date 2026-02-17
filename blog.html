@@ -1410,7 +1410,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1523,7 +1524,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -4370,7 +4371,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="Blog" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="blog-hero.webp" alt="Blog" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <h1>Blog</h1>
@@ -4597,6 +4598,7 @@
             <div class="sidebar-nav-box blog-categories-box">
                 <h3>Categories</h3>
                 <ul class="sidebar-nav blog-categories">
+                    <li><a href="/blog">All Posts</a></li>
                     <li><a href="/blog?category=construction-law">Construction Law</a></li>
                     <li><a href="/blog?category=real-estate-law">Real Estate Law</a></li>
                 </ul>
@@ -4963,32 +4965,82 @@
     }
 </script>
 <script>
-// Blog Pagination - 10 posts per page
+// Blog Category Filtering + Pagination
 (function() {
     var POSTS_PER_PAGE = 10;
-    var posts = document.querySelectorAll('.blog-post-card');
+    var allPosts = Array.prototype.slice.call(document.querySelectorAll('.blog-post-card'));
     var pagination = document.getElementById('blog-pagination');
-    if (!posts.length || !pagination) return;
+    if (!allPosts.length || !pagination) return;
 
-    var totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+    var filteredPosts = allPosts;
     var currentPage = 1;
+    var isInitialLoad = true;
+
+    function getCategory() {
+        var params = new URLSearchParams(window.location.search);
+        return params.get('category') || '';
+    }
+
+    function slugify(text) {
+        return text.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+    }
+
+    function filterPosts(category) {
+        if (!category) {
+            filteredPosts = allPosts;
+        } else {
+            filteredPosts = allPosts.filter(function(post) {
+                var catEl = post.querySelector('.blog-post-category');
+                if (!catEl) return false;
+                return slugify(catEl.textContent) === category;
+            });
+        }
+        // Hide all first
+        allPosts.forEach(function(p) { p.style.display = 'none'; });
+        currentPage = 1;
+        showPage(1);
+        highlightCategory(category);
+    }
+
+    function highlightCategory(category) {
+        var links = document.querySelectorAll('.blog-categories li a');
+        links.forEach(function(link) {
+            var href = link.getAttribute('href');
+            var linkCat = '';
+            if (href && href.indexOf('category=') > -1) {
+                linkCat = href.split('category=')[1];
+            }
+            if (linkCat === category || (!category && !linkCat)) {
+                link.style.fontWeight = '700';
+                link.style.color = 'var(--blue-primary)';
+            } else {
+                link.style.fontWeight = '';
+                link.style.color = '';
+            }
+        });
+    }
 
     function showPage(page) {
         currentPage = page;
         var start = (page - 1) * POSTS_PER_PAGE;
         var end = start + POSTS_PER_PAGE;
 
-        for (var i = 0; i < posts.length; i++) {
-            posts[i].style.display = (i >= start && i < end) ? '' : 'none';
+        // Hide all
+        allPosts.forEach(function(p) { p.style.display = 'none'; });
+
+        // Show only filtered posts for this page
+        for (var i = 0; i < filteredPosts.length; i++) {
+            filteredPosts[i].style.display = (i >= start && i < end) ? '' : 'none';
         }
 
         renderPagination();
-        var column = document.querySelector('.blog-posts-column') || posts[0].parentElement;
-        if (column && !isInitialLoad) column.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!isInitialLoad) window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function renderPagination() {
+        var totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
         if (totalPages <= 1) { pagination.style.display = 'none'; return; }
+        pagination.style.display = '';
 
         var html = '';
         if (currentPage > 1) {
@@ -5013,8 +5065,28 @@
         if (page && page !== currentPage) showPage(page);
     });
 
-    var isInitialLoad = true;
-    showPage(1);
+    // Intercept category link clicks to filter without full reload
+    document.querySelectorAll('.blog-categories li a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var href = this.getAttribute('href');
+            var cat = '';
+            if (href && href.indexOf('category=') > -1) {
+                cat = href.split('category=')[1];
+            }
+            var url = cat ? '/blog?category=' + cat : '/blog';
+            window.history.pushState({}, '', url);
+            filterPosts(cat);
+        });
+    });
+
+    // Handle back/forward browser navigation
+    window.addEventListener('popstate', function() {
+        filterPosts(getCategory());
+    });
+
+    // Initial load
+    filterPosts(getCategory());
     isInitialLoad = false;
 })();
 </script>

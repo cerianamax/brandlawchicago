@@ -1465,7 +1465,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            animation: heroFadeIn 0.3s ease-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-hero-overlay {
@@ -1582,7 +1583,7 @@
 
         .service-main a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -4658,7 +4659,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="construction-contracts-faqs-hero.webp" alt="Understanding Construction Contracts in Chicago" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager">
+        <img src="construction-contracts-faqs-hero.webp" alt="Understanding Construction Contracts in Chicago" class="service-hero-bg-img" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <span class="hero-title">Construction Contract FAQs</span>
@@ -4812,7 +4813,7 @@
                 <h2>Need Help With a Construction Contract?</h2>
                 <p>Whether you're drafting a new contract, negotiating terms on a project, or dealing with a dispute over contract provisions, we can help you understand your options and protect your interests.</p>
                 <p>We work with contractors, subcontractors, property owners, and developers throughout the Chicago area on <a href="/construction-contract-drafting-negotiation">contract drafting</a>, review, negotiation, and dispute resolution.</p>
-                <a href="#contact" class="faq-cta-btn">Schedule a Free Consultation</a>
+                <a href="/contact" class="faq-cta-btn">Schedule a Free Consultation</a>
                 <p class="faq-related-link">For more information about construction contract drafting and negotiation, see our <a href="/construction-contract-drafting-negotiation">Construction Contract Drafting &amp; Negotiation</a> page. For a complete overview of our <a href="/construction-law">construction law</a> services, see our Construction Law page. For questions about mechanics liens and lien rights referenced on this page, see our <a href="/mechanics-liens-faqs">Mechanics Liens FAQs</a>.</p>
             </div>
         </main>
