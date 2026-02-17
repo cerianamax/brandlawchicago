@@ -31,6 +31,10 @@
     function handleFormSubmit(e) {
         e.preventDefault();
         var form = e.target;
+
+        // Honeypot bot check
+        var honeypot = form.querySelector('input[name="company_fax"]');
+        if (honeypot && honeypot.value) { return; }
         activeForm = form;
         popupScheduled = false;
 
