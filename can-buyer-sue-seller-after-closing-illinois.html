@@ -39,7 +39,7 @@
                 "headline": "Can a Buyer Sue a Seller After Closing in Illinois? What the Disclosure Act Requires",
                 "description": "Can a buyer sue a seller after closing in Illinois? Learn what the Residential Real Property Disclosure Act requires, what sellers must disclose, and what buyers need to prove.",
                 "datePublished": "2026-01-06",
-                "dateModified": "2026-01-06",
+                "dateModified": "2026-02-18",
                 "author": {
                     "@type": "Person",
                     "name": "Todd R. Brand",
@@ -93,6 +93,36 @@
                     "postalCode": "60606",
                     "addressCountry": "US"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.brandlawchicago.com/blog/can-buyer-sue-seller-after-closing-illinois#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How long after closing can a buyer sue in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Under the Illinois Residential Real Property Disclosure Act (765 ILCS 77), claims based on the disclosure report must be filed within one year from the earliest of possession, occupancy, or recording. However, if the seller actively concealed a defect or made fraudulent misrepresentations, a buyer may have common law fraud claims with longer limitations periods. The one-year period is strictly enforced for claims under the Disclosure Act and is not extended simply because the defect was discovered later."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does an \"as-is\" clause prevent a buyer from suing the seller?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. An \"as-is\" clause means the seller will not make repairs before closing, but it does not eliminate the seller's obligation to disclose known material defects under the Disclosure Act. If the seller knew about a hidden defect and failed to disclose it, the buyer may still have a valid claim even if the contract contained \"as-is\" language. That said, an \"as-is\" clause can make it harder for buyers to recover for defects that were discoverable through a reasonable inspection."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What damages can a buyer recover in a disclosure dispute?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A buyer can typically recover actual damages, which includes the cost of repairing the undisclosed defect. In some cases, the buyer may recover the difference between the purchase price and the property's actual value with the defect known. The Disclosure Act also allows recovery of attorney fees in certain circumstances. If fraud is established, additional remedies may be available depending on the nature and severity of the seller's conduct."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -1535,6 +1565,87 @@
             margin-bottom: 0;
         }
 
+        /* Blog Visual Elements */
+        .blog-visual-wrap {
+            margin: 2rem 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .blog-visual-wrap::-webkit-scrollbar {
+            display: none;
+        }
+
+        .blog-visual-wrap svg {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .blog-flowchart svg {
+            max-width: 560px;
+            min-width: 340px;
+        }
+
+        .blog-table-graphic svg {
+            max-width: 660px;
+            min-width: 400px;
+        }
+
+        /* Mid-article CTA */
+        .mid-cta-callout {
+            background: #fff;
+            color: rgb(30, 55, 90);
+            border: 2px solid rgb(30, 55, 90);
+            padding: 1.75rem 2rem;
+            border-radius: 6px;
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .mid-cta-callout p {
+            color: rgb(30, 55, 90);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .mid-cta-callout p strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .mid-cta-callout .cta-btn {
+            display: inline-block;
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: none !important;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .mid-cta-callout .cta-btn:hover {
+            background: rgb(30, 55, 90);
+            color: #f5d236;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
         /* CTA Box */
         .service-cta-box {
             background: #f5f7f9;
@@ -1940,7 +2051,7 @@
 
         .blog-article a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3853,6 +3964,33 @@
                 padding: 2rem 1.5rem;
             }
 
+            .mid-cta-callout {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .blog-flowchart svg {
+                min-width: 280px;
+            }
+
+            .blog-table-graphic svg {
+                min-width: 360px;
+            }
+
+            .blog-visual-wrap {
+                margin: 1.5rem -0.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .faq-section {
+                margin-top: 2rem;
+            }
+
+            .faq-item {
+                margin-bottom: 1.25rem;
+            }
+
             .footer-logo img {
                 height: 38px;
             }
@@ -3936,6 +4074,27 @@
             .service-main ul li {
                 font-size: 1rem;
             }
+
+            .mid-cta-callout {
+                padding: 1.25rem;
+            }
+
+            .mid-cta-callout p {
+                font-size: 0.95rem;
+            }
+
+            .mid-cta-callout .cta-btn {
+                padding: 0.7rem 1.75rem;
+                font-size: 0.95rem;
+            }
+
+            .blog-table-graphic svg {
+                min-width: 320px;
+            }
+
+            .blog-flowchart svg {
+                min-width: 300px;
+            }
         }
 
         /* 450px - Tighter mobile */
@@ -3962,6 +4121,32 @@
 
             .logo {
                 gap: 0.6rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .mid-cta-callout {
+                padding: 1.25rem 1rem;
+                margin: 2rem 0;
+            }
+
+            .mid-cta-callout p {
+                font-size: 0.9rem;
+                min-width: 0;
+            }
+
+            .mid-cta-callout .cta-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.9rem;
+                white-space: normal;
+            }
+
+            .blog-table-graphic svg {
+                min-width: 280px;
+            }
+
+            .blog-flowchart svg {
+                min-width: 280px;
             }
         }
 
@@ -4443,74 +4628,184 @@
                 <h1 class="blog-article-title">Can a Buyer Sue a Seller After Closing in Illinois? What the Disclosure Act Requires</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-buyer-sue-seller-hero.webp" alt="Sold sign in front of residential home representing post-closing disclosure disputes in Illinois" width="1600" height="900">
+                    <img src="blog-buyer-sue-seller-hero.webp" alt="Sold sign in front of a residential home representing post-closing disclosure disputes in Illinois" width="1600" height="900">
                 </div>
 
                 <p>You sold your house. The closing went smoothly. The buyers signed everything, the title company wired the funds, and you moved on. Maybe you relocated out of state. Maybe you bought a new place across town. Either way, the sale is done.</p>
                 <p>Then you get a letter from a lawyer.</p>
-                <p>The buyers found a crack in the foundation. Or water in the basement. Or mold behind the drywall. And now they want you to pay for it - tens of thousands of dollars in repairs for problems they say you knew about and didn't disclose.</p>
-                <p>This scenario plays out more often than most sellers expect. And for buyers, discovering a serious defect weeks or months after closing raises an obvious question: can you actually do anything about it, or did you assume all the risk when you signed at closing?</p>
+                <p>The buyers found a crack in the foundation. Or water in the basement. Or mold behind the drywall. And now they want you to pay for it, tens of thousands of dollars in repairs for problems they say you knew about and did not disclose.</p>
+                <p>This scenario plays out more often than most sellers expect. And for buyers, discovering a serious defect weeks or months after closing raises an obvious question: can you actually do anything about it, or did you assume all the risk when you signed at closing? In Illinois, the short answer is yes, but only in limited circumstances and only if certain conditions are met under state law.</p>
                 <p>The answer depends on what the seller knew, what they disclosed, and what Illinois law requires.</p>
 
                 <h2>What the Illinois Residential Real Property Disclosure Act Requires</h2>
-                <p>Illinois has a specific statute that governs what sellers must tell buyers before a residential real estate transaction closes. It's called the Illinois Residential Real Property Disclosure Act, and it applies to most sales of residential property in the state.</p>
-                <p>Under the Act, sellers are required to complete a disclosure report - a standardized form that covers the condition of major systems and structural components of the property. The report asks sellers to identify known problems with the foundation, basement, roof, plumbing, electrical system, HVAC, water intrusion, drainage, environmental hazards, and other material conditions.</p>
-                <p>The key word is "known." The Act does not require sellers to hire an inspector, conduct testing, or investigate conditions they aren't aware of. It requires them to disclose defects they actually know about at the time of the sale.</p>
-                <p>That disclosure report is typically signed during the contract period and delivered to the buyer before closing. If you bought a home in Illinois, it was probably buried somewhere in the stack of documents you signed - and it may be more important than you realized at the time.</p>
+                <p>Illinois has a specific statute that governs what sellers must tell buyers before a residential real estate transaction closes. It is called the <a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=&amp;Chapter=&amp;ActName=Residential%20Real%20Property%20Disclosure%20Act.&amp;ActID=2152&amp;ChapterID=62&amp;ChapAct=765+ILCS+77%2F&amp;SeqStart=300000&amp;SeqEnd=1700000" target="_blank" rel="noopener noreferrer">Illinois Residential Real Property Disclosure Act (765 ILCS 77)</a>, and it applies to most sales of residential property in the state.</p>
+                <p>Under the Act, sellers must complete a disclosure report, a standardized form that covers the condition of major systems and structural components of the property. The report asks sellers to identify known problems with the foundation, basement, roof, plumbing, electrical system, HVAC, water intrusion, drainage, environmental hazards such as lead paint or radon, and other material conditions.</p>
+                <p>The key word is "known." The Act does not require sellers to hire an inspector, conduct testing, or investigate conditions they are not aware of. It requires sellers to disclose defects they actually know about or have notice of at the time of the sale.</p>
+                <p>The disclosure report is typically signed during the contract period and delivered to the buyer before closing. If you bought a home in Illinois, you likely signed this form, and it may be more important than you realized at the time.</p>
 
                 <h2>What Sellers Must Disclose</h2>
-                <p>The disclosure obligation covers material defects that the seller is aware of. In practical terms, this means conditions that affect the value, habitability, or structural integrity of the property and that would not be obvious to a buyer through a reasonable inspection.</p>
-                <p>Common examples of conditions that must be disclosed include known foundation cracks or structural movement, a history of water intrusion in the basement or crawl space, roof leaks or damage that hasn't been fully repaired, mold or environmental contamination the seller is aware of, HVAC systems that are failing or have been patched rather than properly repaired, plumbing issues such as sewer line problems or known pipe deterioration, drainage problems on the property, boundary disputes or encroachments the seller is aware of, and any prior insurance claims related to property damage.</p>
-                <p>The obligation extends to conditions the seller has personally experienced or been told about - including issues flagged by contractors, inspectors, or previous buyers who walked away from an earlier deal.</p>
+                <p>The disclosure obligation covers material defects that the seller is aware of. This means conditions that affect the value, habitability, or structural integrity of the property and that would not be obvious to a buyer through a reasonable inspection.</p>
+                <p><strong>Common examples of conditions that must be disclosed:</strong></p>
+                <ul>
+                    <li>Known foundation cracks or structural movement</li>
+                    <li>History of water intrusion or chronic basement flooding</li>
+                    <li>Roof leaks or damage</li>
+                    <li>Mold or environmental contamination the seller is aware of</li>
+                    <li>Failing HVAC or plumbing systems</li>
+                    <li>Drainage problems on the property</li>
+                    <li>Code violations affecting habitability</li>
+                    <li>Lead paint or radon hazards</li>
+                </ul>
+                <p>Disclosure also extends to conditions the seller has personally experienced or has been told about, including issues flagged by contractors, inspectors, or previous buyers who walked away from an earlier deal.</p>
 
-                <h2>What Sellers Don't Have to Disclose</h2>
-                <p>The Act has important limits. Sellers are not required to disclose conditions they don't know about. There is no duty to investigate, inspect, or test the property before completing the disclosure form. If a seller has never experienced water in the basement and has no reason to suspect a problem, they have no obligation to disclose a water issue they aren't aware of - even if one exists.</p>
-                <p>Sellers also don't have to disclose defects that are open and obvious. If the buyer could see the cracked driveway during their walkthrough, the seller isn't liable for failing to mention it on the form. These are sometimes called "patent" defects - visible conditions that a reasonable buyer would notice. The Act is primarily concerned with "latent" defects - hidden problems that a buyer wouldn't discover through ordinary observation.</p>
-                <p>Certain transactions are also exempt from the disclosure requirement entirely. These include transfers during bankruptcy, foreclosure, or divorce proceedings, transfers by a fiduciary such as an executor or trustee, transfers between family members, court-ordered transfers, and transfers where the seller has never occupied the property. In these situations, the seller typically has no obligation to complete a disclosure report at all.</p>
+                <h2>What Sellers Do Not Have to Disclose</h2>
+                <p>The Act has important limits. Sellers are not required to disclose conditions they do not know about. There is no duty to investigate, inspect, or test the property before completing the disclosure form. If a seller has never experienced water in the basement and has no reason to suspect a problem, there is no obligation to disclose a hidden issue, even if one exists.</p>
+                <p>Sellers also do not have to disclose defects that are open and obvious. These are called patent defects, meaning visible issues that a reasonable buyer would notice during a walkthrough. The Act is primarily concerned with latent defects, which are hidden problems that a buyer would not discover through ordinary observation.</p>
+                <p><strong>Certain transactions are exempt from the disclosure requirement entirely:</strong></p>
+                <ul>
+                    <li>Transfers during bankruptcy, foreclosure, or divorce proceedings</li>
+                    <li>Transfers by a fiduciary such as a trustee or executor</li>
+                    <li>Transfers between family members</li>
+                </ul>
 
-                <h2>What Buyers Need to Prove</h2>
-                <p>If a buyer discovers a defect after closing and wants to bring a claim against the seller, they generally need to establish three things.</p>
-                <p>First, that the seller knew about the defect at the time of the sale. This is the hardest element for buyers to prove, and it's where most disclosure cases are won or lost. Actual knowledge means the seller was personally aware of the condition - not that they should have known or could have discovered it with a little effort.</p>
-                <p>Evidence of actual knowledge might include prior repair invoices showing the seller addressed the same problem before, insurance claims related to the defect, communications with contractors or inspectors about the issue, photographs or records showing the seller attempted to conceal the condition, or testimony from neighbors, tenants, or prior buyers who were told about the problem.</p>
-                <p>Second, that the seller failed to disclose the defect on the disclosure report. If the seller checked "no" next to "foundation problems" on the form but had previously hired a contractor to address a cracking foundation, that's a failure to disclose.</p>
-                <p>Third, that the buyer suffered actual damages. This typically means the cost to repair the defect, or in some cases, the difference between what the buyer paid and what the property would have been worth if the defect had been known.</p>
+                <h2>What Buyers Need to Prove to Sue After Closing</h2>
+                <p>If a buyer discovers a defect after closing and wants to bring a claim against the seller, they generally need to establish three things:</p>
+
+                <!-- Vertical Flowchart: What a Buyer Must Prove -->
+                <div class="blog-visual-wrap blog-flowchart">
+                    <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three elements a buyer must prove: Seller Knowledge, Failure to Disclose, and Actual Damages">
+                        <!-- Box 1: Knowledge -->
+                        <rect x="40" y="10" width="480" height="88" rx="6" fill="rgb(30,55,90)"/>
+                        <text x="280" y="40" text-anchor="middle" fill="#f5d236" font-family="Red Hat Display,sans-serif" font-weight="700" font-size="17">1. Seller Knowledge</text>
+                        <text x="280" y="64" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="13">The seller actually knew about the defect</text>
+                        <text x="280" y="84" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Poppins,sans-serif" font-size="11.5">Hardest element to prove - requires evidence of actual awareness</text>
+                        <!-- Arrow 1→2 -->
+                        <line x1="280" y1="98" x2="280" y2="133" stroke="#ccc" stroke-width="2.5"/>
+                        <polygon points="272,128 280,142 288,128" fill="#ccc"/>
+                        <!-- Box 2: Failure to Disclose -->
+                        <rect x="40" y="145" width="480" height="88" rx="6" fill="rgb(30,55,90)"/>
+                        <text x="280" y="175" text-anchor="middle" fill="#f5d236" font-family="Red Hat Display,sans-serif" font-weight="700" font-size="17">2. Failure to Disclose</text>
+                        <text x="280" y="199" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="13">The seller omitted or misrepresented it on the report</text>
+                        <text x="280" y="219" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Poppins,sans-serif" font-size="11.5">Compare the defect to what the seller checked on the disclosure form</text>
+                        <!-- Arrow 2→3 -->
+                        <line x1="280" y1="233" x2="280" y2="268" stroke="#ccc" stroke-width="2.5"/>
+                        <polygon points="272,263 280,277 288,263" fill="#ccc"/>
+                        <!-- Box 3: Damages -->
+                        <rect x="40" y="280" width="480" height="88" rx="6" fill="rgb(30,55,90)"/>
+                        <text x="280" y="310" text-anchor="middle" fill="#f5d236" font-family="Red Hat Display,sans-serif" font-weight="700" font-size="17">3. Actual Damages</text>
+                        <text x="280" y="334" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="13">The buyer suffered a measurable financial loss</text>
+                        <text x="280" y="354" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Poppins,sans-serif" font-size="11.5">Repair costs, diminished value, or related expenses</text>
+                    </svg>
+                </div>
+
+                <p><strong>The seller knew about the defect at the time of the sale.</strong> Actual knowledge is difficult to prove. It means the seller was personally aware of the condition, not just that they should have known. Evidence might include prior repair invoices, contractor reports, insurance claims, emails, text messages, or testimony showing the seller experienced or was told about the problem.</p>
+                <p>In our experience, the strongest disclosure cases are built on paper trails. A single repair invoice or insurance claim showing the seller dealt with the same problem before the sale can be decisive.</p>
+                <p><strong>The seller failed to disclose the defect on the disclosure report.</strong> For example, if the seller checked "no" next to foundation problems despite having addressed cracking issues before, that is a failure to disclose.</p>
+                <p><strong>The buyer suffered actual damages.</strong> This typically means the cost to repair the defect. In some cases, it may involve the difference between what the buyer paid and the property's value if the defect had been known.</p>
+                <p>In addition, timing matters. Claims under the Illinois Residential Real Property Disclosure Act are generally subject to a <strong>one-year limitations period</strong> from the date of closing. However, the Act does not limit or modify obligations that exist under common law to avoid fraud, misrepresentation, or deceit. If a seller actively concealed a defect or made affirmative misrepresentations, a buyer may have claims for fraud that carry longer limitations periods. Waiting too long can bar an otherwise valid claim either way.</p>
+
+                <!-- Mid-article CTA -->
+                <div class="mid-cta-callout">
+                    <p><strong>Discovered a problem after closing?</strong> The one-year deadline under the Disclosure Act runs fast. A brief consultation can clarify your rights and options before valuable claims expire.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
 
                 <div class="blog-article-image">
                     <img src="blog-buyer-sue-seller-as-is.webp" alt="Wooden letter blocks spelling as-is next to a gavel representing as-is clauses in real estate" width="1600" height="900">
                 </div>
 
                 <h2>Does an "As-Is" Clause Protect the Seller?</h2>
-                <p>Many residential purchase contracts in Illinois include an "as-is" provision - language stating that the buyer is purchasing the property in its current condition and that the seller makes no warranties about the property's condition.</p>
-                <p>An "as-is" clause provides some protection, but it does not override the disclosure requirements under the Act. Even if the contract says "as-is," the seller still has a duty to disclose known material defects on the disclosure form. An "as-is" clause generally means the seller won't make repairs before closing - it doesn't mean the seller can hide known problems.</p>
-                <p>That said, "as-is" language can make it harder for buyers to bring claims for conditions that were discoverable through a reasonable inspection. If the buyer chose not to get an inspection - or got one and missed something - an "as-is" clause strengthens the seller's position that the buyer accepted the property knowing what they were getting.</p>
+                <p>Many residential purchase contracts in Illinois include an "as-is" provision stating that the buyer is purchasing the property in its current condition and that the seller makes no warranties about the property's condition.</p>
+                <p>An as-is clause provides some protection, but it does not override the disclosure requirements under the Act. Even if the contract says as-is, the seller still has a duty to disclose known material defects on the disclosure form.</p>
+
+                <!-- As-Is Table Graphic -->
+                <div class="blog-visual-wrap blog-table-graphic">
+                    <svg viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of what an as-is clause does and does not do">
+                        <!-- Header -->
+                        <rect x="0" y="0" width="660" height="44" rx="6" fill="rgb(30,55,90)"/>
+                        <text x="330" y="29" text-anchor="middle" fill="#fff" font-family="Red Hat Display,sans-serif" font-weight="700" font-size="17">What an "As-Is" Clause Does and Does Not Do</text>
+                        <!-- Left column header -->
+                        <rect x="0" y="48" width="325" height="36" fill="#e8f0e8"/>
+                        <text x="162" y="72" text-anchor="middle" fill="#2a7a2a" font-family="Poppins,sans-serif" font-weight="700" font-size="13.5">&#x2713;  What It Does</text>
+                        <!-- Right column header -->
+                        <rect x="335" y="48" width="325" height="36" fill="#f5e8e8"/>
+                        <text x="497" y="72" text-anchor="middle" fill="#c0392b" font-family="Poppins,sans-serif" font-weight="700" font-size="13.5">&#x2717;  What It Does Not Do</text>
+                        <!-- Row 1 -->
+                        <rect x="0" y="88" width="325" height="52" fill="#f8fbf8" stroke="#e0e0e0" stroke-width="0.5"/>
+                        <text x="162" y="112" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">Limits seller's obligation to</text>
+                        <text x="162" y="129" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">make pre-closing repairs</text>
+                        <rect x="335" y="88" width="325" height="52" fill="#fdf8f8" stroke="#e0e0e0" stroke-width="0.5"/>
+                        <text x="497" y="112" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">Override the statutory duty</text>
+                        <text x="497" y="129" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">to disclose known defects</text>
+                        <!-- Row 2 -->
+                        <rect x="0" y="140" width="325" height="52" fill="#f8fbf8" stroke="#e0e0e0" stroke-width="0.5"/>
+                        <text x="162" y="164" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">Strengthens seller's position if</text>
+                        <text x="162" y="181" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">defect was discoverable</text>
+                        <rect x="335" y="140" width="325" height="52" fill="#fdf8f8" stroke="#e0e0e0" stroke-width="0.5"/>
+                        <text x="497" y="164" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">Protect the seller from</text>
+                        <text x="497" y="181" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">fraud or concealment claims</text>
+                        <!-- Row 3 -->
+                        <rect x="0" y="192" width="325" height="52" fill="#f8fbf8" stroke="#e0e0e0" stroke-width="0.5"/>
+                        <text x="162" y="216" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">Shifts inspection risk</text>
+                        <text x="162" y="233" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">to the buyer</text>
+                        <rect x="335" y="192" width="325" height="52" fill="#fdf8f8" stroke="#e0e0e0" stroke-width="0.5"/>
+                        <text x="497" y="216" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">Eliminate liability for hidden</text>
+                        <text x="497" y="233" text-anchor="middle" fill="#333" font-family="Poppins,sans-serif" font-size="12.5">defects the seller knew about</text>
+                    </svg>
+                </div>
+
+                <p>However, as-is language can make it harder for buyers to bring claims for defects that were discoverable through a reasonable inspection. If the buyer chose not to get an inspection, or got one and missed something, as-is language strengthens the seller's argument that the buyer accepted the property in its visible condition.</p>
 
                 <h2>The Role of the Buyer's Inspection</h2>
-                <p>Most residential buyers in Illinois hire a home inspector before closing. The inspection report often identifies some defects - and the buyer then has to decide whether to proceed, negotiate repairs, or walk away.</p>
+                <p>Most residential buyers in Illinois hire a home inspector before closing. The inspection report often identifies defects, and the buyer must then decide whether to proceed, negotiate repairs, or terminate the contract.</p>
                 <p>If the buyer's inspector flagged a problem and the buyer closed anyway, it becomes much harder to argue that the seller is responsible. The buyer had notice of the condition and chose to move forward.</p>
-                <p>But inspections have limits. Inspectors don't open walls, dig up sewer lines, or test for every possible issue. Latent defects - problems hidden behind finished surfaces, underground, or in areas not accessible during a standard inspection - may not show up until months after closing. These are the defects most likely to support a disclosure claim.</p>
+                <p>But inspections have limits. Inspectors do not open walls, dig up sewer lines, or test for every possible issue. Latent defects, meaning hidden problems behind finished surfaces, underground, or outside the inspection scope, may not show up until months after closing. These are the types of defects most likely to support a post-closing disclosure claim.</p>
 
                 <h2>Common Post-Closing Disputes in Illinois</h2>
-                <p>The defects that generate the most post-closing litigation tend to be expensive to fix and difficult to detect before closing. Foundation and structural problems often top the list, particularly in older Chicago-area homes where settling, cracking, and water damage can develop over decades. Water intrusion - whether from basement seepage, failed drainage, or roof leaks - is another frequent source of claims, especially when the seller made cosmetic repairs that masked the underlying problem.</p>
-                <p>Sewer and plumbing issues, including deteriorating sewer lines, root intrusion, and failing connections, also generate significant post-closing disputes. These are problems that a standard home inspection typically won't catch without a separate sewer scope. If the seller knew about recurring sewer backups but didn't disclose them, that's exactly the kind of latent defect the Act is designed to address.</p>
+                <p>The defects that generate the most post-closing litigation tend to be expensive to fix and difficult to detect before closing. Common examples include foundation and structural problems (especially in older homes), water intrusion and drainage failures that later cause mold or rot, and sewer and plumbing issues that were not visible during inspection. These cases often overlap with <a href="/construction-defects">construction defect claims</a>, especially when the defect traces back to original construction or a renovation.</p>
+                <p>Each of these can be a latent, material defect that may form the basis of a claim if the seller knew about it and failed to disclose it.</p>
 
                 <h2>Practical Advice for Sellers</h2>
-                <p>The best protection for sellers is honest, thorough disclosure. Complete the disclosure form carefully and err on the side of over-disclosing. If you had a water issue five years ago and it was repaired, disclose it. If your HVAC system is aging and has needed frequent repairs, mention it. A disclosed defect almost never turns into a lawsuit. An undisclosed one often does.</p>
-                <p>Keep records of all maintenance, repairs, and improvements. If a buyer comes back with a claim, your records showing that you addressed the issue and disclosed it on the form are your best defense.</p>
-                <p>And don't try to conceal problems with cosmetic fixes. Fresh paint over water-stained drywall, new carpet over cracked floor tiles, or a dehumidifier hiding chronic moisture - these are the kinds of things that look like concealment in hindsight and can turn a simple disclosure dispute into a fraud claim.</p>
+                <p>The best protection for sellers is honest and thorough disclosure. Complete the disclosure form carefully and err on the side of over-disclosing. If you had a water issue five years ago and it was repaired, disclose it. If your HVAC system is aging and has needed frequent repairs, mention it.</p>
+                <p>Keep records of all maintenance, repairs, and improvements. If a buyer later asserts a claim, your documentation showing that you addressed the issue and disclosed it can be your strongest defense.</p>
+                <p>Do not attempt to conceal problems with cosmetic fixes. Fresh paint over water stains, new carpet over cracked tiles, or landscaping that hides drainage issues can later be characterized as concealment and may escalate a dispute into a fraud allegation.</p>
 
                 <h2>Practical Advice for Buyers</h2>
-                <p>Before closing, read the disclosure report carefully - every line. If something looks vague or incomplete, ask follow-up questions in writing. Get a thorough home inspection, and consider specialized inspections for older properties: sewer scopes, radon testing, mold testing, and structural engineering reviews.</p>
-                <p>After closing, if you discover a defect that you believe was concealed, document everything immediately. Take photographs, keep all repair estimates and invoices, and preserve any communications with the seller or their agent. Time matters - both for building your case and because Illinois has a statute of limitations on these claims.</p>
-                <p>Not every post-closing defect means the seller did something wrong. Some problems develop after the sale. Some were genuinely unknown to everyone. But if the evidence suggests the seller knew about a material defect and chose not to disclose it, Illinois law provides a path to hold them accountable.</p>
+                <p>Before closing, read the disclosure report carefully. If something looks vague or incomplete, ask follow-up questions in writing. Obtain a thorough home inspection and consider specialized inspections such as a sewer scope, radon test, mold assessment, or structural engineer evaluation when appropriate.</p>
+                <p>After closing, if you discover a defect that you believe was concealed, document everything immediately. Take photographs. Obtain repair estimates. Preserve emails and text messages. Timing is critical, both for building your case and because Illinois law limits how long you have to bring a claim.</p>
+                <p>Not every post-closing defect means the seller did something wrong. Some problems develop after the sale. Some were genuinely unknown. But if the evidence suggests the seller knew about a material defect and failed to disclose it, Illinois law provides a path to pursue recovery. In cases where the purchase agreement itself was violated, buyers may also have a <a href="/real-estate-breach-of-contract">breach of contract claim</a> alongside or instead of a disclosure claim. And when the dispute involves affirmative misrepresentations or concealment rather than a simple omission on the form, the case may fall under <a href="/real-estate-misrepresentation-disclosure-disputes">misrepresentation and disclosure dispute</a> theories that carry different remedies and longer deadlines.</p>
+                <p>Post-closing disputes are one of the most common forms of <a href="/real-estate-litigation">real estate litigation</a> we handle. Whether you are a buyer building a case or a seller responding to a demand letter, the strength of the claim almost always comes down to what can be documented.</p>
 
-                <p>For more information on disclosure disputes and seller liability in Illinois, visit our <a href="/real-estate-misrepresentation-disclosure-disputes">Real Estate Misrepresentation & Disclosure Disputes</a> page. For a broader overview of real estate disputes, see our <a href="/real-estate-litigation">Real Estate Litigation</a> practice area.</p>
+                <!-- CTA Box -->
+                <div class="service-cta-box">
+                    <h2>Dealing With a Post-Closing Dispute?</h2>
+                    <p>Whether you are a buyer who discovered undisclosed defects or a seller facing a disclosure claim, we can help you understand your rights and options. We offer free, confidential consultations to evaluate your situation.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>How long after closing can a buyer sue in Illinois?</h3>
+                        <p>Under the Illinois Residential Real Property Disclosure Act (<a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=&amp;Chapter=&amp;ActName=Residential%20Real%20Property%20Disclosure%20Act.&amp;ActID=2152&amp;ChapterID=62&amp;ChapAct=765+ILCS+77%2F&amp;SeqStart=300000&amp;SeqEnd=1700000" target="_blank" rel="noopener noreferrer">765 ILCS 77</a>), claims based on the disclosure report must be filed within one year from the earliest of possession, occupancy, or recording. However, if the seller actively concealed a defect or made fraudulent misrepresentations, a buyer may have common law fraud claims with longer limitations periods. The one-year period is strictly enforced for claims under the Disclosure Act and is not extended simply because the defect was discovered later.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does an "as-is" clause prevent a buyer from suing the seller?</h3>
+                        <p>No. An "as-is" clause means the seller will not make repairs before closing, but it does not eliminate the seller's obligation to disclose known material defects under the Disclosure Act. If the seller knew about a hidden defect and failed to disclose it, the buyer may still have a valid claim even if the contract contained "as-is" language. That said, an "as-is" clause can make it harder for buyers to recover for defects that were discoverable through a reasonable inspection.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What damages can a buyer recover in a disclosure dispute?</h3>
+                        <p>A buyer can typically recover actual damages, which includes the cost of repairing the undisclosed defect. In some cases, the buyer may recover the difference between the purchase price and the property's actual value with the defect known. The Disclosure Act also allows recovery of attorney fees in certain circumstances. If fraud is established, additional remedies may be available depending on the nature and severity of the seller's conduct.</p>
+                    </div>
+                </div>
 
                 <!-- Related Articles -->
                 <div class="blog-related-articles">
                     <h2>Related Articles</h2>
                     <ul>
+                        <li><a href="/blog/defective-construction-work-illinois">What to Do When You Discover Defective Construction Work in Illinois</a></li>
                         <li><a href="/blog/quiet-title-actions-chicago-guide">A Guide to Quiet Title Actions in Chicago</a></li>
-                        <li><a href="/blog/easements-property-values-illinois">Understanding How Easements Affect Property Values in Illinois</a></li>
                     </ul>
                 </div>
 
@@ -4520,13 +4815,6 @@
                     <button class="blog-share-btn" onclick="sharePost(this)" data-url="/blog/can-buyer-sue-seller-after-closing-illinois" data-title="Can a Buyer Sue a Seller After Closing in Illinois?">Share This &nbsp;
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
-                </div>
-
-                <!-- CTA Box -->
-                <div class="service-cta-box">
-                    <h2>Dealing With a Post-Closing Dispute?</h2>
-                    <p>Whether you're a buyer who discovered undisclosed defects or a seller facing a disclosure claim, we can help you understand your rights and options. We offer free, confidential consultations to evaluate your situation.</p>
-                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
                 </div>
             </article>
         </main>
@@ -4616,12 +4904,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#aac3c4ccc5eac8d8cbc4cec6cbddc9c2c3c9cbcdc584c9c5c7" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="8be2e5ede4cbe9f9eae5efe7eafce8e3e2e8eaece4a5e8e4e6">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4704,7 +4992,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
