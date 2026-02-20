@@ -39,7 +39,7 @@
                 "headline": "How Poorly Drafted Easements Create Legal Problems in Illinois",
                 "description": "How do poorly drafted easements create legal problems in Illinois? Learn what the law requires for a valid easement and where easement documents go wrong.",
                 "datePublished": "2025-12-01",
-                "dateModified": "2025-12-01",
+                "dateModified": "2026-02-19",
                 "author": {
                     "@type": "Person",
                     "name": "Todd R. Brand",
@@ -93,6 +93,44 @@
                     "postalCode": "60606",
                     "addressCountry": "US"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.brandlawchicago.com/blog/poorly-drafted-easements-illinois#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Can a poorly drafted easement be fixed after it is recorded?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. If both parties agree, a defective easement can be corrected by drafting and recording an amended easement agreement that addresses the deficiencies in the original document. If the parties cannot agree, the party seeking to fix or enforce the easement may need to file a lawsuit asking the court to reform the document or file a quiet title action to establish the easement's validity and scope."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does an unrecorded easement still apply in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "An unrecorded easement may still be enforceable between the original parties who signed it, but it creates significant problems for future buyers. Because recording puts subsequent purchasers on constructive notice of the easement's existence, an unrecorded easement may not be binding on a new owner who purchased the property without knowledge of it. Title companies will also typically refuse to insure an unrecorded easement."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who is responsible for maintaining an easement in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Unless the easement document specifies otherwise, the general rule in Illinois is that the easement holder - the owner of the dominant estate - has both the right and the responsibility to maintain the easement for its intended purpose. However, poorly drafted easements frequently fail to address maintenance obligations, which is one of the most common sources of disputes between neighboring property owners."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can a title company refuse to insure a property because of an easement?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Title companies routinely refuse to insure properties with defective, ambiguous, or unrecorded easements. A title company may also raise an exception for an easement that lacks a sufficient legal description, was not properly executed, or conflicts with other recorded interests on the property. These title exceptions can delay or prevent a sale or refinance until the easement issue is resolved."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -1940,7 +1978,7 @@
 
         .blog-article a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -1948,6 +1986,91 @@
 
         .blog-article a:hover {
             border-bottom-color: var(--blue-medium);
+        }
+
+        /* Mid-Article CTA */
+        .mid-cta-callout {
+            background: #fff;
+            color: rgb(30, 55, 90);
+            border: 2px solid rgb(30, 55, 90);
+            padding: 1.75rem 2rem;
+            border-radius: 6px;
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mid-cta-callout p {
+            color: rgb(30, 55, 90);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .mid-cta-callout p strong {
+            color: rgb(30, 55, 90);
+        }
+
+        .mid-cta-callout .cta-btn {
+            display: inline-block;
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .mid-cta-callout .cta-btn:hover {
+            background: rgb(30, 55, 90);
+            color: #f5d236;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Checklist Visual */
+        .blog-checklist-box {
+            background: #f5f7f9;
+            border-radius: 8px;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .blog-checklist-title {
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: rgb(30, 55, 90);
+            margin-bottom: 1rem;
+        }
+
+        .blog-checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .blog-checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .blog-checklist-item .check-icon {
+            color: #4a9e4a;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
         }
 
         .blog-related-articles {
@@ -2124,6 +2247,49 @@
             .blog-article p,
             .blog-article ul li {
                 font-size: 1rem;
+            }
+            .mid-cta-callout {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .blog-checklist-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mid-cta-callout {
+                padding: 1.25rem;
+            }
+            .mid-cta-callout p {
+                font-size: 0.95rem;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.7rem 1.75rem;
+                font-size: 0.95rem;
+            }
+            .blog-checklist-box {
+                padding: 1.25rem;
+            }
+            .blog-checklist-item {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .mid-cta-callout {
+                padding: 1.25rem 1rem;
+                margin: 2rem 0;
+            }
+            .mid-cta-callout p {
+                font-size: 0.9rem;
+                min-width: 0;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.9rem;
+                white-space: normal;
             }
         }
 
@@ -4408,7 +4574,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="How Poorly Drafted Easements Create Legal Problems in Illinois" class="service-hero-bg-img" width="2560" height="1000" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
+        <img src="blog-hero.webp" alt="How Poorly Drafted Easements Create Legal Problems in Illinois" class="service-hero-bg-img" width="1920" height="600" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <div class="service-hero-title">Blog</div>
@@ -4443,34 +4609,133 @@
                 <h1 class="blog-article-title">How Poorly Drafted Easements Create Legal Problems in Illinois</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-poorly-drafted-easements-hero.webp" alt="Blank directional signs pointing different directions representing poorly drafted easements" width="1600" height="900">
+                    <img src="blog-poorly-drafted-easements-hero.webp" alt="Blank directional signs pointing different directions representing poorly drafted easements" width="1200" height="675">
                 </div>
 
                 <p>Creating an easement seems straightforward. Two property owners agree that one can use part of the other's land for access, utilities, or drainage. They put something in writing, sign it, and move on. Everything works fine - until one of them tries to sell.</p>
-                <p>The title company flags the easement as defective. Or the buyer's lender won't close because the easement wasn't properly recorded. Or the new neighbor reads the easement differently than the original parties intended, and what started as a simple agreement turns into a dispute that costs more to resolve than it would have cost to draft correctly in the first place.</p>
-                <p>Easement problems almost always trace back to the document itself. When an easement isn't drafted with Illinois legal requirements in mind - or when it's drafted without enough specificity - the issues tend to surface at the worst possible time.</p>
+                <p>The title company flags the easement as defective. Or the buyer's lender will not close because the easement was not properly recorded. Or the new neighbor reads the easement differently than the original parties intended, and what started as a simple agreement turns into a dispute that costs more to resolve than it would have cost to draft correctly in the first place.</p>
+                <p>Easement problems almost always trace back to the document itself. When an easement is not drafted with Illinois legal requirements in mind - or when it is drafted without enough specificity - the issues tend to surface at the worst possible time.</p>
 
                 <h2>What Illinois Law Requires for a Valid Easement</h2>
-                <p>Illinois imposes specific requirements for an easement to be enforceable. Missing any of them can create problems down the road.</p>
-                <p>The Statute of Frauds requires easements to be in writing. Oral agreements about easement rights are generally unenforceable, with limited exceptions for prescriptive easements established through long-term use. The document must be signed by the grantor - the property owner creating the easement - and notarized according to Illinois requirements.</p>
-                <p>The easement must include a legal description sufficient for a surveyor to locate it on the ground. That means a legal description of both the dominant estate (the property benefiting from the easement) and the servient estate (the property burdened by it), along with the specific location, dimensions, and boundaries of the easement area. "The path along the back fence" is not a legal description.</p>
-                <p>Recording the easement with the county recorder is critical. Recording puts future buyers on notice that the easement exists. In Cook County, the recorder's office has specific formatting and fee requirements, and documents that don't comply may be rejected. An unrecorded easement may still be enforceable between the original parties, but it creates significant uncertainty for everyone who comes after them.</p>
+                <p>Illinois imposes specific requirements for an express easement to be enforceable. Missing any of them can create problems down the road.</p>
+                <p>The <a href="https://www.ilga.gov/Legislation/ILCS/Articles?ActID=2036&ChapterID=57" target="_blank" rel="noopener noreferrer">Statute of Frauds (740 ILCS 80)</a> requires easements to be in writing. Oral agreements about easement rights are generally unenforceable, with limited exceptions for prescriptive easements established through continuous, open, and adverse use over a 20-year period. The document must be signed by the grantor - the property owner creating the easement - and notarized according to Illinois requirements.</p>
+                <p>The easement must include a legal description sufficient for a surveyor to locate it on the ground. That means a legal description of both the dominant estate (the property benefiting from the easement) and the servient estate (the property burdened by it), along with the specific location, dimensions, and boundaries of the easement area. "The path along the back fence" is not a legal description. An ALTA survey can help confirm that the easement's legal description matches what is physically on the ground - and in our experience, it is surprising how often those two do not align.</p>
+                <p>Recording the easement with the county recorder is critical. Under the <a href="https://www.ilga.gov/Legislation/ILCS/Articles?ActID=2137&ChapterID=62" target="_blank" rel="noopener noreferrer">Illinois Conveyances Act (765 ILCS 5)</a>, recording puts future buyers on constructive notice that the easement exists. In Cook County, the recorder's office has specific formatting and fee requirements, and documents that do not comply may be rejected. An unrecorded easement may still be enforceable between the original parties, but it creates significant uncertainty for everyone who comes after them - and title companies will typically refuse to insure it.</p>
                 <p>While not required in every situation, providing consideration - payment or an exchange of value - strengthens enforceability and demonstrates that both parties entered the agreement with serious intent.</p>
 
                 <h2>Where Easement Documents Go Wrong</h2>
                 <p>Even when property owners get the basics right, the substance of the easement is often where problems develop.</p>
-                <p>Generic templates are a common starting point, but they rarely account for Illinois-specific requirements or the property's particular circumstances. A form designed for a rural access easement in another state may be completely inadequate for a shared driveway between residential lots in Cook County. These templates frequently omit contingencies, ignore title insurance considerations, and use language that doesn't hold up under scrutiny.</p>
-                <p>Vague or incomplete terms create some of the most expensive problems. A simple "access easement" doesn't specify whether that means foot traffic, passenger vehicles, or commercial trucks. It doesn't say whether the easement holder can pave the path, install a gate, or park on the easement area. It doesn't address who handles maintenance, snow removal, or repairs. The parties may have understood perfectly what they meant when they signed. A judge reading the same language five years later won't have that context.</p>
-                <p>Third-party interests are frequently overlooked. If the property granting the easement has a mortgage, the lender has an interest that matters. If a foreclosure occurs and the lender's lien has priority over the easement, the easement could be wiped out entirely. Homeowners associations may have covenants that restrict certain types of easements. Co-owners all need to consent. Skipping these steps can render an easement unenforceable regardless of how well the rest of the document is drafted.</p>
-                <p>Termination provisions are often missing entirely. Easements generally run with the land indefinitely unless the document specifies conditions for termination. What happens if a new public road eliminates the need for an access easement? What if the purpose becomes obsolete? What if one party wants to buy out the other's interest? Without termination language, the parties may have no clear path to end the easement short of going to court.</p>
+
+                <h3>Generic Templates</h3>
+                <p>Generic templates are a common starting point, but they rarely account for Illinois-specific requirements or the property's particular circumstances. A form designed for a rural access easement in another state may be completely inadequate for a shared driveway between residential lots in Cook County. These templates frequently omit contingencies, ignore title insurance considerations, and use language that does not hold up under scrutiny.</p>
+
+                <h3>Vague or Incomplete Terms</h3>
+                <p>Vague language creates some of the most expensive problems. A simple "access easement" does not specify whether that means foot traffic, passenger vehicles, or commercial trucks. It does not say whether the easement holder can pave the path, install a gate, or park on the easement area. It does not address who handles maintenance, snow removal, or repairs. The parties may have understood perfectly what they meant when they signed. A judge reading the same language five years later will not have that context.</p>
+
+                <h3>Overlooked Third-Party Interests</h3>
+                <p>If the property granting the easement has a mortgage, the lender has an interest that matters. If a foreclosure occurs and the lender's lien has priority over the easement, the easement could be wiped out entirely. Homeowners associations may have covenants that restrict certain types of easements. Co-owners all need to consent. Skipping these steps can render an easement unenforceable regardless of how well the rest of the document is drafted.</p>
+
+                <h3>Missing Termination Provisions</h3>
+                <p>An easement appurtenant runs with the land indefinitely unless the document specifies conditions for termination. What happens if a new public road eliminates the need for an access easement? What if the purpose becomes obsolete? What if one party wants to buy out the other's interest? Without termination language, the parties may have no clear path to end the easement short of going to court - through release, merger, abandonment, or a quiet title action.</p>
+
+                <!-- Checklist Visual -->
+                <div class="blog-checklist-box">
+                    <div class="blog-checklist-title">What a Properly Drafted Easement Should Address</div>
+                    <div class="blog-checklist-grid">
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Legal descriptions of both properties</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Exact location, dimensions, and boundaries</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Permitted uses and prohibited activities</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Maintenance and repair responsibilities</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Whether the easement is appurtenant or in gross</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Conditions for termination or modification</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Lender and co-owner consents</span>
+                        </div>
+                        <div class="blog-checklist-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span>Recording with the county recorder</span>
+                        </div>
+                    </div>
+                </div>
 
                 <h2>What Happens When a Defective Easement Surfaces</h2>
                 <p>The consequences of a poorly drafted easement tend to emerge during transactions - when a property is being sold, refinanced, or developed and someone finally takes a close look at the document.</p>
-                <p>Title companies routinely refuse to insure properties with defective or ambiguous easements. That refusal can kill a sale or block a refinance. Buyers walk away from deals when they can't get clear answers about what the easement allows. Lenders won't fund loans on properties with unresolved title issues.</p>
-                <p>When disputes reach litigation, scope of use conflicts are among the most common. The parties disagree about what activities the easement permits, and the vague language in the document doesn't resolve the question. Maintenance conflicts are close behind - especially when one party makes improvements to the easement area and demands the other share the cost. Interference claims, where the burdened property owner blocks or restricts access, often require court intervention to sort out.</p>
+                <p>Title companies routinely refuse to insure properties with defective or ambiguous easements, or they raise exceptions that effectively exclude the easement from coverage. That refusal can kill a sale or block a refinance. Buyers walk away from deals when they cannot get clear answers about what the easement allows. Lenders will not fund loans on properties with unresolved title issues.</p>
+                <p>When disputes reach litigation, scope of use conflicts are among the most common. The parties disagree about what activities the easement permits - whether it allows commercial vehicles on an access road, or whether a utility easement extends to cable and internet lines that did not exist when the easement was written. Maintenance disputes are close behind, especially when one party makes improvements to the easement area and demands the other share the cost. Interference claims, where the servient estate owner blocks or restricts access with fences, gates, or structures, often require court intervention to sort out.</p>
+
+                <!-- Mid-article CTA -->
+                <div class="mid-cta-callout">
+                    <p><strong>Dealing with a defective easement?</strong> Whether you need to fix, enforce, or challenge an easement, the earlier you act the more options you have - especially if a sale or refinance is on the line.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <h2>How to Fix a Defective Easement</h2>
+                <p>A defective easement does not necessarily mean starting over. How it gets corrected depends on whether the parties can cooperate and what specifically is wrong with the document.</p>
+                <p>If both parties agree the easement needs to be fixed, the most direct approach is to draft and record an <strong>amended easement agreement</strong> that corrects the deficiencies in the original. This might mean adding a proper legal description, clarifying the scope of permitted use, assigning maintenance responsibilities, or adding termination provisions. The amended document is recorded with the county recorder alongside the original, and the title company can then insure the corrected easement.</p>
+                <p>If the parties cannot agree, the options become more formal. A court can <strong>reform</strong> an easement when the written document does not reflect what the parties actually intended - for example, if a legal description contains a surveying error that both sides acknowledge. Reformation corrects the document to match the original intent.</p>
+                <p>In cases where the dispute is about whether the easement exists at all, or about the scope of rights it grants, a <strong><a href="/blog/quiet-title-actions-chicago-guide">quiet title action</a></strong> may be necessary. This asks the court to determine and declare the parties' respective rights in the property, which can resolve ambiguities that the original easement document left open.</p>
+                <p>In our experience, the cost of correcting a defective easement after the fact - whether through negotiation or litigation - is almost always significantly more than the cost of having it drafted properly to begin with. When an easement surfaces as a problem during a transaction, time pressure makes everything more expensive and limits your options.</p>
+
+                <h2>Easements Created Without a Written Agreement</h2>
+                <p>Not every easement starts with a signed document. Illinois recognizes several types of easements that arise without an express written grant, and understanding them matters because they are often the hardest to resolve when disputes occur.</p>
+                <p>An <strong>easement by necessity</strong> may be established when a parcel of land is landlocked and has no other legal access to a public road. The necessity must arise from the division of a previously unified tract. An <strong>easement by implication</strong> can arise when a property owner used one part of their land for the benefit of another part in an apparent, continuous manner, and then sold one of the parcels without formally granting an easement. In both cases, the party claiming the easement must establish the required elements by clear and convincing evidence.</p>
+                <p>A <strong>prescriptive easement</strong> can be established through continuous, open, exclusive, and adverse use of another's property for 20 years or more. Unlike express easements, prescriptive easements are not created by agreement - they are imposed by law based on the conduct of the parties over time. These claims frequently arise in disputes over shared driveways, paths, and access roads where the use was never formalized in writing.</p>
+                <p>Each of these easement types carries its own evidentiary requirements and can be difficult to prove or defend against without proper legal guidance.</p>
+
                 <p>These disputes are expensive, slow, and almost always avoidable. A properly drafted easement that complies with Illinois law, addresses the specific circumstances of the property, and anticipates how the easement will function over time protects both parties and survives changes in ownership without creating uncertainty.</p>
 
-                <p>For more information on property disputes involving easements or title issues, visit our <a href="/real-estate-litigation">Real Estate Litigation</a> practice area page.</p>
+                <p>For more information on property disputes involving easements or title issues, visit our <a href="/real-estate-litigation">Real Estate Litigation</a> practice area page. If a title defect is complicating a sale, our guide on <a href="/blog/quiet-title-actions-chicago-guide">quiet title actions in Chicago</a> explains how those are resolved. For a broader look at how easements affect property values and transactions, see our post on <a href="/blog/easements-property-values-illinois">how easements affect property values in Illinois</a>.</p>
+
+                <!-- CTA Box -->
+                <div class="service-cta-box">
+                    <h2>Questions About an Easement on Your Property?</h2>
+                    <p>Whether you need to draft a new easement, fix a defective one, or resolve a dispute over easement rights, we can help you understand your options and protect your property interests. We offer free, confidential consultations.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Can a poorly drafted easement be fixed after it is recorded?</h3>
+                        <p>Yes. If both parties agree, a defective easement can be corrected by drafting and recording an amended easement agreement that addresses the deficiencies in the original document. If the parties cannot agree, the party seeking to fix or enforce the easement may need to file a lawsuit asking the court to reform the document or file a <a href="/blog/quiet-title-actions-chicago-guide">quiet title action</a> to establish the easement's validity and scope.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does an unrecorded easement still apply in Illinois?</h3>
+                        <p>An unrecorded easement may still be enforceable between the original parties who signed it, but it creates significant problems for future buyers. Because recording puts subsequent purchasers on constructive notice of the easement's existence, an unrecorded easement may not be binding on a new owner who purchased the property without knowledge of it. Title companies will also typically refuse to insure an unrecorded easement.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Who is responsible for maintaining an easement in Illinois?</h3>
+                        <p>Unless the easement document specifies otherwise, the general rule in Illinois is that the easement holder - the owner of the dominant estate - has both the right and the responsibility to maintain the easement for its intended purpose. However, poorly drafted easements frequently fail to address maintenance obligations, which is one of the most common sources of disputes between neighboring property owners.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can a title company refuse to insure a property because of an easement?</h3>
+                        <p>Yes. Title companies routinely refuse to insure properties with defective, ambiguous, or unrecorded easements. A title company may also raise an exception for an easement that lacks a sufficient legal description, was not properly executed, or conflicts with other recorded interests on the property. These title exceptions can delay or prevent a sale or refinance until the easement issue is resolved.</p>
+                    </div>
+                </div>
 
                 <!-- Related Articles -->
                 <div class="blog-related-articles">
@@ -4487,13 +4752,6 @@
                     <button class="blog-share-btn" onclick="sharePost(this)" data-url="/blog/poorly-drafted-easements-illinois" data-title="How Poorly Drafted Easements Create Legal Problems in Illinois">Share This &nbsp;
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
-                </div>
-
-                <!-- CTA Box -->
-                <div class="service-cta-box">
-                    <h2>Questions About an Easement on Your Property?</h2>
-                    <p>Whether you need to draft a new easement, fix a defective one, or resolve a dispute over easement rights, we can help. We offer free, confidential consultations.</p>
-                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
                 </div>
             </article>
         </main>
@@ -4583,12 +4841,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#c8a1a6aea788aabaa9a6aca4a9bfaba0a1aba9afa7e6aba7a5" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="cba2a5ada48ba9b9aaa5afa7aabca8a3a2a8aaaca4e5a8a4a6">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4671,7 +4929,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
@@ -4872,13 +5130,4 @@
             navigator.clipboard.writeText(url).then(function() {
                 const original = btn.innerHTML;
                 btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHTML = original; }, 2000);
-            });
-        }
-    }
-</script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="/calendly-form.js"></script>
-    
-</body>
-</html>
+                setTimeout(function() { btn.innerHT

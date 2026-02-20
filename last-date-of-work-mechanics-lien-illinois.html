@@ -39,7 +39,7 @@
                 "headline": "What Counts as the Last Date of Work on a Mechanics Lien in Illinois?",
                 "description": "What counts as the last date of work for a mechanics lien in Illinois? Learn which activities extend lien deadlines and which do not under the Illinois Mechanics Lien Act.",
                 "datePublished": "2025-12-19",
-                "dateModified": "2025-12-19",
+                "dateModified": "2026-02-19",
                 "author": {
                     "@type": "Person",
                     "name": "Todd R. Brand",
@@ -93,6 +93,43 @@
                     "postalCode": "60606",
                     "addressCountry": "US"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Does punch list work extend my mechanics lien deadline in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Illinois courts have consistently held that punch list work - such as touching up paint, replacing a cracked tile, or adjusting hardware - is considered a correction to completed work, not new furnishing. Punch list items do not restart the 90-day notice period or the four-month recording deadline. Your last date of work is calculated from when you completed your substantive scope, not from when you finished punch list corrections."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What happens if I file my mechanics lien one day late in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "If you record your lien more than four months after your last date of substantive work, the lien loses priority against third parties such as subsequent purchasers and lenders. You may still be able to enforce the lien against the original property owner if you file within two years, but the loss of priority significantly reduces the lien's practical value. If you miss the two-year deadline entirely, the lien expires and cannot be enforced at all."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does a change order restart my mechanics lien deadline in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It can, but only if the change order involves substantive work that is genuinely related to your original contract. The additional scope must be authorized and documented. If the work is too far removed from your original contract, a court may treat it as a new contract rather than a change order - which means it would not extend your lien deadline for the original scope of work."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I extend my lien deadline by returning to the jobsite to do minor work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Illinois courts will not recognize a return trip that serves no legitimate purpose other than extending lien rights. In CLP II, Inc. v. Telkow Construction Co., 2014 IL App (1st) 133587-U, the First District held that trivial activities such as sending documents to a realtor or making changes to a computer file did not constitute substantial work. If a court determines that a return visit was a token trip to restart the clock, it will calculate your deadlines from the date you actually completed your substantive work."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -1513,6 +1550,105 @@
             font-size: 1.15rem;
         }
 
+        /* Mid-Article CTA */
+        .mid-cta-callout {
+            background: #fff;
+            color: rgb(30, 55, 90);
+            border: 2px solid rgb(30, 55, 90);
+            padding: 1.75rem 2rem;
+            border-radius: 6px;
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mid-cta-callout p {
+            color: rgb(30, 55, 90);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .mid-cta-callout p strong {
+            color: rgb(30, 55, 90);
+        }
+
+        .mid-cta-callout .cta-btn {
+            display: inline-block;
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .mid-cta-callout .cta-btn:hover {
+            background: rgb(30, 55, 90);
+            color: #f5d236;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Blog Comparison Table */
+        .blog-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 1rem;
+        }
+
+        .blog-comparison-table thead th {
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .blog-comparison-table tbody td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .blog-comparison-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .blog-comparison-table tbody tr:hover {
+            background: #eef3f8;
+        }
+
+        /* Table Fade Wrapper */
+        .blog-table-fade-wrapper {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .blog-table-fade-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .blog-table-scroll-hint {
+            display: none;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
         /* FAQ Section */
         .faq-section {
             margin-top: 3rem;
@@ -1940,7 +2076,7 @@
 
         .blog-article a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -3853,6 +3989,25 @@
                 padding: 2rem 1.5rem;
             }
 
+            .mid-cta-callout {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .blog-comparison-table {
+                font-size: 0.92rem;
+                min-width: 580px;
+            }
+
+            .blog-comparison-table thead th,
+            .blog-comparison-table tbody td {
+                padding: 0.65rem 0.75rem;
+            }
+            .blog-table-scroll-hint {
+                display: block;
+            }
+
             .footer-logo img {
                 height: 38px;
             }
@@ -3935,6 +4090,35 @@
             .service-main p,
             .service-main ul li {
                 font-size: 1rem;
+            }
+
+            .mid-cta-callout {
+                padding: 1.25rem;
+            }
+
+            .mid-cta-callout p {
+                font-size: 0.95rem;
+            }
+
+            .mid-cta-callout .cta-btn {
+                padding: 0.7rem 1.75rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .mid-cta-callout {
+                padding: 1.25rem 1rem;
+                margin: 2rem 0;
+            }
+            .mid-cta-callout p {
+                font-size: 0.9rem;
+                min-width: 0;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.9rem;
+                white-space: normal;
             }
         }
 
@@ -4408,7 +4592,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="What Counts as the Last Date of Work on a Mechanics Lien in Illinois?" class="service-hero-bg-img" width="2560" height="1000" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
+        <img src="blog-hero.webp" alt="What Counts as the Last Date of Work on a Mechanics Lien in Illinois?" class="service-hero-bg-img" width="1920" height="600" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <div class="service-hero-title">Blog</div>
@@ -4443,76 +4627,152 @@
                 <h1 class="blog-article-title">What Counts as the Last Date of Work on a Mechanics Lien in Illinois?</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-last-date-work-hero.webp" alt="Hourglass on a calendar representing mechanics lien deadlines and the last date of work" width="1600" height="900">
+                    <img src="blog-last-date-work-hero.webp" alt="Hourglass on a calendar representing mechanics lien deadlines and the last date of work" width="1200" height="675">
                 </div>
 
-                <p>If you're a contractor, subcontractor, or other lien claimant in Illinois, your mechanics lien rights depend on one date more than any other: the last date you furnished labor or materials to the project.</p>
-                <p>Get that date wrong, and everything falls apart. Your 90-day notice is late. Your four-month recording deadline passes. Your lien gets challenged and thrown out - not because you weren't owed the money, but because you miscounted.</p>
-                <p>The frustrating part is that determining the last date of work isn't always straightforward. Not every trip to the jobsite counts. Not every invoice extends the deadline. And the line between work that extends your lien rights and work that doesn't can be thinner than most contractors realize.</p>
-                <p>Here's what you need to know.</p>
+                <p>If you are a contractor, subcontractor, or other lien claimant in Illinois, your mechanics lien rights depend on one date more than any other: the last date you furnished labor or materials to the project.</p>
+                <p>Get that date wrong, and everything falls apart. Your 90-day notice is late. Your four-month recording deadline passes. Your lien gets challenged and thrown out - not because you were not owed the money, but because the technical requirements of the Illinois Mechanics Lien Act were not followed.</p>
+                <p>The frustrating part is that determining the last date of work is not always straightforward. Not every trip to the jobsite counts. Not every invoice extends the deadline. And the line between work that extends your lien rights and work that does not can be thinner than most contractors realize.</p>
+                <p>Here is what you need to know.</p>
 
                 <h2>Why the Last Date of Work Matters So Much</h2>
-                <p>Under the Illinois Mechanics Lien Act, the last date you performed labor or delivered materials to a project is the starting point for two critical deadlines.</p>
-                <p>First, if you're a subcontractor who doesn't have a direct contract with the property owner, you have to serve a notice of your lien claim on the owner within 90 days of your last date of work. Miss that window and your lien rights are gone - no exceptions, no extensions, no do-overs.</p>
-                <p>Second, every lien claimant - whether general contractor, subcontractor, or material supplier - must record their lien with the county recorder within four months of their last date of furnishing labor or materials. File on day one of month five and you're too late.</p>
-                <p>These deadlines are strict. Illinois courts have repeatedly held that even a single day late is fatal. And the clock starts ticking from your actual last date of substantive work - not the date you sent your final invoice, not the date the owner stopped returning your calls, and not the date you decided you weren't going to get paid.</p>
+                <p>Under the <a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2254&ChapterID=63" target="_blank" rel="noopener">Illinois Mechanics Lien Act</a> (770 ILCS 60), the last date you performed labor or delivered materials to a project is the starting point for three critical deadlines.</p>
+                <p>First, if you are a subcontractor who does not have a direct contract with the property owner, you must serve a notice of your lien claim on the owner within 90 days of your last date of work under <a href="https://www.ilga.gov/documents/legislation/ilcs/documents/077000600K24.htm" target="_blank" rel="noopener">Section 24</a> of the Act. There is one important exception: if the general contractor provided the owner with a sworn statement under <a href="https://www.ilga.gov/documents/legislation/ilcs/documents/077000600K5.htm" target="_blank" rel="noopener">Section 5</a> that lists the subcontractor and the amount due, the 90-day notice may not be required. The Illinois Supreme Court confirmed this in <em>Weather-Tite, Inc. v. University of St. Francis</em>, 233 Ill. 2d 385 (2009), holding that a sworn statement listing a subcontractor and the balance owed creates a duty on the owner to retain sufficient funds to pay that claim. However, if the sworn statement understates the amount owed, the subcontractor is only protected to the extent of the amount listed. And if the subcontractor is not listed at all, lien rights are lost without a timely 90-day notice. Because subcontractors rarely know what the general contractor included in the sworn statement, it is always safer to serve the Section 24 notice independently.</p>
+                <p>Second, in order to have lien priority over lenders, mortgagees, and subsequent purchasers, all lien claimants - whether general contractor, subcontractor, or material supplier - must record their lien with the county recorder within four months of their last date of furnishing labor or materials under <a href="https://www.ilga.gov/documents/legislation/ilcs/documents/077000600K7.htm" target="_blank" rel="noopener">Section 7</a>. This is arguably the most important deadline to remember and follow, because most property owners have mortgages. Having priority over the lender gives you significantly more leverage than if you record outside the four-month window, where your lien is only enforceable against the original owner.</p>
+                <p>Third, every lien claimant must file suit to foreclose the lien within two years of the last date of work. If the two-year window passes without a lawsuit being filed, the lien expires entirely and cannot be revived. This deadline applies regardless of whether you recorded the lien within four months or later.</p>
+
+                <div class="blog-table-fade-wrapper">
+                <table class="blog-comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Deadline</th>
+                            <th>Who It Applies To</th>
+                            <th>Time Limit</th>
+                            <th>Consequence of Missing It</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Section 24 Notice</td>
+                            <td>Subcontractors only</td>
+                            <td>90 days from last date of work</td>
+                            <td>Lien rights lost unless subcontractor is listed on GC's sworn statement</td>
+                        </tr>
+                        <tr>
+                            <td>Section 7 Lien Recording</td>
+                            <td>All claimants</td>
+                            <td>4 months from last date of work</td>
+                            <td>Lien loses priority over third parties</td>
+                        </tr>
+                        <tr>
+                            <td>Foreclosure Suit</td>
+                            <td>All claimants</td>
+                            <td>2 years from last date of work</td>
+                            <td>Lien expires and becomes unenforceable</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <p class="blog-table-scroll-hint">Swipe to see full table</p>
+
+                <p>These deadlines are strict. Illinois courts have repeatedly held that even a single day late is fatal. In our experience, the most common mistake lien claimants make is missing a statutory deadline because they do not know how to properly calculate their last date of work. The clock starts ticking from your actual last date of substantive work, not the date you sent your final invoice, not the date the owner stopped returning your calls, and not the date you decided you were not going to get paid.</p>
 
                 <h2>What Counts as Substantive Work</h2>
-                <p>Work that extends your last date of furnishing is work that advances the project toward completion. This includes original scope work such as installation, construction, fabrication, or assembly that's part of your contract. It includes material deliveries - bringing materials to the jobsite that are incorporated into the project. And it includes change order work, meaning additional scope that's been authorized by the owner or general contractor and relates to the original contract.</p>
+                <p>Work that extends your last date of furnishing is work that advances the project toward completion. This includes original scope work such as installation, construction, fabrication, or assembly that is part of your contract. It includes material deliveries - bringing materials to the jobsite that are incorporated into the project. And it includes change order work, meaning additional scope that has been authorized by the owner or general contractor and relates to the original contract.</p>
                 <p>The key question is whether the work was necessary to complete the project. If it was, it counts.</p>
-                <p>For example, if you're an electrician and your last day of rough-in was March 15, but you came back on April 20 to install fixtures as part of your original scope, your last date of work is April 20. If the owner then issued a change order for an additional outlet and you installed it on May 5, your last date is May 5 - because that change order work relates to your original contract and required substantive effort.</p>
+                <p>For example, if you are an electrician and your last day of rough-in was March 15, but you came back on April 20 to install fixtures as part of your original scope, your last date of work is April 20. If the owner then issued a change order for an additional outlet and you installed it on May 5, your last date is May 5 - because that change order work relates to your original contract and required substantive effort.</p>
 
-                <h2>What Doesn't Count</h2>
+                <h2>What Does Not Count</h2>
                 <p>This is where contractors get tripped up. Certain types of work - even if performed on the jobsite - do not extend your last date of furnishing under the Act.</p>
 
                 <h3>Warranty Work</h3>
-                <p>If you installed a furnace in January and came back in June to repair a malfunction, that return trip doesn't extend your lien deadline. Warranty repairs are considered remedial - they address something that was already completed, not something that still needs to be built. Your last date of work is still January.</p>
+                <p>If you installed a furnace in January and came back in June to repair a malfunction, that return trip does not extend your lien deadline. Warranty repairs are considered remedial - they address something that was already completed, not something that still needs to be built. Your last date of work is still January.</p>
 
                 <h3>Punch List Items</h3>
-                <p>Replacing a cracked tile, touching up paint, adjusting a door that doesn't close properly - these are corrections to completed work, not new furnishing. Courts have consistently held that punch list work does not extend lien deadlines.</p>
+                <p>Replacing a cracked tile, touching up paint, adjusting a door that does not close properly - these are corrections to completed work, not new furnishing. Courts have consistently held that punch list work does not extend lien deadlines. If you need to understand how <a href="/blog/defective-construction-work-illinois">defective construction work</a> is treated differently from incomplete work, the distinction matters here as well: remedial repairs do not restart the clock.</p>
 
                 <h3>Trivial or Token Return Trips</h3>
-                <p>This is the one that gets contractors in real trouble. Some contractors, realizing their lien deadline is approaching, will go back to the jobsite and perform minor touch-ups or adjustments specifically to restart the clock. Illinois courts see right through this. A return trip that serves no legitimate purpose other than extending lien rights will not be recognized as substantive work, and the court will calculate your deadlines from the date you actually finished your real work.</p>
+                <p>This is the one that gets contractors in real trouble. Some contractors, realizing their lien deadline is approaching, will go back to the jobsite and perform minor touch-ups or adjustments specifically to restart the clock. Illinois courts see right through this. In <em>CLP II, Inc. v. Telkow Construction Co.</em>, 2014 IL App (1st) 133587-U, the First District Appellate Court held that sending documents to a realtor for a brochure and making changes to a computer file did not constitute substantial work sufficient to extend lien filing deadlines. A return trip that serves no legitimate purpose other than extending lien rights will not be recognized as substantive work, and the court will calculate your deadlines from the date you actually finished your real work.</p>
 
                 <h3>Maintenance</h3>
-                <p>Coming back months later to clean an HVAC system, service equipment you installed, or perform routine upkeep is maintenance - not furnishing. It doesn't extend your deadlines.</p>
+                <p>Coming back months later to clean an HVAC system, service equipment you installed, or perform routine upkeep is maintenance - not furnishing. It does not extend your deadlines.</p>
 
-                <p>The distinction comes down to whether the work was needed to complete the job or whether it was needed to maintain or repair something that was already done. Completion work counts. Everything else doesn't.</p>
+                <p>The distinction comes down to whether the work was needed to complete the job or whether it was needed to maintain or repair something that was already done. Completion work counts. Everything else does not.</p>
 
                 <h2>The Change Order Gray Area</h2>
                 <p>Change orders can extend your last date of work - but only when the additional scope is genuinely related to your original contract and involves substantive work.</p>
-                <p>Here's how that works in practice. A framing contractor finishes his original scope on June 1. The owner then issues a change order to add a wall in the basement, and the framing contractor completes that work on July 10. Because the change order is directly related to the original framing contract and requires real work, the last date of furnishing moves to July 10.</p>
-                <p>But change orders have limits. The additional work has to be authorized and documented. A contractor can't unilaterally decide to perform extra work and then claim it extends their lien timeline. The change order should be in writing, tied to the original contract, and involve more than a trivial adjustment.</p>
+                <p>Here is how that works in practice. A framing contractor finishes his original scope on June 1. The owner then issues a change order to add a wall in the basement, and the framing contractor completes that work on July 10. Because the change order is directly related to the original framing contract and requires real work, the last date of furnishing moves to July 10.</p>
+                <p>But change orders have limits. The additional work has to be authorized and documented. A contractor cannot unilaterally decide to perform extra work and then claim it extends their lien timeline. The change order should be in writing, tied to the original contract, and involve more than a trivial adjustment.</p>
+                <p>In our experience, the most common disputes in this area involve verbal change orders that were never documented. When a property owner later challenges the lien deadline, the contractor has no written record showing the additional scope was authorized - which makes it much harder to prove the change order work legitimately extended the last date of furnishing.</p>
                 <p>If the additional work is too far removed from the original scope, it may not be treated as a change order at all. Instead, it might be classified as a new contract - which has very different implications for lien rights.</p>
 
                 <h2>When New Work Means a New Contract</h2>
                 <p>Sometimes an owner or general contractor asks you to come back and do something completely unrelated to your original scope. When that happens, the new work typically creates a separate contract - even if nobody signs a new written agreement.</p>
-                <p>Consider this scenario: a plumber is hired to rough in and finish all plumbing for a kitchen renovation. After the kitchen is complete, the homeowner asks the same plumber to install a new bathroom vanity in a different part of the house. That bathroom work is a separate contract. If the plumber doesn't get paid for the kitchen work, the last date of furnishing for lien purposes is when the kitchen plumbing was finished - not when the vanity was installed.</p>
-                <p>And if the plumber isn't paid for either project, they'd need to file two separate lien claims - one for each contract.</p>
-                <p>The line between a change order and a new contract isn't always obvious. Factors that courts consider include whether the additional work relates to the same scope, whether it was contemplated by the original agreement, whether it was performed in the same area of the project, and whether separate pricing or payment terms were established.</p>
-                <p>When it's unclear, err on the side of caution: calculate your deadlines from the earlier date and protect your lien rights accordingly.</p>
+                <p>Consider this scenario: a plumber is hired to rough in and finish all plumbing for a kitchen renovation. After the kitchen is complete, the homeowner asks the same plumber to install a new bathroom vanity in a different part of the house. That bathroom work is a separate contract. If the plumber does not get paid for the kitchen work, the last date of furnishing for lien purposes is when the kitchen plumbing was finished - not when the vanity was installed.</p>
+                <p>And if the plumber is not paid for either project, they would need to file two separate lien claims - one for each contract.</p>
+                <p>The line between a change order and a new contract is not always obvious. Factors that courts consider include whether the additional work relates to the same scope, whether it was contemplated by the original agreement, whether it was performed in the same area of the project, and whether separate pricing or payment terms were established.</p>
+                <p>When it is unclear, err on the side of caution: calculate your deadlines from the earlier date and protect your lien rights accordingly.</p>
+
+                <!-- Mid-CTA -->
+                <div class="mid-cta-callout">
+                    <p><strong>If you are unsure whether your recent work qualifies as a change order or a new contract - or whether it extends your lien deadline at all - do not guess.</strong> A miscalculation can cost you your lien rights entirely. We offer free, confidential consultations to review your timeline and protect your deadlines before they expire.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
 
                 <h2>Practical Steps to Protect Your Lien Deadlines</h2>
-                <p>Knowing what counts and what doesn't is only useful if you're tracking the right information in real time. Here are some steps that can help.</p>
+                <p>Knowing what counts and what does not is only useful if you are tracking the right information in real time. Here are some steps that can help.</p>
                 <p><strong>Keep detailed daily logs.</strong> Document what work was performed each day, by whom, and where. If you ever need to prove your last date of substantive work, contemporaneous records are far more persuasive than trying to reconstruct a timeline months later.</p>
                 <p><strong>Track change orders separately.</strong> Every change order should be documented in writing, with a clear description of the additional scope and the date the work was completed. This protects you if you need to show that the change order work legitimately extended your last date of furnishing.</p>
-                <p><strong>Don't confuse your last invoice with your last day of work.</strong> Contractors often assume the date on their final pay application is their last date of work. It's not. The relevant date is when you last performed labor or delivered materials - not when you billed for it.</p>
-                <p><strong>Know your deadlines cold.</strong> Once your substantive work is done, count forward. If you're a subcontractor without a direct contract with the owner, you have 90 days to serve notice. All claimants have four months to record the lien. Mark those dates on your calendar and treat them as immovable.</p>
-                <p><strong>When in doubt, file early.</strong> If there's any ambiguity about whether your most recent work qualifies as substantive furnishing, calculate your deadline from the earlier date. Filing a lien a few weeks early costs you nothing. Filing a day late costs you everything.</p>
+                <p><strong>Do not confuse your last invoice with your last day of work.</strong> Contractors often assume the date on their final pay application is their last date of work. It is not. The relevant date is when you last performed labor or delivered materials - not when you billed for it.</p>
+                <p><strong>Know your deadlines cold.</strong> Once your substantive work is done, count forward. If you are a subcontractor without a direct contract with the owner, you have 90 days to serve notice. All claimants have four months to record the lien and two years to file suit. Mark those dates on your calendar and treat them as immovable.</p>
+                <p><strong>When in doubt, file early.</strong> If there is any ambiguity about whether your most recent work qualifies as substantive furnishing, calculate your deadline from the earlier date. Filing a lien a few weeks early costs you nothing. Filing a day late costs you everything.</p>
 
                 <h2>Getting the Date Wrong Can Cost You the Entire Claim</h2>
-                <p>The last date of work isn't just a technicality. It's the foundation that every mechanics lien deadline is built on. Contractors who miscalculate - by counting warranty work, relying on a token return trip, or confusing a new contract with a change order - risk losing their lien rights entirely, regardless of how much money they're owed.</p>
-                <p>If you're unsure when your last date of substantive work occurred, or if your situation involves change orders, punch list disputes, or overlapping contracts at the same project, it's worth getting a clear answer before your deadlines pass.</p>
+                <p>The last date of work is not just a technicality. It is the foundation that every mechanics lien deadline is built on. Contractors who miscalculate - by counting warranty work, relying on a token return trip, or confusing a new contract with a change order - risk losing their lien rights entirely, regardless of how much money they are owed.</p>
+                <p>If you are unsure when your last date of substantive work occurred, or if your situation involves change orders, punch list disputes, or overlapping contracts at the same project, it is worth getting a clear answer before your deadlines pass.</p>
 
-                <p>For more information on mechanics lien rights and deadlines in Illinois, visit our <a href="/mechanics-liens">Mechanics Liens</a> practice area page or our <a href="/mechanics-liens-faqs">Mechanics Liens FAQ</a>. If you need to understand how to challenge or remove a lien, read our posts on <a href="/blog/how-to-challenge-mechanics-lien-illinois">how to challenge a mechanics lien claim in Illinois</a> and <a href="/blog/how-to-remove-mechanics-lien-illinois">how to remove a mechanics lien in Illinois</a>.</p>
+                <p>For more information on mechanics lien rights and deadlines in Illinois, visit our <a href="/mechanics-liens">Mechanics Liens</a> practice area page or our <a href="/mechanics-liens-faqs">Mechanics Liens FAQ</a>. If you need to understand how to challenge or remove a lien, read our posts on <a href="/blog/how-to-challenge-mechanics-lien-illinois">how to challenge a mechanics lien claim in Illinois</a> and <a href="/blog/how-to-remove-mechanics-lien-illinois">removing a mechanics lien in Illinois</a>. And if a payment dispute has escalated beyond lien deadlines into broader issues like breach of contract or defective work, our <a href="/construction-disputes">construction dispute</a> practice covers those situations as well.</p>
 
+                <!-- CTA Box -->
+                <div class="service-cta-box">
+                    <h2>Not Sure When Your Lien Deadline Runs?</h2>
+                    <p>If you are a contractor or subcontractor trying to determine whether your lien rights are still intact, we can help. We offer free, confidential consultations to review your situation and advise you on deadlines, notice requirements, and next steps.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Does punch list work extend my mechanics lien deadline in Illinois?</h3>
+                        <p>No. Illinois courts have consistently held that punch list work - such as touching up paint, replacing a cracked tile, or adjusting hardware - is considered a correction to completed work, not new furnishing. Punch list items do not restart the 90-day notice period or the four-month recording deadline. Your last date of work is calculated from when you completed your substantive scope, not from when you finished punch list corrections.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What happens if I file my mechanics lien one day late in Illinois?</h3>
+                        <p>If you record your lien more than four months after your last date of substantive work, the lien loses priority against third parties such as subsequent purchasers and lenders. You may still be able to enforce the lien against the original property owner if you file within two years, but the loss of priority significantly reduces the lien's practical value. If you miss the two-year deadline entirely, the lien expires and cannot be enforced at all.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does a change order restart my mechanics lien deadline in Illinois?</h3>
+                        <p>It can, but only if the change order involves substantive work that is genuinely related to your original contract. The additional scope must be authorized and documented. If the work is too far removed from your original contract, a court may treat it as a new contract rather than a change order - which means it would not extend your lien deadline for the original scope of work.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I extend my lien deadline by returning to the jobsite to do minor work?</h3>
+                        <p>No. Illinois courts will not recognize a return trip that serves no legitimate purpose other than extending lien rights. In <em>CLP II, Inc. v. Telkow Construction Co.</em>, 2014 IL App (1st) 133587-U, the First District held that trivial activities such as sending documents to a realtor or making changes to a computer file did not constitute substantial work. If a court determines that a return visit was a token trip to restart the clock, it will calculate your deadlines from the date you actually completed your substantive work.</p>
+                    </div>
+
+                    <p>Have more questions about mechanics liens in Illinois? Visit our <a href="/mechanics-liens-faqs">Mechanics Liens FAQ page</a> for additional answers.</p>
+                </div>
 
                 <!-- Related Articles -->
                 <div class="blog-related-articles">
                     <h2>Related Articles</h2>
                     <ul>
                         <li><a href="/blog/how-to-challenge-mechanics-lien-illinois">How to Challenge a Mechanics Lien Claim in Illinois: Common Defects and Legal Strategies</a></li>
-                        <li><a href="/blog/how-to-remove-mechanics-lien-illinois">How to Remove a Mechanics Lien in Illinois: Options for Property Owners</a></li>
+                        <li><a href="/blog/how-to-remove-mechanics-lien-illinois">Removing a Mechanics Lien in Illinois: Deadlines, Demands, and Bond Options</a></li>
                         <li><a href="/blog/lien-waivers-illinois-construction">Lien Waivers in Illinois Construction: What Contractors and Property Owners Need to Know</a></li>
                     </ul>
                 </div>
@@ -4525,12 +4785,6 @@
                     </button>
                 </div>
 
-                <!-- CTA Box -->
-                <div class="service-cta-box">
-                    <h2>Not Sure When Your Lien Deadline Runs?</h2>
-                    <p>If you're a contractor or subcontractor trying to determine whether your lien rights are still intact, we can help. We offer free, confidential consultations to review your situation and advise you on deadlines, notice requirements, and next steps.</p>
-                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
-                </div>
             </article>
         </main>
 
@@ -4619,12 +4873,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#d5bcbbb3ba95b7a7b4bbb1b9b4a2b6bdbcb6b4b2bafbb6bab8" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="cca5a2aaa38caebeada2a8a0adbbafa4a5afadaba3e2afa3a1">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4707,7 +4961,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
@@ -4912,9 +5166,22 @@
             });
         }
     }
-</script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="/calendly-form.js"></script>
-    
+
+    // Table fade effect
+    document.querySelectorAll('.blog-table-fade-wrapper').forEach(function(wrapper) {
+        var hint = wrapper.nextElementSibling;
+        function updateHint() {
+            if (hint && hint.classList.contains('blog-table-scroll-hint')) {
+                if (wrapper.scrollWidth > wrapper.clientWidth) {
+                    hint.style.display = 'block';
+                } else {
+                    hint.style.display = 'none';
+                }
+            }
+        }
+        window.addEventListener('resize', updateHint);
+        updateHint();
+    });
+    </script>
 </body>
 </html>

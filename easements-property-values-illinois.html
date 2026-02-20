@@ -39,7 +39,7 @@
                 "headline": "Understanding How Easements Affect Property Values in Illinois",
                 "description": "How do easements affect property values in Illinois? Learn the types of easements, when they reduce value, and what buyers and sellers should know before closing.",
                 "datePublished": "2025-08-07",
-                "dateModified": "2025-08-07",
+                "dateModified": "2026-02-19",
                 "author": {
                     "@type": "Person",
                     "name": "Todd R. Brand",
@@ -93,6 +93,44 @@
                     "postalCode": "60606",
                     "addressCountry": "US"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.brandlawchicago.com/blog/easements-property-values-illinois#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Does an easement lower property value in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It depends on the type, location, and scope of the easement. Easements that restrict buildable area, limit access, or create maintenance obligations tend to reduce value. A utility easement running through the center of a buildable lot has a much greater impact than one along the rear property line. Standard utility easements along property edges are so common that they rarely affect sale price. Access easements that benefit a landlocked parcel can actually increase value by ensuring legal road access."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I have to disclose an easement when selling property in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. The Illinois Residential Real Property Disclosure Act requires sellers to disclose known material defects, which includes easements and encroachments that affect the property. Failure to disclose a known easement can expose the seller to post-closing claims from the buyer, including claims for misrepresentation or rescission of the sale."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I remove an easement from my property in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Easements can be terminated in several ways under Illinois law, including a written release from the easement holder, merger of the dominant and servient estates, abandonment, or a court order through a quiet title action. The method available depends on how the easement was created and whether the easement holder agrees to release their rights. Prescriptive easements and easements by necessity can be more difficult to remove."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do appraisers account for easements when valuing property?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Appraisers evaluate how an easement affects the usability and marketability of the property. Key factors include the size of the easement relative to the total lot, whether it restricts the buildable area, whether it affects access or privacy, and whether comparable sales in the area have similar easements. If the easement significantly limits what the owner can do with the property, the appraiser may adjust the value downward. Lenders may also impose stricter requirements for properties with easements that affect development potential."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -1940,7 +1978,7 @@
 
         .blog-article a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -1948,6 +1986,108 @@
 
         .blog-article a:hover {
             border-bottom-color: var(--blue-medium);
+        }
+
+        /* Mid-Article CTA */
+        .mid-cta-callout {
+            background: #fff;
+            color: rgb(30, 55, 90);
+            border: 2px solid rgb(30, 55, 90);
+            padding: 1.75rem 2rem;
+            border-radius: 6px;
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mid-cta-callout p {
+            color: rgb(30, 55, 90);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .mid-cta-callout p strong {
+            color: rgb(30, 55, 90);
+        }
+
+        .mid-cta-callout .cta-btn {
+            display: inline-block;
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .mid-cta-callout .cta-btn:hover {
+            background: rgb(30, 55, 90);
+            color: #f5d236;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Comparison Table */
+        .blog-table-fade-wrapper {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .blog-table-fade-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .blog-table-scroll-hint {
+            display: none;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .blog-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.88rem;
+            min-width: 640px;
+        }
+
+        .blog-comparison-table thead th {
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .blog-comparison-table tbody td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .blog-comparison-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .blog-comparison-table tbody tr:hover {
+            background: #eef2f7;
         }
 
         .blog-related-articles {
@@ -2124,6 +2264,50 @@
             .blog-article p,
             .blog-article ul li {
                 font-size: 1rem;
+            }
+            .mid-cta-callout {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .blog-comparison-table {
+                font-size: 0.82rem;
+            }
+            .blog-comparison-table thead th,
+            .blog-comparison-table tbody td {
+                padding: 0.55rem 0.75rem;
+            }
+            .blog-table-scroll-hint {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mid-cta-callout {
+                padding: 1.25rem;
+            }
+            .mid-cta-callout p {
+                font-size: 0.95rem;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.7rem 1.75rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .mid-cta-callout {
+                padding: 1.25rem 1rem;
+                margin: 2rem 0;
+            }
+            .mid-cta-callout p {
+                font-size: 0.9rem;
+                min-width: 0;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.9rem;
+                white-space: normal;
             }
         }
 
@@ -4408,7 +4592,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="Understanding How Easements Affect Property Values in Illinois" class="service-hero-bg-img" width="2560" height="1000" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
+        <img src="blog-hero.webp" alt="Understanding How Easements Affect Property Values in Illinois" class="service-hero-bg-img" width="1920" height="600" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <div class="service-hero-title">Blog</div>
@@ -4443,37 +4627,140 @@
                 <h1 class="blog-article-title">Understanding How Easements Affect Property Values in Illinois</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-easements-hero.webp" alt="Utility power lines crossing open land representing an easement affecting property values" width="1600" height="900">
+                    <img src="blog-easements-hero.webp" alt="Utility power lines crossing open land representing an easement affecting property values" width="1200" height="675">
                 </div>
 
-                <p>An easement gives someone the right to use part of your property for a specific purpose - even though they don't own it. Utility companies run power lines across backyards. Neighbors share driveways. The city maintains a drainage channel along a property line. These are all easements, and they're more common than most property owners realize.</p>
-                <p>The question that comes up most often - especially when someone is buying, selling, or developing property - is whether an easement helps or hurts the property's value. The answer depends on the type of easement, where it sits on the property, and how much it limits what the owner can do with the land.</p>
+                <p>An easement gives someone the right to use part of your property for a specific purpose - even though they do not own it. Utility companies run power lines across backyards. Neighbors share driveways. The city maintains a drainage channel along a property line. These are all easements, and they are more common than most property owners realize.</p>
+                <p>The question that comes up most often - especially when someone is buying, selling, or developing property - is whether an easement helps or hurts the property's value. The short answer is that it depends on the type of easement, where it sits on the property, and how much it limits what the owner can do with the land. In our experience, the difference between an easement that has no practical effect on value and one that kills a deal often comes down to the specific terms of the easement document and where the easement falls on the lot.</p>
 
-                <h2>What an Easement Is (and Isn't)</h2>
-                <p>An easement is a legal right to use another person's property for a defined purpose. It doesn't transfer ownership. The property owner still holds title to the land, but their ability to use the burdened area may be restricted.</p>
-                <p>Illinois recognizes several types of easements. An express easement is created by a written agreement between the property owner granting the easement and the party benefiting from it. The terms, location, and permitted uses are typically spelled out in a recorded document. This is the most common type, and the one buyers are most likely to encounter in a title search.</p>
-                <p>An implied easement arises without a written agreement, usually based on the circumstances of how a property was divided or used. The most familiar example is an easement by necessity - when a parcel of land is landlocked and the owner has no other way to access a public road. Illinois courts may recognize an implied right to cross the neighboring property even without a formal agreement.</p>
-                <p>A prescriptive easement - sometimes called an easement by prescription - is based on long-standing, continuous use of another person's property without permission. In Illinois, the use must be adverse, open, continuous, and uninterrupted for 20 years. If those requirements are met, the user may acquire a legal right to continue using the property even over the owner's objection.</p>
+                <h2>What an Easement Is and How It Affects Property Rights</h2>
+                <p>An easement is a legal right to use another person's property for a defined purpose. It does not transfer ownership. The property owner still holds title to the land, but their ability to use the burdened area may be restricted. Illinois recognizes several types of easements - express, implied, prescriptive, and easements by necessity - each created under different circumstances and carrying different implications for property value. For a deeper look at how easement documents can go wrong, see our post on <a href="/blog/poorly-drafted-easements-illinois">how poorly drafted easements create legal problems in Illinois</a>.</p>
+                <p>The key distinction for purposes of property value is between easements that burden a property (the servient estate, where someone else has the right to use your land) and easements that benefit a property (the dominant estate, where you have the right to use someone else's land). Easements that burden your property tend to reduce value. Easements that benefit your property can increase it.</p>
 
                 <h2>When Easements Reduce Property Value</h2>
                 <p>Not all easements affect value the same way, but certain types consistently create problems for property owners.</p>
-                <p>Easements that restrict buildable area are among the most impactful. If a utility easement runs through the middle of a lot, the owner may not be able to build a structure, plant trees, or install permanent improvements in that area. For residential lots, this can reduce usable yard space. For commercial or development properties, it can make a project financially unworkable if the easement limits the building footprint or requires setbacks beyond what zoning already requires.</p>
-                <p>Easements that affect access or privacy can also reduce value. A shared driveway easement means another party has a legal right to drive across your property. A pedestrian or trail easement may bring foot traffic through what would otherwise be a private area. Buyers tend to discount properties where they can't fully control who enters and how.</p>
-                <p>Easements that create maintenance obligations or liability exposure are another concern. If the easement requires the property owner to maintain a road, drainage structure, or shared utility, the ongoing cost becomes a factor in the property's value. And if someone is injured on the easement area, questions about liability can become complicated.</p>
-                <p>The visibility and location of the easement matter as well. A utility easement along the rear property line that doesn't interfere with any planned use may have little or no impact on value. The same type of easement cutting diagonally across a buildable lot is a different story entirely.</p>
+
+                <h3>Easements That Restrict Buildable Area</h3>
+                <p>If a utility easement runs through the middle of a lot, the owner may not be able to build a structure, plant trees, or install permanent improvements in that area. For residential lots, this can reduce usable yard space. For commercial or development properties, it can make a project financially unworkable if the easement limits the building footprint or requires setbacks beyond what zoning already requires. Lenders may also view properties with significant easements as higher-risk investments, which can affect financing terms.</p>
+
+                <h3>Easements That Affect Access or Privacy</h3>
+                <p>A shared driveway easement means another party has a legal right to drive across your property. A pedestrian or trail easement may bring foot traffic through what would otherwise be a private area. Buyers tend to discount properties where they cannot fully control who enters and how. In our experience, shared driveway easements are among the most common sources of neighbor disputes and buyer hesitation in the Chicago suburbs.</p>
+
+                <h3>Easements That Create Maintenance Obligations</h3>
+                <p>If the easement requires the property owner to maintain a road, drainage structure, or shared utility, the ongoing cost becomes a factor in the property's value. And if someone is injured on the easement area, questions about liability can become complicated - particularly when the <a href="/blog/poorly-drafted-easements-illinois">easement document does not clearly allocate responsibility</a>.</p>
+
+                <h3>Conservation Easements</h3>
+                <p>Conservation easements permanently restrict development on the burdened property. While they serve important environmental purposes and can provide tax benefits, they typically reduce the market value of the encumbered land significantly because future owners cannot develop, subdivide, or change the use of the restricted area. The impact depends on what restrictions are imposed and how much of the property is affected.</p>
+
+                <!-- Comparison Table -->
+                <div class="blog-table-fade-wrapper">
+                    <table class="blog-comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Easement Type</th>
+                                <th>Typical Value Impact</th>
+                                <th>Key Factor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Utility (rear/side property line)</strong></td>
+                                <td>Minimal to none</td>
+                                <td>Does not interfere with primary use or improvements</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Utility (through buildable area)</strong></td>
+                                <td>Moderate to significant reduction</td>
+                                <td>Restricts building footprint, limits development potential</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shared driveway / access</strong></td>
+                                <td>Moderate reduction</td>
+                                <td>Limits privacy, creates neighbor disputes, deters buyers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Access easement (benefiting your property)</strong></td>
+                                <td>Positive - increases value</td>
+                                <td>Provides legal road access to landlocked parcel</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conservation / scenic</strong></td>
+                                <td>Significant reduction</td>
+                                <td>Permanently restricts development, may offer tax benefits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prescriptive (unrecorded)</strong></td>
+                                <td>Varies - often negative</td>
+                                <td>Creates uncertainty, may not appear in title search</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Drainage / stormwater</strong></td>
+                                <td>Minimal to moderate reduction</td>
+                                <td>Depends on location and maintenance obligations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="blog-table-scroll-hint">Swipe to see full table</p>
 
                 <h2>When Easements Have Minimal or Positive Impact</h2>
-                <p>Some easements have little effect on property value - and a few can actually help.</p>
-                <p>Standard utility easements along property edges are so common that most buyers don't think twice about them. As long as the easement doesn't interfere with the property's primary use or any planned improvements, it's unlikely to affect the sale price.</p>
-                <p>Access easements that benefit the property - meaning the property owner has the right to cross someone else's land - can increase value by ensuring legal access to a road, waterfront, or shared amenity that wouldn't otherwise be available. A landlocked parcel with no access easement is worth significantly less than the same parcel with a recorded easement guaranteeing road access.</p>
-                <p>Conservation or scenic easements, while they restrict development, can sometimes enhance value by preserving views, open space, or natural features that make surrounding properties more desirable.</p>
+                <p>Standard utility easements along property edges are so common that most buyers do not think twice about them. As long as the easement does not interfere with the property's primary use or any planned improvements, it is unlikely to affect the sale price. In many neighborhoods, every property has the same utility easements, which normalizes the condition and eliminates any competitive disadvantage.</p>
+                <p>Access easements that benefit the property - meaning the property owner has the right to cross someone else's land - can increase value by ensuring legal access to a road, waterfront, or shared amenity that would not otherwise be available. A landlocked parcel with no access easement is worth significantly less than the same parcel with a recorded easement guaranteeing road access.</p>
+                <p>The visibility and location of the easement matter as much as the type. A utility easement along the rear property line that does not interfere with any planned use may have little or no impact on value. The same type of easement cutting diagonally across a buildable lot is a different story entirely.</p>
+
+                <h2>How Appraisers and Lenders Evaluate Easements</h2>
+                <p>When a property with an easement is appraised, the appraiser evaluates how the easement affects the usability and marketability of the property. Key factors include the size of the easement relative to the total lot, whether it restricts the buildable area, whether it affects access or privacy, and whether comparable sales in the area have similar easements.</p>
+                <p>If the easement significantly limits what the owner can do with the property, the appraiser may adjust the value downward. Lenders pay close attention to this analysis. A property with a major easement that restricts development potential may face stricter underwriting requirements or higher interest rates because the lender views the collateral as less marketable.</p>
+                <p>Title insurance companies also evaluate easements carefully. If an easement creates ambiguity about what the owner can and cannot do with the property, the title company may add exceptions to the policy - meaning the buyer would not be covered if the easement leads to a dispute down the road.</p>
+
+                <!-- Mid-article CTA -->
+                <div class="mid-cta-callout">
+                    <p><strong>Buying or selling property with an easement?</strong> The terms of the easement and where it falls on the lot make all the difference. We can review the easement, evaluate its impact, and help you protect your investment.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
 
                 <h2>What Buyers and Sellers Should Watch For</h2>
-                <p>If you're buying property in Illinois, the title search should reveal any recorded easements. But not all easements show up in the public record - implied and prescriptive easements may exist without any documentation. A thorough review of the property's history, a physical inspection, and a conversation with a real estate attorney can help identify easement issues before closing.</p>
-                <p>If you're selling, undisclosed easements can become a problem after closing. The Illinois Residential Real Property Disclosure Act requires sellers to disclose known easements and encroachments, and failure to do so can lead to the same types of post-closing disputes we discuss in our post on <a href="/blog/can-buyer-sue-seller-after-closing-illinois">whether a buyer can sue a seller after closing in Illinois</a>.</p>
-                <p>If you're negotiating a new easement - whether you're granting one or receiving one - the terms matter enormously. The location, width, permitted uses, maintenance responsibilities, and duration of the easement all affect how much it will impact the property's value going forward. An easement that's carefully drafted to minimize the burden on the property owner is very different from one that gives the easement holder broad, undefined rights.</p>
+                <p>If you are buying property in Illinois, the title search should reveal any recorded easements. But not all easements show up in the public record - implied and prescriptive easements may exist without any documentation. A thorough review of the property's history, a physical inspection, and a conversation with a <a href="/easement-disputes">real estate attorney who handles easement issues</a> can help identify problems before closing.</p>
+                <p>If you are selling, undisclosed easements can become a problem after closing. The <a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=&Chapter=&ActName=Residential%20Real%20Property%20Disclosure%20Act.&ActID=2152&ChapterID=62&ChapAct=765+ILCS+77%2F&SeqStart=300000&SeqEnd=1700000" target="_blank" rel="noopener noreferrer">Illinois Residential Real Property Disclosure Act (765 ILCS 77)</a> requires sellers to disclose known material defects, which includes easements and encroachments that affect the property. Failure to disclose a known easement can expose the seller to post-closing claims from the buyer, including claims for misrepresentation or rescission of the sale. For more on post-closing disputes, see our post on <a href="/blog/can-buyer-sue-seller-after-closing-illinois">whether a buyer can sue a seller after closing in Illinois</a>.</p>
 
-                <p>For more information on property disputes involving easements, boundaries, or title issues, visit our <a href="/real-estate-litigation">Real Estate Litigation</a> practice area page.</p>
+                <h2>Negotiating Easement Terms to Protect Property Value</h2>
+                <p>If you are negotiating a new easement - whether you are granting one or receiving one - the specific terms matter far more than most property owners realize. A well-drafted easement that limits the burden on the property preserves value. A vague easement with undefined scope can create problems for decades.</p>
+                <p>Key terms to negotiate include the precise location and width of the easement area, the specific permitted uses (and prohibited uses), which party is responsible for maintenance and repair, insurance and liability allocation, whether the easement can be relocated if the property is developed, and whether the easement includes a termination provision or sunset clause.</p>
+                <p>An easement that gives the holder broad, undefined rights across your property is very different from one that is narrowly tailored to a specific purpose in a specific location. When we draft or review easements for clients, the goal is always to ensure the easement accomplishes its purpose while minimizing the impact on the property's usability and long-term value.</p>
+
+                <p>For more information on <a href="/easement-disputes">easement disputes</a>, <a href="/property-line-disputes">property line disputes</a>, or <a href="/title-disputes">title issues</a> in Illinois, visit our <a href="/real-estate-litigation">Real Estate Litigation</a> practice area page.</p>
+
+                <!-- CTA Box -->
+                <div class="service-cta-box">
+                    <h2>Questions About an Easement on Your Property?</h2>
+                    <p>Whether you are buying property with an existing easement, negotiating a new one, or dealing with a dispute over easement rights, we can help you understand your options and protect your property's value. We offer free, confidential consultations.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Does an easement lower property value in Illinois?</h3>
+                        <p>It depends on the type, location, and scope of the easement. Easements that restrict buildable area, limit access, or create maintenance obligations tend to reduce value. A utility easement running through the center of a buildable lot has a much greater impact than one along the rear property line. Standard utility easements along property edges are so common that they rarely affect sale price. Access easements that benefit a landlocked parcel can actually increase value by ensuring legal road access.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do I have to disclose an easement when selling property in Illinois?</h3>
+                        <p>Yes. The <a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=&Chapter=&ActName=Residential%20Real%20Property%20Disclosure%20Act.&ActID=2152&ChapterID=62&ChapAct=765+ILCS+77%2F&SeqStart=300000&SeqEnd=1700000" target="_blank" rel="noopener noreferrer">Illinois Residential Real Property Disclosure Act (765 ILCS 77)</a> requires sellers to disclose known material defects, which includes easements and encroachments that affect the property. Failure to disclose a known easement can expose the seller to post-closing claims from the buyer, including claims for misrepresentation or rescission of the sale.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I remove an easement from my property in Illinois?</h3>
+                        <p>Easements can be terminated in several ways under Illinois law, including a written release from the easement holder, merger of the dominant and servient estates, abandonment, or a court order through a <a href="/blog/quiet-title-actions-chicago-guide">quiet title action</a>. The method available depends on how the easement was created and whether the easement holder agrees to release their rights. Prescriptive easements and easements by necessity can be more difficult to remove.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do appraisers account for easements when valuing property?</h3>
+                        <p>Appraisers evaluate how an easement affects the usability and marketability of the property. Key factors include the size of the easement relative to the total lot, whether it restricts the buildable area, whether it affects access or privacy, and whether comparable sales in the area have similar easements. If the easement significantly limits what the owner can do with the property, the appraiser may adjust the value downward. Lenders may also impose stricter requirements for properties with easements that affect development potential.</p>
+                    </div>
+                </div>
 
                 <!-- Related Articles -->
                 <div class="blog-related-articles">
@@ -4491,13 +4778,6 @@
                     <button class="blog-share-btn" onclick="sharePost(this)" data-url="/blog/easements-property-values-illinois" data-title="Understanding How Easements Affect Property Values in Illinois">Share This &nbsp;
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
-                </div>
-
-                <!-- CTA Box -->
-                <div class="service-cta-box">
-                    <h2>Questions About an Easement on Your Property?</h2>
-                    <p>Whether you're buying property with an existing easement, negotiating a new one, or dealing with a dispute over easement rights, we can help you understand your options. We offer free, confidential consultations.</p>
-                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
                 </div>
             </article>
         </main>
@@ -4587,12 +4867,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#d0b9beb6bf90b2a2b1beb4bcb1a7b3b8b9b3b1b7bffeb3bfbd" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="6900070f06290b1b08070d05081e0a01000a080e06470a0604">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4675,7 +4955,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
@@ -4866,6 +5146,21 @@
         }
     }, true);
 })();
+    // Table fade effect
+    document.querySelectorAll('.blog-table-fade-wrapper').forEach(function(wrapper) {
+        var hint = wrapper.nextElementSibling;
+        function updateHint() {
+            if (hint && hint.classList.contains('blog-table-scroll-hint')) {
+                if (wrapper.scrollWidth > wrapper.clientWidth) {
+                    hint.style.display = 'block';
+                } else {
+                    hint.style.display = 'none';
+                }
+            }
+        }
+        window.addEventListener('resize', updateHint);
+        updateHint();
+    });
     function sharePost(btn) {
         const url = window.location.origin + btn.getAttribute('data-url');
         const title = btn.getAttribute('data-title');
@@ -4876,13 +5171,4 @@
             navigator.clipboard.writeText(url).then(function() {
                 const original = btn.innerHTML;
                 btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHTML = original; }, 2000);
-            });
-        }
-    }
-</script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="/calendly-form.js"></script>
-    
-</body>
-</html>
+                setTimeout(function() { btn.innerHT

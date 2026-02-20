@@ -39,7 +39,7 @@
                 "headline": "When the Title Says You Own It, But Someone Else Says They Do: A Guide to Quiet Title Actions in Chicago",
                 "description": "What is a quiet title action and when do Chicago property owners need one? Learn how quiet title lawsuits resolve ownership disputes, old liens, and title defects in Illinois.",
                 "datePublished": "2025-11-26",
-                "dateModified": "2025-11-26",
+                "dateModified": "2026-02-19",
                 "author": {
                     "@type": "Person",
                     "name": "Todd R. Brand",
@@ -93,6 +93,44 @@
                     "postalCode": "60606",
                     "addressCountry": "US"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.brandlawchicago.com/blog/quiet-title-actions-chicago-guide#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How much does a quiet title action cost in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The cost of a quiet title action depends on the complexity of the title issue and whether anyone contests it. Court filing fees in Cook County run several hundred dollars. Attorney fees for a straightforward, uncontested case typically range from a few thousand dollars. Contested cases involving active disputes over ownership cost significantly more and can require months of additional litigation. Service by publication, title searches, and recording fees add to the total."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does a quiet title action take in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A straightforward, uncontested quiet title action in Cook County typically takes 4 to 6 months from filing to judgment. Contested cases where someone actively disputes ownership can take 12 to 18 months or longer. The biggest variable is service of process - tracking down and notifying all potential claimants, especially when dealing with deceased individuals, dissolved companies, or unknown heirs."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I sell my property while a quiet title action is pending?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Technically you can list the property, but most buyers and lenders will not close on a property with an active title dispute. Once a quiet title action is filed, a lis pendens is recorded against the property, which puts potential buyers on notice that the title is being litigated. Most sellers wait until the court enters judgment before proceeding with a sale."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is a cloud on title?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A cloud on title is any claim, lien, encumbrance, or defect in the chain of title that raises doubt about who actually owns the property. Common examples include unreleased liens, improperly recorded deeds, gaps in the chain of title, and competing ownership claims. A cloud on title can prevent you from selling, refinancing, or developing your property because title companies will not insure it until the issue is resolved."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -1940,7 +1978,7 @@
 
         .blog-article a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -1948,6 +1986,51 @@
 
         .blog-article a:hover {
             border-bottom-color: var(--blue-medium);
+        }
+
+        /* Mid-Article CTA */
+        .mid-cta-callout {
+            background: #fff;
+            color: rgb(30, 55, 90);
+            border: 2px solid rgb(30, 55, 90);
+            padding: 1.75rem 2rem;
+            border-radius: 6px;
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mid-cta-callout p {
+            color: rgb(30, 55, 90);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .mid-cta-callout p strong {
+            color: rgb(30, 55, 90);
+        }
+
+        .mid-cta-callout .cta-btn {
+            display: inline-block;
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .mid-cta-callout .cta-btn:hover {
+            background: rgb(30, 55, 90);
+            color: #f5d236;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .blog-related-articles {
@@ -2124,6 +2207,40 @@
             .blog-article p,
             .blog-article ul li {
                 font-size: 1rem;
+            }
+            .mid-cta-callout {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mid-cta-callout {
+                padding: 1.25rem;
+            }
+            .mid-cta-callout p {
+                font-size: 0.95rem;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.7rem 1.75rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .mid-cta-callout {
+                padding: 1.25rem 1rem;
+                margin: 2rem 0;
+            }
+            .mid-cta-callout p {
+                font-size: 0.9rem;
+                min-width: 0;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.9rem;
+                white-space: normal;
             }
         }
 
@@ -4408,7 +4525,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="A Guide to Quiet Title Actions in Chicago" class="service-hero-bg-img" width="2560" height="1000" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
+        <img src="blog-hero.webp" alt="A Guide to Quiet Title Actions in Chicago" class="service-hero-bg-img" width="1920" height="600" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <div class="service-hero-title">Blog</div>
@@ -4443,59 +4560,60 @@
                 <h1 class="blog-article-title">When the Title Says You Own It, But Someone Else Says They Do: A Guide to Quiet Title Actions in Chicago</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-quiet-title-hero.webp" alt="Chicago brick bungalow representing inherited property requiring a quiet title action" width="1600" height="900">
+                    <img src="blog-quiet-title-hero.webp" alt="Chicago brick bungalow representing inherited property requiring a quiet title action" width="1200" height="675">
                 </div>
 
-                <p>Last month, a client contacted us with a problem that would make any property owner's stomach drop. She'd inherited her grandmother's bungalow in Portage Park three years ago, paid the property taxes faithfully, renovated the kitchen, and was finally ready to sell. The buyer had cash. The offer was good. Closing was scheduled for two weeks out.</p>
+                <p>Last month, a client contacted us with a problem that would make any property owner's stomach drop. She had inherited her grandmother's bungalow in Portage Park three years ago, paid the property taxes faithfully, renovated the kitchen, and was finally ready to sell. The buyer had cash. The offer was good. Closing was scheduled for two weeks out.</p>
                 <p>Then the title company called.</p>
                 <p>Turns out, there was a 1987 judgment lien on the property from a contractor her grandmother never paid. The contractor's company dissolved in 1994. The lien was never released. The original creditor was dead. His kids had no idea the lien existed. But it was still there, sitting in the Cook County records like a land mine, and it was about to blow up her sale.</p>
-                <p>"Can't we just... explain this?" she asked.</p>
-                <p>We wish. But in real estate, the public record doesn't care about your explanations. It only cares about what's written down. And when what's written down is wrong, incomplete, or disputed, you need a court to fix it.</p>
-                <p>That's what a quiet title action does.</p>
+                <p>"Can we just... explain this?" she asked.</p>
+                <p>We wish. But in real estate, the public record does not care about your explanations. It only cares about what is written down. And when what is written down is wrong, incomplete, or disputed, you need a court to fix it.</p>
+                <p>That is what a quiet title action does.</p>
 
-                <h2>What Even Is a Quiet Title Action? (And Why the Name?)</h2>
-                <p>A quiet title action is a lawsuit where you ask a judge to declare that you own the property and certain claims against it are invalid.</p>
-                <p>The name comes from the legal concept of "quieting" competing claims. Think of it like this: there's noise in the title. Multiple people might claim rights to the property. Old liens are still recorded. Prior owners might have screwed something up. The goal is to quiet all that noise and get a clear answer: who actually owns this property?</p>
-                <p>It's not sexy. It's not dramatic. But when you're trying to sell, refinance, or develop property and someone says "we can't move forward until this is resolved," it becomes the most important lawsuit you've ever filed.</p>
+                <h2>What Is a Quiet Title Action?</h2>
+                <p>A quiet title action in Illinois is a lawsuit where you ask a judge to determine ownership and remove invalid liens, claims, or defects from the public record.</p>
+                <p>The name comes from the legal concept of "quieting" competing claims. Think of it like this: there is noise in the title. Multiple people might claim rights to the property. Old liens are still recorded. Prior owners might have made mistakes in the chain of title. The goal is to quiet all that noise and get a clear answer: who actually owns this property?</p>
+                <p>Under the <a href="https://ilga.gov/Documents/legislation/ilcs/documents/073500050K2-103.htm" target="_blank" rel="noopener noreferrer">Illinois Code of Civil Procedure (735 ILCS 5/2-103)</a>, a quiet title action must be filed in the county where the real estate is located. In Cook County, these cases are heard in the Chancery Division of the Circuit Court. The plaintiff must establish two elements: that they hold true title to the property, and that their title is superior to the claims of the other parties. The burden is on the plaintiff to prove superior title, typically through recorded deeds, probate records, or other documentary evidence.</p>
+                <p>It is not dramatic. But when you are trying to sell, refinance, or develop property and someone says "we cannot move forward until this is resolved," it becomes the most important lawsuit you have ever filed.</p>
 
                 <h2>The Stories That Lead to Quiet Title Actions in Chicago</h2>
                 <p>Here are the situations we see most often in Chicago:</p>
 
                 <h3>The Inheritance Disaster</h3>
-                <p>Three siblings inherit their parents' two-flat in Logan Square. The will says "split it equally." Simple, right? Except the property was in a trust that was never properly funded. Or the deed from 1962 has a name spelled wrong. Or there's a gap in the chain of title from when the property transferred between family members in the 1970s and no one bothered to record the deed properly.</p>
-                <p>Now all three siblings want to sell, the buyer is ready, and the title company says "we can't insure this." Someone has to file a quiet title action to clean up 60 years of sloppy paperwork.</p>
+                <p>Three siblings inherit their parents' two-flat in Logan Square. The will says "split it equally." Simple, right? Except the property was in a trust that was never properly funded. Or the deed from 1962 has a name spelled wrong. Or there is a gap in the chain of title from when the property transferred between family members in the 1970s and no one bothered to record the deed properly.</p>
+                <p>Now all three siblings want to sell, the buyer is ready, and the title company says "we cannot insure this." Someone has to file a quiet title action to clean up 60 years of sloppy paperwork. And if the siblings cannot agree on what to do with the property, they may also need a <a href="/blog/force-co-owner-sell-inherited-property-illinois">partition action</a> to force a sale.</p>
 
                 <div class="blog-article-image">
-                    <img src="blog-quiet-title-zombie-lien.webp" alt="Stack of old property records and legal documents involved in quiet title action research" width="1600" height="900">
+                    <img src="blog-quiet-title-zombie-lien.webp" alt="Stack of old property records and legal documents involved in quiet title action research" width="1200" height="675">
                 </div>
 
                 <h3>The Zombie Lien</h3>
                 <p>This is what happened to our Portage Park client. A contractor put a judgment lien on the property in 1987 for unpaid work. The contractor's company dissolved in 1994. The lien was never released. The original creditor was dead. His estate had no records of it.</p>
-                <p>And liens don't have expiration dates printed on them like milk cartons. They just sit there. Forever. Haunting your title.</p>
-                <p>A quiet title action forces the issue. You notify everyone who might have a claim (or their heirs, or their dissolved company's last known address), and if they don't show up to defend it, the court wipes it out.</p>
+                <p>And liens do not have expiration dates printed on them like milk cartons. They just sit there. Forever. Haunting your title. Even if a judgment has expired or was never revived, it can remain in the public record and still cloud title until formally addressed.</p>
+                <p>A quiet title action forces the issue. You notify everyone who might have a claim (or their heirs, or their dissolved company's last known address), and if they do not show up to defend it, the court wipes it out.</p>
 
-                <h3>The Foreclosure That Wasn't Quite Right</h3>
-                <p>Someone bought a property at a tax sale or foreclosure auction. They thought they got clean title. They didn't. Maybe the prior owner wasn't properly notified. Maybe there was a procedural defect in the foreclosure. Maybe there's a junior lienholder who got missed.</p>
-                <p>Now the new owner has a deed, but title companies won't insure it because there are clouds on title from the prior foreclosure. Quiet title action fixes it.</p>
+                <h3>The Foreclosure That Was Not Quite Right</h3>
+                <p>Someone bought a property at a tax sale or foreclosure auction. They thought they got clean title. They did not. Maybe the prior owner was not properly notified. Maybe there was a procedural defect in the foreclosure. Maybe there is a junior lienholder who got missed.</p>
+                <p>Now the new owner has a deed, but title companies will not insure it because there are clouds on title from the prior foreclosure. Quiet title action fixes it.</p>
 
                 <h3>The "Wait, Who Actually Owns This?" Problem</h3>
-                <p>Two business partners bought a commercial building together in 2005. They broke up in 2008. One partner quitclaimed their interest to the other, but the deed was never recorded. Or it was recorded wrong. Or there's confusion about whether the property was in an LLC or in their personal names.</p>
+                <p>Two business partners bought a commercial building together in 2005. They broke up in 2008. One partner quitclaimed their interest to the other, but the deed was never recorded. Or it was recorded wrong. Or there is confusion about whether the property was in an LLC or in their personal names.</p>
                 <p>Now one partner is trying to sell and the other is claiming they still have an ownership interest. Quiet title action sorts it out.</p>
 
                 <h2>What a Quiet Title Lawsuit Actually Looks Like</h2>
-                <p>Here's the process, step by step, without the legal jargon:</p>
+                <p>Here is the process, step by step, without the legal jargon:</p>
 
-                <h3>1. We investigate what's actually wrong.</h3>
-                <p>Before you file anything, you need to understand the full scope of the problem. Who are all the potential claimants? What documents are in the public record? What's missing? We pull the chain of title, review recorded liens and judgments, and figure out exactly what needs to be resolved.</p>
+                <h3>1. We investigate what is actually wrong.</h3>
+                <p>Before you file anything, you need to understand the full scope of the problem. Who are all the potential claimants? What documents are in the public record? What is missing? We pull the chain of title, review recorded liens and judgments, and figure out exactly what needs to be resolved.</p>
 
                 <h3>2. We file the lawsuit.</h3>
-                <p>The lawsuit names everyone who might have a claim (even if they're dead, dissolved, or missing). It describes the property, explains why you're the rightful owner, and asks the court to declare that certain claims are invalid.</p>
+                <p>The lawsuit names everyone who might have a claim (even if they are dead, dissolved, or missing). It describes the property, explains why you are the rightful owner, and asks the court to declare that certain claims are invalid.</p>
 
                 <h3>3. We serve everyone who needs to know.</h3>
-                <p>This is the hard part. If you're trying to eliminate a lien from 1987, you might have to track down the creditor's estate, their heirs, or serve them through publication in a newspaper if they can't be found. Illinois law has specific requirements for notice, and you have to follow them exactly.</p>
+                <p>This is the hard part. If you are trying to eliminate a lien from 1987, you might have to track down the creditor's estate, their heirs, or serve them through publication in a newspaper if they cannot be found. Illinois law has specific requirements for notice, and you have to follow them exactly.</p>
 
                 <h3>4. We wait to see if anyone shows up.</h3>
-                <p>Here's the thing about quiet title actions: most of the time, nobody fights them. The contractor from 1987? Dead. His company? Dissolved. His kids? Don't even know the lien exists. If nobody responds to the lawsuit, you win by default.</p>
+                <p>Here is the thing about quiet title actions: most of the time, nobody fights them. The contractor from 1987? Dead. His company? Dissolved. His kids? Do not even know the lien exists. If nobody responds to the lawsuit, you win by default.</p>
 
                 <h3>5. The judge issues a judgment.</h3>
                 <p>The court enters an order declaring that you hold clear title and that the disputed claims are extinguished. That judgment gets recorded against the property, and now the public record is clean.</p>
@@ -4503,62 +4621,102 @@
                 <h3>6. You can finally move forward.</h3>
                 <p>The title company will insure the property. The lender will fund the loan. The sale closes. Life continues.</p>
 
-                <h2>How Long Does This Take?</h2>
-                <p>The honest answer: it depends on how many people you have to notify and whether anyone fights you.</p>
-                <p>If it's a straightforward case with an old lien where the creditor is dead and nobody objects, you might get a judgment in 4-6 months.</p>
-                <p>If it's contested — someone actually shows up and says "no, I have a valid claim" — you're looking at 12-18 months of litigation.</p>
-                <p>Most cases fall somewhere in the middle.</p>
-
-                <div class="blog-article-image">
-                    <img src="blog-quiet-title-company.webp" alt="Frustrated property owner reviewing title documents during quiet title consultation" width="1600" height="900">
+                <!-- Mid-article CTA -->
+                <div class="mid-cta-callout">
+                    <p><strong>Dealing with a cloud on your title?</strong> The longer a title defect sits unresolved, the harder and more expensive it becomes to fix. If a sale, refinance, or development project is on the line, act now.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
                 </div>
 
-                <h2>Can't the Title Company Just... Fix This?</h2>
-                <p>No.</p>
-                <p>Title companies don't fix title problems. They insure against them, but only if they're willing to take the risk. And if there's an obvious defect in the chain of title, a recorded lien that was never released, or a dispute about ownership, they're not insuring it.</p>
-                <p>Their job is to say "we can't close until this is resolved." Your job (or your lawyer's job) is to actually resolve it.</p>
+                <h2>How Long Does This Take?</h2>
+                <p>The honest answer: it depends on how many people you have to notify and whether anyone fights you.</p>
+                <p>If it is a straightforward case with an old lien where the creditor is dead and nobody objects, you might get a judgment in 4 to 6 months.</p>
+                <p>If it is contested - someone actually shows up and says "no, I have a valid claim" - you are looking at 12 to 18 months of litigation.</p>
+                <p>Most cases fall somewhere in the middle. The biggest variable is service of process. If potential claimants are easy to locate, things move quickly. If you are dealing with dissolved companies, deceased individuals, or unknown heirs, tracking everyone down and completing proper service takes time.</p>
 
-                <h2>When You Don't Need a Quiet Title Action</h2>
+                <h2>How Much Does a Quiet Title Action Cost?</h2>
+                <p>The cost depends on the complexity of the title issue and whether anyone contests it.</p>
+                <p>Court filing fees in Cook County run several hundred dollars. Attorney fees for a straightforward, uncontested case - where the title defect is clear and no one disputes your ownership - typically range from a few thousand dollars. Contested cases involving active disputes over ownership cost significantly more, especially if the matter requires discovery, depositions, or a trial.</p>
+                <p>Additional costs include title searches, service of process fees, publication costs (when you cannot locate a defendant and must publish notice in a newspaper), and recording fees for the final judgment. If you need a <a href="/blog/poorly-drafted-easements-illinois">defective easement</a> resolved alongside the title issue, that adds complexity.</p>
+                <p>In our experience, the cost of a quiet title action is almost always less than the cost of losing a sale, missing a refinance window, or letting the title problem compound over additional years. The earlier you act, the simpler and less expensive the case tends to be.</p>
+
+                <div class="blog-article-image">
+                    <img src="blog-quiet-title-company.webp" alt="Frustrated property owner reviewing title documents during quiet title consultation" width="1200" height="675">
+                </div>
+
+                <h2>The Title Company Cannot Fix This</h2>
+                <p>Title companies do not fix title problems. They insure against them, but only if they are willing to take the risk. And if there is an obvious defect in the chain of title, a recorded lien that was never released, or a dispute about ownership, they are not insuring it.</p>
+                <p>Their job is to say "we cannot close until this is resolved." Your job (or your lawyer's job) is to actually resolve it.</p>
+
+                <h2>When You Do Not Need a Quiet Title Action</h2>
                 <p>Not every title issue requires a lawsuit. Sometimes you can fix problems through documentation:</p>
                 <ul>
                     <li><strong>Old mortgage that was paid off but never released?</strong> Sometimes you can get a release from the lender or their successor, or use an affidavit if the lender is dissolved.</li>
                     <li><strong>Name spelled wrong on a deed?</strong> A corrective deed might work.</li>
                     <li><strong>Missing link in the chain of title?</strong> An affidavit of heirship or corrective documentation might be enough.</li>
                 </ul>
-                <p>But when those solutions don't work, and when the title company says "this isn't good enough" or when there's an actual dispute about who owns what, quiet title is the answer.</p>
+                <p>But when those solutions do not work, and when the title company says "this is not good enough" or when there is an actual dispute about who owns what, quiet title is the answer.</p>
 
                 <h2>The Real Cost of Waiting</h2>
-                <p>Here's what happens if you ignore a title problem:</p>
                 <ul>
                     <li><strong>Your sale falls through.</strong> Buyers walk. You lose the deal.</li>
-                    <li><strong>Your refinance gets denied.</strong> You can't access your equity.</li>
-                    <li><strong>You can't develop the property.</strong> No lender will finance construction on property with clouded title.</li>
+                    <li><strong>Your refinance gets denied.</strong> You cannot access your equity.</li>
+                    <li><strong>You cannot develop the property.</strong> No lender will finance construction on property with clouded title.</li>
                     <li><strong>The problem gets worse.</strong> More time passes, more people die, more companies dissolve, and tracking everyone down gets harder.</li>
                 </ul>
-                <p>The longer you wait, the more expensive and complicated it becomes.</p>
+                <p>The longer you wait, the more expensive and complicated it becomes. When a quiet title action is filed, a lis pendens is recorded against the property, putting potential buyers on notice that the title is being litigated. Most sellers wait until the court enters judgment before proceeding with a sale, which means every month of delay is a month your property sits unsold.</p>
 
                 <h2>Why This Matters for Chicago Property Owners</h2>
                 <p>Chicago has some of the oldest continuously inhabited neighborhoods in the Midwest. Properties change hands across generations. Families inherit buildings. Small businesses buy commercial spaces and hold them for decades.</p>
-                <p>That long history is great until it's not. Until someone realizes that Great-Aunt Helen never properly recorded her deed in 1958. Or that the property went through a tax sale in 1982 that wasn't quite done right. Or that there's a mechanics lien from a long-dead contractor that's blocking a sale in 2026.</p>
-                <p>These problems are fixable. But they don't fix themselves.</p>
+                <p>That long history is great until it is not. Until someone realizes that Great-Aunt Helen never properly recorded her deed in 1958. Or that the property went through a tax sale in 1982 that was not quite done right. Or that there is a <a href="/mechanics-liens">mechanics lien</a> from a long-dead contractor that is blocking a sale in 2026.</p>
+                <p>These problems are fixable. But they do not fix themselves.</p>
 
                 <h2>What to Do If You Think You Have a Title Problem</h2>
-                <p>If you're trying to sell, refinance, or develop property in Chicago and you've hit a title issue, here's what to do:</p>
                 <ul>
                     <li><strong>Get the title commitment or preliminary report.</strong> This tells you exactly what the problem is.</li>
-                    <li><strong>Don't panic.</strong> Most title issues can be resolved.</li>
-                    <li><strong>Talk to a real estate attorney who actually handles quiet title actions.</strong> Not every lawyer does this work regularly. You want someone who knows the Cook County court system and has done this before.</li>
+                    <li><strong>Do not panic.</strong> Most title issues can be resolved.</li>
+                    <li><strong>Talk to a <a href="/real-estate-litigation">real estate attorney</a> who actually handles quiet title actions.</strong> Not every lawyer does this work regularly. You want someone who knows the Cook County court system and has done this before.</li>
                     <li><strong>Move quickly if you have a pending transaction.</strong> Time kills deals.</li>
                 </ul>
-                <p>We handle <a href="/quiet-title-actions">quiet title actions</a> for property owners throughout Chicago and the surrounding counties. If you're dealing with disputed ownership, an unresolved lien, or any other cloud on title that's preventing you from moving forward, we can help you evaluate whether a quiet title action is the right solution.</p>
+                <p>We handle <a href="/quiet-title-actions">quiet title actions</a> for property owners throughout Chicago and the surrounding counties. If you are dealing with disputed ownership, an unresolved lien, or any other cloud on title that is preventing you from moving forward, we can help you evaluate whether a quiet title action is the right solution.</p>
 
+                <!-- CTA Box -->
+                <div class="service-cta-box">
+                    <h2>Dealing With a Title Issue?</h2>
+                    <p>If you are facing a <a href="/title-disputes">title dispute</a>, an unresolved lien, or any cloud on title that is holding up a sale, refinance, or development project, we can help. We offer free, confidential consultations to evaluate your situation and discuss your options.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>How much does a quiet title action cost in Illinois?</h3>
+                        <p>The cost of a quiet title action depends on the complexity of the title issue and whether anyone contests it. Court filing fees in Cook County run several hundred dollars. Attorney fees for a straightforward, uncontested case typically range from a few thousand dollars. Contested cases involving active disputes over ownership cost significantly more and can require months of additional litigation. Service by publication, title searches, and recording fees add to the total.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How long does a quiet title action take in Illinois?</h3>
+                        <p>A straightforward, uncontested quiet title action in Cook County typically takes 4 to 6 months from filing to judgment. Contested cases where someone actively disputes ownership can take 12 to 18 months or longer. The biggest variable is service of process - tracking down and notifying all potential claimants, especially when dealing with deceased individuals, dissolved companies, or unknown heirs.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I sell my property while a quiet title action is pending?</h3>
+                        <p>Technically you can list the property, but most buyers and lenders will not close on a property with an active title dispute. Once a quiet title action is filed, a lis pendens is recorded against the property, which puts potential buyers on notice that the title is being litigated. Most sellers wait until the court enters judgment before proceeding with a sale.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is a cloud on title?</h3>
+                        <p>A cloud on title is any claim, lien, encumbrance, or defect in the chain of title that raises doubt about who actually owns the property. Common examples include unreleased liens, improperly recorded deeds, gaps in the chain of title, and competing ownership claims. A cloud on title can prevent you from selling, refinancing, or developing your property because title companies will not insure it until the issue is resolved.</p>
+                    </div>
+                </div>
 
                 <!-- Related Articles -->
                 <div class="blog-related-articles">
                     <h2>Related Articles</h2>
                     <ul>
                         <li><a href="/blog/can-buyer-sue-seller-after-closing-illinois">Can a Buyer Sue a Seller After Closing in Illinois? What the Disclosure Act Requires</a></li>
-                        <li><a href="/blog/easements-property-values-illinois">Understanding How Easements Affect Property Values in Illinois</a></li>
+                        <li><a href="/blog/force-co-owner-sell-inherited-property-illinois">How to Force a Co-Owner to Sell Inherited Property in Illinois</a></li>
                         <li><a href="/blog/poorly-drafted-easements-illinois">How Poorly Drafted Easements Create Legal Problems in Illinois</a></li>
                     </ul>
                 </div>
@@ -4569,13 +4727,6 @@
                     <button class="blog-share-btn" onclick="sharePost(this)" data-url="/blog/quiet-title-actions-chicago-guide" data-title="A Guide to Quiet Title Actions in Chicago">Share This &nbsp;
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
-                </div>
-
-                <!-- CTA Box -->
-                <div class="service-cta-box">
-                    <h2>Dealing With a Title Issue?</h2>
-                    <p>If you're facing a <a href="/title-disputes">title dispute</a>, an unresolved lien, or any cloud on title that's holding up a sale, refinance, or development project, we can help. We offer free, confidential consultations to evaluate your situation and discuss your options.</p>
-                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
                 </div>
             </article>
         </main>
@@ -4665,12 +4816,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#80e9eee6efc0e2f2e1eee4ece1f7e3e8e9e3e1e7efaee3efed" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="2e474048416e4c5c4f404a424f594d46474d4f4941004d4143">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4753,7 +4904,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
@@ -4954,13 +5105,4 @@
             navigator.clipboard.writeText(url).then(function() {
                 const original = btn.innerHTML;
                 btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHTML = original; }, 2000);
-            });
-        }
-    }
-</script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="/calendly-form.js"></script>
-    
-</body>
-</html>
+                setTimeout(function() { btn.innerHT

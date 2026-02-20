@@ -39,7 +39,7 @@
                 "headline": "Can You Force a Co-Owner to Sell Inherited Property in Illinois?",
                 "description": "Can you force a co-owner to sell inherited property in Illinois? Learn how partition actions work, when courts order a sale, and what co-owners should know.",
                 "datePublished": "2026-01-28",
-                "dateModified": "2026-01-28",
+                "dateModified": "2026-02-19",
                 "author": {
                     "@type": "Person",
                     "name": "Todd R. Brand",
@@ -93,6 +93,44 @@
                     "postalCode": "60606",
                     "addressCountry": "US"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.brandlawchicago.com/blog/force-co-owner-sell-inherited-property-illinois#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Can one sibling force the sale of inherited property in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Any co-owner of inherited property in Illinois can file a partition action to force a sale, regardless of how small their ownership share is. The right to partition is considered nearly absolute under Illinois law. The court will typically order a sale if the property cannot be physically divided, with proceeds split according to each co-owner's share after adjustments for contributions like taxes, maintenance, and improvements."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does a partition action take in Illinois?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A partition action in Illinois typically takes several months to over a year, depending on how contested it is. The process involves filing a complaint, serving the other co-owners, obtaining an appraisal, and working through the court system. If the co-owners dispute the property's value or raise accounting claims for reimbursement of taxes and maintenance costs, the timeline can extend further."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can a co-owner be reimbursed for paying property taxes on inherited property?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. In a partition action, the court conducts an accounting to adjust the distribution of sale proceeds. A co-owner who paid more than their share of property taxes, insurance, mortgage payments, or necessary maintenance costs is typically entitled to a credit from the sale proceeds before the remainder is divided. Similarly, a co-owner who made improvements that increased the property's value may be reimbursed for those costs."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the Uniform Partition of Heirs Property Act?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Uniform Partition of Heirs Property Act (755 ILCS 75) is an Illinois law that provides additional protections when inherited property is subject to a partition action. It requires the court to order an independent appraisal, gives non-filing co-owners the right to buy out the filing co-owner's share at appraised value, and requires any court-ordered sale to be conducted on the open market rather than by private auction. The Act applies when the property qualifies as heirs property under the statute."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -1940,7 +1978,7 @@
 
         .blog-article a {
             color: var(--blue-medium);
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
@@ -1948,6 +1986,129 @@
 
         .blog-article a:hover {
             border-bottom-color: var(--blue-medium);
+        }
+
+        /* Mid-Article CTA */
+        .mid-cta-callout {
+            background: #fff;
+            color: rgb(30, 55, 90);
+            border: 2px solid rgb(30, 55, 90);
+            padding: 1.75rem 2rem;
+            border-radius: 6px;
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mid-cta-callout p {
+            color: rgb(30, 55, 90);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .mid-cta-callout p strong {
+            color: rgb(30, 55, 90);
+        }
+
+        .mid-cta-callout .cta-btn {
+            display: inline-block;
+            background: rgb(30, 55, 90);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .mid-cta-callout .cta-btn:hover {
+            background: rgb(30, 55, 90);
+            color: #f5d236;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Comparison Chart */
+        .blog-comparison-chart {
+            background: #f5f7f9;
+            border-radius: 8px;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .blog-comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .blog-comparison-card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 1.25rem;
+        }
+
+        .blog-comparison-card.card-green {
+            border-top: 4px solid #4a9e4a;
+        }
+
+        .blog-comparison-card.card-blue {
+            border-top: 4px solid #2E82DC;
+        }
+
+        .blog-comparison-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-comparison-card.card-green .blog-comparison-title {
+            color: #4a9e4a;
+        }
+
+        .blog-comparison-card.card-blue .blog-comparison-title {
+            color: rgb(30, 55, 90);
+        }
+
+        .blog-comparison-items {
+            font-size: 0.85rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .blog-comparison-items div {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-comparison-items div:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Visual Wrap for Flowchart SVGs */
+        .blog-visual-wrap {
+            margin: 2rem 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .blog-visual-wrap::-webkit-scrollbar {
+            display: none;
+        }
+
+        .blog-visual-wrap svg {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            max-width: 620px;
+            min-width: 400px;
         }
 
         .blog-related-articles {
@@ -2124,6 +2285,64 @@
             .blog-article p,
             .blog-article ul li {
                 font-size: 1rem;
+            }
+            .mid-cta-callout {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .blog-comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-visual-wrap svg {
+                min-width: 360px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mid-cta-callout {
+                padding: 1.25rem;
+            }
+            .mid-cta-callout p {
+                font-size: 0.95rem;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.7rem 1.75rem;
+                font-size: 0.95rem;
+            }
+            .blog-comparison-chart {
+                padding: 1rem;
+            }
+            .blog-comparison-card {
+                padding: 1rem;
+            }
+            .blog-comparison-title {
+                font-size: 0.9rem;
+            }
+            .blog-comparison-items {
+                font-size: 0.8rem;
+            }
+            .blog-visual-wrap svg {
+                min-width: 320px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .mid-cta-callout {
+                padding: 1.25rem 1rem;
+                margin: 2rem 0;
+            }
+            .mid-cta-callout p {
+                font-size: 0.9rem;
+                min-width: 0;
+            }
+            .mid-cta-callout .cta-btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.9rem;
+                white-space: normal;
+            }
+            .blog-visual-wrap svg {
+                min-width: 280px;
             }
         }
 
@@ -4408,7 +4627,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="Can You Force a Co-Owner to Sell Inherited Property in Illinois?" class="service-hero-bg-img" width="2560" height="1000" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
+        <img src="blog-hero.webp" alt="Can You Force a Co-Owner to Sell Inherited Property in Illinois?" class="service-hero-bg-img" width="1920" height="600" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <div class="service-hero-title">Blog</div>
@@ -4443,40 +4662,172 @@
                 <h1 class="blog-article-title">Can You Force a Co-Owner to Sell Inherited Property in Illinois?</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-force-sell-inherited-hero.webp" alt="Model house split in half representing inherited property disputes and partition actions in Illinois" width="1600" height="900">
+                    <img src="blog-force-sell-inherited-hero.webp" alt="Model house split in half representing inherited property disputes and partition actions in Illinois" width="1200" height="675">
                 </div>
 
-                <p>When two or more people inherit property together, they don't always agree on what to do with it. One sibling wants to keep the family home. Another wants to sell and split the proceeds. A third lives out of state and doesn't want to deal with it at all. Nobody budges, and the property just sits there - costing everyone money in taxes, maintenance, and insurance while the disagreement drags on.</p>
+                <p>When two or more people inherit property together, they do not always agree on what to do with it. One sibling wants to keep the family home. Another wants to sell and split the proceeds. A third lives out of state and does not want to deal with it at all. Nobody budges, and the property just sits there - costing everyone money in taxes, maintenance, and insurance while the disagreement drags on.</p>
                 <p>This situation is one of the most common real estate disputes we see. And the question at the center of it is always the same: can one co-owner force the others to sell?</p>
                 <p>In Illinois, the answer is generally yes - through a legal proceeding called a <a href="/partition-actions">partition action</a>.</p>
 
                 <h2>What a Partition Action Does</h2>
-                <p>A partition action is a lawsuit that asks a court to divide jointly owned property. Any co-owner can file one, regardless of how much of the property they own. You don't need the other co-owners' permission or cooperation to start the process.</p>
+                <p>A partition action is a lawsuit that asks a court to divide jointly owned property. Any co-owner can file one, regardless of how much of the property they own. A minority owner can force a sale against the will of the majority owners. You do not need the other co-owners' permission or cooperation to start the process. Courts do not deny partition simply because the majority of owners oppose a sale.</p>
+                <p>The right to partition is considered nearly absolute under Illinois law. Courts have consistently held that no co-owner can be forced to remain in an unwanted co-ownership relationship indefinitely. The legal framework is found in the Illinois Code of Civil Procedure, <a href="https://ilga.gov/documents/legislation/ilcs/documents/073500050K17-101.htm" target="_blank" rel="noopener noreferrer">735 ILCS 5/17-101</a> et seq., which governs partition actions in the state.</p>
                 <p>The goal is to give each owner the fair value of their share. How the court accomplishes that depends on the type of property and whether it can be physically divided.</p>
 
                 <h2>Partition in Kind vs. Partition by Sale</h2>
                 <p>Illinois courts recognize two primary ways to resolve a partition action.</p>
-                <p>A partition in kind divides the property itself. If the property is a large tract of land - farmland, for example - it may be possible to split it into separate parcels so each co-owner walks away with their own piece. Courts consider whether the property can be divided practically without destroying its value, whether the divided parcels would be roughly proportional to each owner's share, and whether any co-owner would be unfairly harmed by the division.</p>
-                <p>For most residential properties, partition in kind isn't realistic. You can't split a house in half. In those cases, the court will typically order a partition by sale - the property is sold, and the proceeds are divided among the co-owners according to their ownership shares.</p>
-                <p>Before a court orders a sale, it may consider whether one co-owner is willing and able to buy out the others. If one sibling wants to keep the family home and can afford to pay the others their share, that's often the cleanest resolution. But if no one can afford a buyout, or if the parties can't agree on a price, the court moves toward a sale.</p>
+                <p>A <strong>partition in kind</strong> divides the property itself. If the property is a large tract of land - farmland, for example - it may be possible to split it into separate parcels so each co-owner walks away with their own piece. Courts consider whether the property can be divided practically without destroying its value, whether the divided parcels would be roughly proportional to each owner's share, and whether any co-owner would be unfairly harmed by the division.</p>
+                <p>For most residential properties, partition in kind is not realistic. You cannot split a house in half. In those cases, the court will typically order a <strong>partition by sale</strong> - the property is sold, and the proceeds are divided among the co-owners according to their ownership shares.</p>
+
+                <!-- Partition in Kind vs. Partition by Sale Comparison -->
+                <div class="blog-comparison-chart">
+                    <div class="blog-comparison-grid">
+                        <div class="blog-comparison-card card-green">
+                            <div class="blog-comparison-title">Partition in Kind</div>
+                            <div class="blog-comparison-items">
+                                <div>Property is physically divided into separate parcels</div>
+                                <div>Each co-owner receives their own titled piece</div>
+                                <div>Most common for farmland or large lots</div>
+                                <div>Rarely practical for residential homes</div>
+                            </div>
+                        </div>
+                        <div class="blog-comparison-card card-blue">
+                            <div class="blog-comparison-title">Partition by Sale</div>
+                            <div class="blog-comparison-items">
+                                <div>Property is sold and proceeds are divided</div>
+                                <div>Court oversees the sale for fairness</div>
+                                <div>Most common outcome for houses and condos</div>
+                                <div>Adjustments made for taxes, maintenance, improvements</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Before a court orders a sale, it may consider whether one co-owner is willing and able to buy out the others. If one sibling wants to keep the family home and can afford to pay the others their share, that is often the cleanest resolution. But if no one can afford a buyout, or if the parties cannot agree on a price, the court moves toward a sale.</p>
 
                 <h2>How the Process Works</h2>
-                <p>A partition action starts with a complaint filed in the county where the property is located. The filing co-owner identifies all other owners and their respective shares.</p>
-                <p>If the co-owners can't agree on the property's value, the court can appoint an independent appraiser. This takes the valuation dispute out of the parties' hands and gives everyone a neutral number to work from.</p>
-                <p>From there, the court will determine whether partition in kind is feasible or whether a sale is necessary. If the property is sold, the court oversees the process to ensure it's handled fairly. After the sale, proceeds are distributed according to each owner's share - minus any adjustments for things like one co-owner having paid property taxes, made improvements, or covered maintenance costs that benefited the entire property.</p>
+                <p>A partition action starts with a complaint filed in the circuit court of the county where the property is located. The filing co-owner identifies all other owners and their respective shares.</p>
+
+                <!-- Process Flowchart -->
+                <div class="blog-visual-wrap">
+                    <svg viewBox="0 0 620 100" xmlns="http://www.w3.org/2000/svg" font-family="Poppins, sans-serif">
+                        <!-- Step connecting lines -->
+                        <line x1="88" y1="35" x2="165" y2="35" stroke="#d0d0d0" stroke-width="2"/>
+                        <line x1="213" y1="35" x2="283" y2="35" stroke="#d0d0d0" stroke-width="2"/>
+                        <line x1="331" y1="35" x2="401" y2="35" stroke="#d0d0d0" stroke-width="2"/>
+                        <line x1="449" y1="35" x2="526" y2="35" stroke="#d0d0d0" stroke-width="2"/>
+
+                        <!-- Step 1: File -->
+                        <circle cx="66" cy="35" r="22" fill="rgb(30,55,90)"/>
+                        <text x="66" y="40" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">1</text>
+                        <text x="66" y="80" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">File Complaint</text>
+
+                        <!-- Step 2: Serve -->
+                        <circle cx="189" cy="35" r="22" fill="rgb(30,55,90)"/>
+                        <text x="189" y="40" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">2</text>
+                        <text x="189" y="80" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">Serve Owners</text>
+
+                        <!-- Step 3: Appraise -->
+                        <circle cx="307" cy="35" r="22" fill="rgb(30,55,90)"/>
+                        <text x="307" y="40" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">3</text>
+                        <text x="307" y="80" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">Appraisal</text>
+
+                        <!-- Step 4: Court Decision -->
+                        <circle cx="425" cy="35" r="22" fill="rgb(30,55,90)"/>
+                        <text x="425" y="40" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">4</text>
+                        <text x="425" y="75" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">Court Rules on</text>
+                        <text x="425" y="90" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">Division or Sale</text>
+
+                        <!-- Step 5: Sale/Division -->
+                        <circle cx="548" cy="35" r="22" fill="#f5d236"/>
+                        <text x="548" y="40" text-anchor="middle" fill="rgb(30,55,90)" font-weight="700" font-size="13">5</text>
+                        <text x="548" y="75" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">Sale or Division</text>
+                        <text x="548" y="90" text-anchor="middle" fill="rgb(30,55,90)" font-weight="600" font-size="11">+ Distribution</text>
+                    </svg>
+                </div>
+
+                <p>If the co-owners cannot agree on the property's value, the court can appoint an independent appraiser. This takes the valuation dispute out of the parties' hands and gives everyone a neutral number to work from.</p>
+                <p>From there, the court will determine whether partition in kind is feasible or whether a sale is necessary. If the property is sold, the court oversees the process to ensure it is handled fairly. After the sale, proceeds are distributed according to each owner's share - minus any adjustments determined through the accounting process.</p>
+
+                <h2>Accounting: How Contributions Affect the Split</h2>
+                <p>In most partition cases, the proceeds are not simply divided by ownership percentage. The court conducts an accounting to adjust the distribution based on each co-owner's financial contributions to the property.</p>
+                <p>A co-owner who has been paying property taxes, insurance, mortgage payments, or necessary maintenance costs while the other co-owners have not contributed is typically entitled to a credit from the sale proceeds before the remainder is divided. Similarly, if a co-owner made improvements that increased the property's value - such as a new roof or updated electrical system - they may be reimbursed for those costs.</p>
+                <p>On the other side, a co-owner who has had exclusive use of the property may owe the other co-owners compensation for that occupancy. This is sometimes called occupation rent or fair rental value. If one sibling has been living in the inherited home rent-free while the others receive no benefit from the property, the court may require that sibling to account for the rental value they received.</p>
+                <p>In our experience, keeping detailed records of every payment you make toward the property - taxes, insurance premiums, repair bills, mortgage payments - is critical. If a partition action is filed, those records are the foundation of your accounting claim. Without documentation, it becomes much harder to prove what you contributed.</p>
+
+                <h2>What Happens if There Is a Mortgage</h2>
+                <p>When inherited property has an outstanding mortgage, the situation becomes more complex. The mortgage does not disappear when the original owner dies. It remains a lien on the property, and someone has to keep making payments or the lender can foreclose.</p>
+                <p>If one co-owner has been making the mortgage payments, that co-owner is generally entitled to credit for those payments in the accounting. If the property is sold through a partition action, the mortgage balance is paid off from the sale proceeds before the remaining amount is divided among the co-owners.</p>
+                <p>Co-owners should also be aware that falling behind on mortgage payments or property taxes while a co-ownership dispute drags on can result in foreclosure or a tax sale - outcomes that hurt everyone's interest in the property. This is one reason why unresolved co-ownership disputes carry real financial risk, and why acting sooner rather than later is often the better course.</p>
+
+                <h2>The Uniform Partition of Heirs Property Act</h2>
+                <p>Illinois adopted the <strong><a href="https://www.ilga.gov/Legislation/ILCS/Articles?ActID=4032&ChapterID=60" target="_blank" rel="noopener noreferrer">Uniform Partition of Heirs Property Act</a></strong> (<a href="https://www.ilga.gov/Legislation/ILCS/Articles?ActID=4032&ChapterID=60" target="_blank" rel="noopener noreferrer">755 ILCS 75</a>), which provides additional protections specifically for inherited property that qualifies as "heirs property" under the statute. The Act was designed to prevent forced sales at below-market prices that disproportionately affected families who inherited property without a will or formal ownership agreement.</p>
+                <p>When the Act applies, the court must follow a specific process before ordering a sale:</p>
+                <ul>
+                    <li><strong>Court-ordered appraisal</strong> - The court must order an independent appraisal to determine the property's fair market value, rather than relying on the parties' competing estimates</li>
+                    <li><strong>Right of first refusal</strong> - Non-filing co-owners must be given the opportunity to buy out the filing co-owner's share at the appraised value before any sale can proceed</li>
+                    <li><strong>Open-market sale required</strong> - If a sale is ordered, it must be conducted on the open market rather than by private auction, which typically results in a higher sale price</li>
+                </ul>
+                <p>The Act applies when the property is held in tenancy in common and at least one co-owner acquired their interest from a relative. If your inherited property dispute involves heirs property, the UPHPA may significantly affect how the partition action proceeds and what protections you are entitled to.</p>
+
+                <!-- Mid-article CTA -->
+                <div class="mid-cta-callout">
+                    <p><strong>Inherited property dispute?</strong> Every month of inaction costs you in taxes, insurance, and lost equity. A brief consultation can clarify your options - whether you want to force a sale, pursue a buyout, or respond to a partition action.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
 
                 <h2>What Co-Owners Should Know Before Filing</h2>
                 <p>Partition actions are powerful, but they come with realities that co-owners should understand going in.</p>
-                <p>The process takes time. Between filing, serving the other owners, getting an appraisal, and working through the court system, a partition action can take several months to over a year depending on how contested it is.</p>
-                <p>It can affect family relationships. When the co-owners are siblings or other family members, filing a partition action can feel like an escalation - and it often is. That doesn't mean it's the wrong choice, but it's worth attempting negotiation first if there's any chance of reaching a voluntary agreement.</p>
-                <p>One co-owner's contributions may affect the distribution. If you've been paying property taxes, insurance, or maintenance costs while the other co-owners haven't contributed, you may be entitled to credit for those expenses out of the sale proceeds. Similarly, if you made improvements that increased the property's value, you may have a claim for reimbursement. Document everything.</p>
-                <p>The property may sell for less than you expect. Court-ordered sales don't always achieve full market value, particularly if the sale is forced and the parties aren't cooperating on preparation, staging, or timing. A negotiated sale between willing co-owners almost always produces a better result than a court-ordered one.</p>
+                <ul>
+                    <li><strong>The process takes time.</strong> Between filing, serving the other owners, getting an appraisal, and working through the court system, a partition action can take several months to over a year depending on how contested it is.</li>
+                    <li><strong>It can affect family relationships.</strong> When the co-owners are siblings or other family members, filing a partition action can feel like an escalation - and it often is. That does not mean it is the wrong choice, but it is worth attempting negotiation first if there is any chance of reaching a voluntary agreement.</li>
+                    <li><strong>The property may sell for less than you expect.</strong> Court-ordered sales do not always achieve full market value, particularly if the sale is forced and the parties are not cooperating on preparation, staging, or timing. A negotiated sale between willing co-owners almost always produces a better result than a court-ordered one.</li>
+                    <li><strong>Litigation costs come out of the proceeds.</strong> Attorney fees, appraisal costs, and court expenses in a partition action can be significant. Those costs are typically paid from the sale proceeds, which means less money for everyone. Before filing, weigh the cost of litigation against what you stand to gain.</li>
+                </ul>
+
+                <h2>Tenancy in Common vs. Joint Tenancy</h2>
+                <p>How co-owners hold title affects what happens when one owner dies and what rights the surviving owners have.</p>
+                <p>Most inherited property is held as <strong>tenancy in common</strong>. Each co-owner holds a distinct, transferable interest that can be passed down through a will or by intestate succession. If one co-owner dies, their share goes to their heirs, not automatically to the other co-owners.</p>
+                <p><strong>Joint tenancy</strong>, by contrast, includes a right of survivorship. When one joint tenant dies, their share passes automatically to the surviving joint tenants - bypassing probate entirely. For a joint tenancy to exist in Illinois, the deed must explicitly state the intent, typically using the phrase "as joint tenants with right of survivorship."</p>
+                <p>The distinction matters because it determines who ends up owning the property after a death and whether a partition action is the right remedy. In most inherited property disputes involving siblings, the property is held as tenants in common, and partition is available to any co-owner who wants out.</p>
 
                 <h2>When Negotiation Is the Better Path</h2>
-                <p>Not every co-ownership dispute needs to go to court. In many cases, the co-owners can agree on a buyout price, a timeline for selling, or a plan for managing the property in the short term. A real estate attorney can help structure these agreements and make sure they're documented properly so the same dispute doesn't come back later.</p>
-                <p>But when one co-owner refuses to engage, won't agree to sell, or won't respond at all, a partition action may be the only way to move forward. Illinois law gives every co-owner the right to access the value of their ownership interest - and a partition action is the mechanism for enforcing that right.</p>
+                <p>Not every co-ownership dispute needs to go to court. In many cases, the co-owners can agree on a buyout price, a timeline for selling, or a plan for managing the property in the short term. We tell clients to try a written buyout proposal first. It costs nothing, and if it fails, it shows the court you made a good-faith effort before filing. A <a href="/real-estate-litigation">real estate attorney</a> can help structure these agreements and make sure they are documented properly so the same dispute does not come back later.</p>
+                <p>But when one co-owner refuses to engage, will not agree to sell, or will not respond at all, a partition action may be the only way to move forward. Illinois law gives every co-owner the right to access the value of their ownership interest - and a partition action is the mechanism for enforcing that right.</p>
 
-                <p>For more information on inherited property disputes and co-ownership issues, visit our <a href="/partition-actions">Partition Actions</a> practice area page. If your inherited property has title issues that need to be resolved before it can be sold, our post on <a href="/blog/quiet-title-actions-chicago-guide">quiet title actions in Chicago</a> explains how those are handled.</p>
+                <p>For more information on inherited property disputes and co-ownership issues, visit our <a href="/partition-actions">Partition Actions</a> practice area page. If your inherited property has title issues that need to be resolved before it can be sold, our post on <a href="/blog/quiet-title-actions-chicago-guide">quiet title actions in Chicago</a> explains how those are handled. And if the property dispute involves questions about what was or was not disclosed during a prior sale, see our guide on <a href="/blog/can-buyer-sue-seller-after-closing-illinois">post-closing disclosure claims in Illinois</a>.</p>
+
+                <!-- CTA Box -->
+                <div class="service-cta-box">
+                    <h2>Dealing With a Co-Ownership Dispute?</h2>
+                    <p>Whether you need to file a partition action or respond to one, we help co-owners throughout Chicago and surrounding counties understand their rights and move forward. We offer free, confidential consultations.</p>
+                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Can one sibling force the sale of inherited property in Illinois?</h3>
+                        <p>Yes. Any co-owner of inherited property in Illinois can file a partition action to force a sale, regardless of how small their ownership share is. The right to partition is considered nearly absolute under Illinois law. The court will typically order a sale if the property cannot be physically divided, with proceeds split according to each co-owner's share after adjustments for contributions like taxes, maintenance, and improvements.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How long does a partition action take in Illinois?</h3>
+                        <p>A partition action in Illinois typically takes several months to over a year, depending on how contested it is. The process involves filing a complaint, serving the other co-owners, obtaining an appraisal, and working through the court system. If the co-owners dispute the property's value or raise accounting claims for reimbursement of taxes and maintenance costs, the timeline can extend further.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can a co-owner be reimbursed for paying property taxes on inherited property?</h3>
+                        <p>Yes. In a partition action, the court conducts an accounting to adjust the distribution of sale proceeds. A co-owner who paid more than their share of property taxes, insurance, mortgage payments, or necessary maintenance costs is typically entitled to a credit from the sale proceeds before the remainder is divided. Similarly, a co-owner who made improvements that increased the property's value may be reimbursed for those costs.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the Uniform Partition of Heirs Property Act?</h3>
+                        <p>The <a href="https://www.ilga.gov/Legislation/ILCS/Articles?ActID=4032&ChapterID=60" target="_blank" rel="noopener noreferrer">Uniform Partition of Heirs Property Act</a> (<a href="https://www.ilga.gov/Legislation/ILCS/Articles?ActID=4032&ChapterID=60" target="_blank" rel="noopener noreferrer">755 ILCS 75</a>) is an Illinois law that provides additional protections when inherited property is subject to a partition action. It requires the court to order an independent appraisal, gives non-filing co-owners the right to buy out the filing co-owner's share at appraised value, and requires any court-ordered sale to be conducted on the open market rather than by private auction. The Act applies when the property qualifies as heirs property under the statute.</p>
+                    </div>
+                </div>
 
                 <!-- Related Articles -->
                 <div class="blog-related-articles">
@@ -4493,13 +4844,6 @@
                     <button class="blog-share-btn" onclick="sharePost(this)" data-url="/blog/force-co-owner-sell-inherited-property-illinois" data-title="Can You Force a Co-Owner to Sell Inherited Property in Illinois?">Share This &nbsp;
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
-                </div>
-
-                <!-- CTA Box -->
-                <div class="service-cta-box">
-                    <h2>Dealing With a Co-Ownership Dispute?</h2>
-                    <p>Whether you need to file a partition action or respond to one, we help co-owners throughout Chicago and surrounding counties understand their rights and move forward. We offer free, confidential consultations.</p>
-                    <a href="/contact" class="cta-btn">Schedule a Free Consultation</a>
                 </div>
             </article>
         </main>
@@ -4589,12 +4933,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#8fe6e1e9e0cfedfdeee1ebe3eef8ece7e6eceee8e0a1ece0e2" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="f990979f96b99b8b98979d95988e9a91909a989e96d79a9694">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4677,7 +5021,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
@@ -4878,13 +5222,4 @@
             navigator.clipboard.writeText(url).then(function() {
                 const original = btn.innerHTML;
                 btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHTML = original; }, 2000);
-            });
-        }
-    }
-</script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="/calendly-form.js"></script>
-    
-</body>
-</html>
+                setTimeout(function() { btn.innerHT
