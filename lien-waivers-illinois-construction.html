@@ -5264,5 +5264,28 @@
     </script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="/calendly-form.js"></script>
+<script>
+    function toggleSharePopover(btn) {
+        var wrapper = btn.closest('.share-popover-wrapper');
+        var popover = wrapper.querySelector('.share-popover');
+        var isOpen = popover.classList.contains('active');
+
+        document.querySelectorAll('.share-popover').forEach(function(p) {
+            p.classList.remove('active');
+        });
+
+        if (!isOpen) {
+            popover.classList.add('active');
+        }
+    }
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.share-popover-wrapper')) {
+            document.querySelectorAll('.share-popover').forEach(function(p) {
+                p.classList.remove('active');
+            });
+        }
+    });
+    </script>
 </body>
 </html>
