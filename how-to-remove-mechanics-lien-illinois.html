@@ -5092,7 +5092,7 @@
 <script>
 /* ========== EMAIL VALIDATION ========== */
 (function() {
-    var re = /^(?!.*\.\.)[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
+    var re = /^(?!.*\.\.)[[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
 
     function showError(input, msg) {
         clearError(input);
@@ -5154,6 +5154,21 @@
         }
     }, true);
 })();
+    function sharePost(btn) {
+        const url = window.location.origin + btn.getAttribute('data-url');
+        const title = btn.getAttribute('data-title');
+        
+        if (navigator.share) {
+            navigator.share({ title: title, url: url });
+        } else {
+            navigator.clipboard.writeText(url).then(function() {
+                const original = btn.innerHTML;
+                btn.innerHTML = 'Link Copied! \u2713';
+                setTimeout(function() { btn.innerHTML = original; }, 2000);
+            });
+        }
+    }
+
     // Table fade effect
     document.querySelectorAll('.blog-table-fade-wrapper').forEach(function(wrapper) {
         var hint = wrapper.nextElementSibling;
@@ -5169,15 +5184,8 @@
         window.addEventListener('resize', updateHint);
         updateHint();
     });
-
-    function sharePost(btn) {
-        const url = window.location.origin + btn.getAttribute('data-url');
-        const title = btn.getAttribute('data-title');
-        
-        if (navigator.share) {
-            navigator.share({ title: title, url: url });
-        } else {
-            navigator.clipboard.writeText(url).then(function() {
-                const original = btn.innerHTML;
-                btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHT
+    </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="/calendly-form.js"></script>
+</body>
+</html>

@@ -9244,7 +9244,7 @@
 <script>
 /* ========== EMAIL VALIDATION ========== */
 (function() {
-    var re = /^(?!.*\.\.)[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
+    var re = /^(?!.*\.\.)[[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
 
     function showError(input, msg) {
         clearError(input);
@@ -9306,32 +9306,8 @@
         }
     }, true);
 })();
-</script>
-<script>
-// Parallax effect for contact section logo
-(function() {
-    const contactSection = document.querySelector('.contact-section');
-    const contactParallaxBg = document.querySelector('.contact-parallax-bg');
-    
-    if (!contactSection || !contactParallaxBg) return;
-    
-    let ticking = false;
-    
-    function updateParallax() {
-        const rect = contactSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        if (rect.bottom > 0 && rect.top < windowHeight) {
-            const scrolled = (windowHeight - rect.top) / (windowHeight + rect.height);
-            const parallaxOffset = (scrolled - 0.5) * 600;
-            
-            contactParallaxBg.style.transform = `translateY(calc(-50% + ${parallaxOffset}px))`;
-        }
-        ticking = false;
-    }
-    
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
+    </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="/calendly-form.js"></script>
+</body>
+</html>

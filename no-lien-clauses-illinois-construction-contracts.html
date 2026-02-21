@@ -4957,7 +4957,7 @@
 <script>
 /* ========== EMAIL VALIDATION ========== */
 (function() {
-    var re = /^(?!.*\.\.)[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
+    var re = /^(?!.*\.\.)[[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
 
     function showError(input, msg) {
         clearError(input);
@@ -5028,5 +5028,13 @@
         } else {
             navigator.clipboard.writeText(url).then(function() {
                 const original = btn.innerHTML;
-                btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHT
+                btn.innerHTML = 'Link Copied! \u2713';
+                setTimeout(function() { btn.innerHTML = original; }, 2000);
+            });
+        }
+    }
+    </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="/calendly-form.js"></script>
+</body>
+</html>
