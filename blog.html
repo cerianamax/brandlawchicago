@@ -4941,6 +4941,127 @@
         // ========================================
     </script>
 <script>
+// Blog Category Filtering + Pagination
+(function() {
+    var POSTS_PER_PAGE = 10;
+    var allPosts = Array.prototype.slice.call(document.querySelectorAll('.blog-post-card'));
+    var pagination = document.getElementById('blog-pagination');
+    if (!allPosts.length || !pagination) return;
+
+    var filteredPosts = allPosts;
+    var currentPage = 1;
+    var isInitialLoad = true;
+
+    function getCategory() {
+        var params = new URLSearchParams(window.location.search);
+        return params.get('category') || '';
+    }
+
+    function slugify(text) {
+        return text.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+    }
+
+    function filterPosts(category) {
+        if (!category) {
+            filteredPosts = allPosts;
+        } else {
+            filteredPosts = allPosts.filter(function(post) {
+                var catEl = post.querySelector('.blog-post-category');
+                if (!catEl) return false;
+                return slugify(catEl.textContent) === category;
+            });
+        }
+        allPosts.forEach(function(p) { p.style.display = 'none'; });
+        currentPage = 1;
+        showPage(1);
+        highlightCategory(category);
+    }
+
+    function highlightCategory(category) {
+        var links = document.querySelectorAll('.blog-categories li a');
+        links.forEach(function(link) {
+            var href = link.getAttribute('href');
+            var linkCat = '';
+            if (href && href.indexOf('category=') > -1) {
+                linkCat = href.split('category=')[1];
+            }
+            if (linkCat === category || (!category && !linkCat)) {
+                link.style.fontWeight = '700';
+                link.style.color = 'var(--blue-primary)';
+            } else {
+                link.style.fontWeight = '';
+                link.style.color = '';
+            }
+        });
+    }
+
+    function showPage(page) {
+        currentPage = page;
+        var start = (page - 1) * POSTS_PER_PAGE;
+        var end = start + POSTS_PER_PAGE;
+
+        allPosts.forEach(function(p) { p.style.display = 'none'; });
+
+        for (var i = 0; i < filteredPosts.length; i++) {
+            filteredPosts[i].style.display = (i >= start && i < end) ? '' : 'none';
+        }
+
+        renderPagination();
+        var column = document.querySelector('.blog-posts-column') || allPosts[0].parentElement;
+        if (column && !isInitialLoad) column.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderPagination() {
+        var totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+        if (totalPages <= 1) { pagination.style.display = 'none'; return; }
+        pagination.style.display = '';
+
+        var html = '';
+        if (currentPage > 1) {
+            html += '<a href="#" class="pagination-item" data-page="1">First</a>';
+            html += '<a href="#" class="pagination-item" data-page="' + (currentPage - 1) + '">Prev</a>';
+        }
+        for (var p = 1; p <= totalPages; p++) {
+            html += '<a href="#" class="pagination-item' + (p === currentPage ? ' active' : '') + '" data-page="' + p + '">' + p + '</a>';
+        }
+        if (currentPage < totalPages) {
+            html += '<a href="#" class="pagination-item" data-page="' + (currentPage + 1) + '">Next</a>';
+            html += '<a href="#" class="pagination-item" data-page="' + totalPages + '">Last</a>';
+        }
+        pagination.innerHTML = html;
+    }
+
+    pagination.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = e.target.closest('.pagination-item');
+        if (!target) return;
+        var page = parseInt(target.getAttribute('data-page'));
+        if (page && page !== currentPage) showPage(page);
+    });
+
+    document.querySelectorAll('.blog-categories li a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var href = this.getAttribute('href');
+            var cat = '';
+            if (href && href.indexOf('category=') > -1) {
+                cat = href.split('category=')[1];
+            }
+            var url = cat ? '/blog?category=' + cat : '/blog';
+            window.history.pushState({}, '', url);
+            filterPosts(cat);
+        });
+    });
+
+    window.addEventListener('popstate', function() {
+        filterPosts(getCategory());
+    });
+
+    filterPosts(getCategory());
+    isInitialLoad = false;
+})();
+</script>
+<script>
 /* ========== EMAIL VALIDATION ========== */
 (function() {
     var re = /^(?!.*\.\.)[[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
