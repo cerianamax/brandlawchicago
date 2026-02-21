@@ -4602,7 +4602,7 @@
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <img src="blog-hero.webp" alt="How Construction Disputes Are Resolved in Illinois" class="service-hero-bg-img" width="2560" height="1000" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
+        <img src="blog-hero.webp" alt="How Construction Disputes Are Resolved in Illinois" class="service-hero-bg-img" width="1920" height="600" fetchpriority="high" decoding="async" loading="eager" onload="this.style.opacity='1'">
         <div class="service-hero-overlay"></div>
         <div class="service-hero-content">
             <div class="service-hero-title">Blog</div>
@@ -4637,7 +4637,7 @@
                 <h1 class="blog-article-title">How Construction Disputes Are Resolved in Illinois: Negotiation, Mediation, Arbitration, and Litigation</h1>
 
                 <div class="blog-article-image">
-                    <img src="blog-dispute-resolution-hero.webp" alt="Conflict and Resolution puzzle pieces representing Illinois construction dispute resolution" width="1600" height="900">
+                    <img src="blog-dispute-resolution-hero.webp" alt="Conflict and Resolution puzzle pieces representing Illinois construction dispute resolution" width="1200" height="675">
                 </div>
 
                 <p>Construction disputes in Illinois rarely come out of nowhere. They build. A subcontractor submits a pay application and does not hear back. A change order gets approved verbally but never makes it into writing. An owner notices defective work and withholds payment. A general contractor falls behind schedule and the finger-pointing starts.</p>
@@ -4727,6 +4727,10 @@
                 <p><strong>When mediation is the right choice:</strong> The parties are willing to settle but cannot get there on their own. Emotions are running high and a neutral voice helps. The dispute involves multiple issues and the parties need help prioritizing what matters most. Both sides want to preserve the relationship - construction is a relationship business, and parties who will work together on future projects often prefer mediation over more adversarial options.</p>
                 <p>Mediation is confidential, less formal than arbitration or litigation, and gives the parties control over the outcome. The limitation is that it is non-binding. If one side will not agree to a resolution, you leave without a decision and have to pursue another path. But in practice, mediation resolves a high percentage of the disputes that make it to the table. Organizations like the American Arbitration Association (AAA) maintain rosters of construction mediators with industry-specific experience.</p>
                 <p>For more on how mediation works in the construction context, visit our <a href="/construction-mediation">Construction Mediation</a> page.</p>
+
+                <div class="blog-article-image">
+                    <img src="blog-dispute-resolution-arbitration.webp" alt="Dictionary definition of arbitration representing binding arbitration in Illinois construction disputes" width="1200" height="675">
+                </div>
 
                 <h2>Arbitration</h2>
                 <p>Arbitration is more formal than mediation and produces a binding result. The parties present their case to an arbitrator (or a panel of arbitrators), who hears evidence, reviews documents, and issues a decision called an award. That award is enforceable in court, and in most cases, it is final - there is very limited ability to appeal.</p>
@@ -4894,12 +4898,12 @@
                             </svg>
                             <span>(312) 535-9221</span>
                         </a>
-                        <a href="mailto:info@brandlawchicago.com" class="footer-contact-link">
+                        <a href="/cdn-cgi/l/email-protection#cea7a0a8a18eacbcafa0aaa2afb9ada6a7adafa9a1e0ada1a3" class="footer-contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>info@brandlawchicago.com</span>
+                            <span><span class="__cf_email__" data-cfemail="dcb5b2bab39cbeaebdb2b8b0bdabbfb4b5bfbdbbb3f2bfb3b1">[email&#160;protected]</span></span>
                         </a>
                     </div>
                     <div class="footer-newsletter">
@@ -4982,7 +4986,7 @@
     </footer>
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Add scrolled class to navbar when user scrolls
         let lastNavScrollY = window.scrollY;
         
@@ -5111,7 +5115,7 @@
 <script>
 /* ========== EMAIL VALIDATION ========== */
 (function() {
-    var re = /^(?!.*\.\.)[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
+    var re = /^(?!.*\.\.)[[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/;
 
     function showError(input, msg) {
         clearError(input);
@@ -5173,6 +5177,21 @@
         }
     }, true);
 })();
+    function sharePost(btn) {
+        const url = window.location.origin + btn.getAttribute('data-url');
+        const title = btn.getAttribute('data-title');
+        
+        if (navigator.share) {
+            navigator.share({ title: title, url: url });
+        } else {
+            navigator.clipboard.writeText(url).then(function() {
+                const original = btn.innerHTML;
+                btn.innerHTML = 'Link Copied! \u2713';
+                setTimeout(function() { btn.innerHTML = original; }, 2000);
+            });
+        }
+    }
+
     // Table fade effect
     document.querySelectorAll('.blog-table-fade-wrapper').forEach(function(wrapper) {
         var hint = wrapper.nextElementSibling;
@@ -5188,14 +5207,8 @@
         window.addEventListener('resize', updateHint);
         updateHint();
     });
-    function sharePost(btn) {
-        const url = window.location.origin + btn.getAttribute('data-url');
-        const title = btn.getAttribute('data-title');
-        
-        if (navigator.share) {
-            navigator.share({ title: title, url: url });
-        } else {
-            navigator.clipboard.writeText(url).then(function() {
-                const original = btn.innerHTML;
-                btn.innerHTML = 'Link Copied! ✓';
-                setTimeout(function() { btn.innerHT
+    </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="/calendly-form.js"></script>
+</body>
+</html>
