@@ -5017,14 +5017,14 @@
         pagination.style.display = '';
 
         var html = '';
-        if (currentPage > 1) {
+        if (totalPages > 2 && currentPage > 1) {
             html += '<a href="#" class="pagination-item" data-page="1">First</a>';
             html += '<a href="#" class="pagination-item" data-page="' + (currentPage - 1) + '">Prev</a>';
         }
         for (var p = 1; p <= totalPages; p++) {
             html += '<a href="#" class="pagination-item' + (p === currentPage ? ' active' : '') + '" data-page="' + p + '">' + p + '</a>';
         }
-        if (currentPage < totalPages) {
+        if (totalPages > 2 && currentPage < totalPages) {
             html += '<a href="#" class="pagination-item" data-page="' + (currentPage + 1) + '">Next</a>';
             html += '<a href="#" class="pagination-item" data-page="' + totalPages + '">Last</a>';
         }
