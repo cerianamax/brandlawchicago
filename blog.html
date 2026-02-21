@@ -5007,8 +5007,7 @@
         }
 
         renderPagination();
-        var column = document.querySelector('.blog-posts-column') || allPosts[0].parentElement;
-        if (column && !isInitialLoad) column.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!isInitialLoad) window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function renderPagination() {
