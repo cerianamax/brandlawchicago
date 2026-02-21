@@ -4,6 +4,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://brandlawchicago.com/</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -11,16 +12,19 @@
     <!-- About -->
     <url>
         <loc>https://brandlawchicago.com/about</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/meet-todd-r-brand</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/why-choose-us</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -28,6 +32,7 @@
     <!-- Practice Areas Hub -->
     <url>
         <loc>https://brandlawchicago.com/practice-areas</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -35,6 +40,7 @@
     <!-- Construction Law Hub -->
     <url>
         <loc>https://brandlawchicago.com/construction-law</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -42,46 +48,55 @@
     <!-- Construction Disputes -->
     <url>
         <loc>https://brandlawchicago.com/construction-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/payment-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-defects</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-delays</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/change-order-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/differing-site-conditions</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/contractor-abandonment</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-arbitration</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-mediation</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -89,11 +104,13 @@
     <!-- Contract Drafting -->
     <url>
         <loc>https://brandlawchicago.com/construction-contract-drafting-negotiation</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-project-delivery-methods</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -101,16 +118,19 @@
     <!-- Other Practice Areas -->
     <url>
         <loc>https://brandlawchicago.com/mechanics-liens</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/insurance-claims-restoration-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/hoa-condo-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -118,36 +138,43 @@
     <!-- Real Estate Litigation -->
     <url>
         <loc>https://brandlawchicago.com/real-estate-litigation</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/quiet-title-actions</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/real-estate-breach-of-contract</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/partition-actions</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/property-line-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/easement-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/real-estate-misrepresentation-disclosure-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -155,16 +182,19 @@
     <!-- Title & Closings & Business -->
     <url>
         <loc>https://brandlawchicago.com/title-disputes</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/real-estate-closings</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/business-law</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -172,46 +202,55 @@
     <!-- FAQs -->
     <url>
         <loc>https://brandlawchicago.com/faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-disputes-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/construction-contracts-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/mechanics-liens-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/mediation-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/arbitration-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/public-adjuster-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/hoa-condo-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/title-dispute-quiet-title-faqs</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -219,66 +258,79 @@
     <!-- Blog -->
     <url>
         <loc>https://brandlawchicago.com/blog</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/quiet-title-actions-chicago-guide</loc>
+        <lastmod>2025-11-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/how-to-remove-mechanics-lien-illinois</loc>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/how-to-challenge-mechanics-lien-illinois</loc>
+        <lastmod>2025-06-24</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/last-date-of-work-mechanics-lien-illinois</loc>
+        <lastmod>2025-12-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/lien-waivers-illinois-construction</loc>
+        <lastmod>2025-10-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/can-buyer-sue-seller-after-closing-illinois</loc>
+        <lastmod>2026-01-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/construction-dispute-resolution-illinois</loc>
+        <lastmod>2026-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/easements-property-values-illinois</loc>
+        <lastmod>2025-08-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/poorly-drafted-easements-illinois</loc>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/force-co-owner-sell-inherited-property-illinois</loc>
+        <lastmod>2026-01-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/defective-construction-work-illinois</loc>
+        <lastmod>2026-02-05</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/blog/no-lien-clauses-illinois-construction-contracts</loc>
+        <lastmod>2025-08-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -286,21 +338,25 @@
     <!-- Contact & Legal -->
     <url>
         <loc>https://brandlawchicago.com/contact</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/privacy-policy</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/disclaimer</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://brandlawchicago.com/sitemap</loc>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
