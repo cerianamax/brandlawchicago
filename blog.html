@@ -5055,6 +5055,78 @@
         });
     }
 
+
+    // Blog Search
+    function getSearchQuery() {
+        var params = new URLSearchParams(window.location.search);
+        return params.get('search') || '';
+    }
+
+    function performSearch(query) {
+        var category = getCategory();
+        var postsToSearch = allPosts;
+
+        // Apply category filter first
+        if (category) {
+            postsToSearch = allPosts.filter(function(post) {
+                var catEl = post.querySelector('.blog-post-category');
+                if (!catEl) return false;
+                return slugify(catEl.textContent) === category;
+            });
+        }
+
+        // Then apply search filter
+        if (query) {
+            var q = query.toLowerCase();
+            filteredPosts = postsToSearch.filter(function(post) {
+                var title = (post.querySelector('.blog-post-title') || {}).textContent || '';
+                var excerpt = (post.querySelector('.blog-post-excerpt') || {}).textContent || '';
+                var cat = (post.querySelector('.blog-post-category') || {}).textContent || '';
+                return title.toLowerCase().indexOf(q) > -1 ||
+                       excerpt.toLowerCase().indexOf(q) > -1 ||
+                       cat.toLowerCase().indexOf(q) > -1;
+            });
+        } else {
+            filteredPosts = postsToSearch;
+        }
+
+        allPosts.forEach(function(p) { p.style.display = 'none'; });
+        currentPage = 1;
+        showPage(1);
+        highlightCategory(category);
+
+        // Update URL
+        var url = '/blog';
+        var params = [];
+        if (category) params.push('category=' + category);
+        if (query) params.push('search=' + encodeURIComponent(query));
+        if (params.length) url += '?' + params.join('&');
+        window.history.pushState({}, '', url);
+
+        // Sync both search inputs
+        document.querySelectorAll('.blog-search-input').forEach(function(input) {
+            input.value = query;
+        });
+    }
+
+    // Search input handlers
+    document.querySelectorAll('.blog-search-input').forEach(function(input) {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch(this.value.trim());
+            }
+        });
+    });
+
+    document.querySelectorAll('.blog-search-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var input = this.closest('.blog-search-wrapper').querySelector('.blog-search-input');
+            performSearch(input.value.trim());
+        });
+    });
+
     function showPage(page) {
         currentPage = page;
         var start = (page - 1) * POSTS_PER_PAGE;
@@ -5098,6 +5170,19 @@
         if (page && page !== currentPage) showPage(page);
     });
 
+
+    // Override filterPosts to include search
+    var origFilterPosts = filterPosts;
+    filterPosts = function(category) {
+        var query = getSearchQuery();
+        if (query) {
+            performSearch(query);
+        } else {
+            origFilterPosts(category);
+        }
+    };
+
+    // Category click - clear search
     document.querySelectorAll('.blog-categories li a').forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -5106,18 +5191,34 @@
             if (href && href.indexOf('category=') > -1) {
                 cat = href.split('category=')[1];
             }
+            // Clear search inputs
+            document.querySelectorAll('.blog-search-input').forEach(function(input) {
+                input.value = '';
+            });
             var url = cat ? '/blog?category=' + cat : '/blog';
             window.history.pushState({}, '', url);
-            filterPosts(cat);
+            origFilterPosts(cat);
         });
     });
 
     window.addEventListener('popstate', function() {
-        filterPosts(getCategory());
+        var query = getSearchQuery();
+        if (query) {
+            performSearch(query);
+        } else {
+            origFilterPosts(getCategory());
+        }
     });
 
-    filterPosts(getCategory());
+    // Initial load
+    var initSearch = getSearchQuery();
+    if (initSearch) {
+        performSearch(initSearch);
+    } else {
+        origFilterPosts(getCategory());
+    }
     isInitialLoad = false;
+
 })();
 </script>
 <script>

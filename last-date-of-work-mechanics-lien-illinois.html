@@ -5291,5 +5291,25 @@
         }
     });
     </script>
+<script>
+    // Blog search redirect
+    document.querySelectorAll('.blog-search-input').forEach(function(input) {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var q = this.value.trim();
+                if (q) window.location.href = '/blog?search=' + encodeURIComponent(q);
+            }
+        });
+    });
+    document.querySelectorAll('.blog-search-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var input = this.closest('.blog-search-wrapper').querySelector('.blog-search-input');
+            var q = input.value.trim();
+            if (q) window.location.href = '/blog?search=' + encodeURIComponent(q);
+        });
+    });
+    </script>
 </body>
 </html>
