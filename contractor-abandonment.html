@@ -323,7 +323,14 @@
         a.logo:visited,
         a.logo:hover,
         a.logo:active,
-        .logo *,
+        .logo * {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--charcoal);
@@ -468,16 +475,14 @@
 
         .logo {
             display: flex;
-            align-items: flex-start;
-            gap: 1.2rem;
+            align-items: center;
         }
 
         .logo img {
-            height: 43px;
+            height: 65px;
             width: auto;
             filter: brightness(0) invert(1);
             transition: filter 0.3s ease;
-            margin-top: 3px;
         }
         .nav-links {
             display: flex;
@@ -1970,7 +1975,7 @@
             }
 
             .logo img {
-                height: 31px;
+                height: 57px;
             }
             .cta-nav-btn {
                 font-size: 1.05rem;
@@ -2875,9 +2880,8 @@
             }
 
             nav .logo img {
-                height: 37px;
+                height: 31px;
                 width: auto;
-                margin-top: 3px;
             }
             .hamburger {
                 display: flex;
