@@ -366,9 +366,18 @@
         nav a,
         nav a:visited,
         .logo,
-        .logo:visited,
+        .logo:visited {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+        }
+
         nav a:focus,
-        .logo:focus,
+        .logo:focus {
+            outline: none !important;
+            text-decoration: none !important;
+        }
+
         .nav-wrapper.scrolled {
             background: rgb(245, 245, 245);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
