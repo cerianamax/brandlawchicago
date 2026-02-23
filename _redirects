@@ -1,1 +1,39 @@
+# ============================================
+# Force trailing slash to non-trailing slash
+# Fixes "duplicate without user-selected canonical"
+# ============================================
+/blog/  /blog  301
+
+# Blog pretty URLs (existing rule)
 /blog/:slug  /:slug  200
+
+/about/  /about  301
+/mechanics-liens/  /mechanics-liens  301
+/faq/  /faqs  301
+
+# ============================================
+# Old Wix pages with clear equivalents - 301 redirect
+# ============================================
+/todd-r-brand/  /meet-todd-r-brand  301
+/about-us/  /about  301
+/about-us-2/  /about  301
+/bcd31-about-us/  /about  301
+/contract-drafting-negotiation/  /construction-contract-drafting-negotiation  301
+/news/  /blog  301
+/bcd31-contact-us/  /contact  301
+/property-damage/  /insurance-claims-restoration-disputes  301
+
+# ============================================
+# Old Wix junk - 410 Gone (permanently removed)
+# ============================================
+/bcd31-portfolio/  /404.html  410
+/bcd31-portfolio-single/  /404.html  410
+/hello-world/  /404.html  410
+/hello-world-2/  /404.html  410
+/the-future-of-marketing-automation/  /404.html  410
+/how-analytics-can-fuel-your-marketing-success/  /404.html  410
+/how-we-helped-a-fashion-brand-achieve-their-goal/  /404.html  410
+/what-we-do/  /404.html  410
+/appearance-guide/  /404.html  410
+/improve-him-believe-opinion-offered/  /404.html  410
+/perfectly-on-furniture/  /404.html  410
