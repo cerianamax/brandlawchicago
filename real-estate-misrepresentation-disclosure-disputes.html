@@ -324,16 +324,12 @@
         a.logo:visited,
         a.logo:hover,
         a.logo:active,
-        .logo *,
-        .logo-text,
-        .logo-text *,
-        .logo-text .logo-title,
-        .logo-text p {
+        .logo * {
             text-decoration: none !important;
-            border: none !important;
             border-bottom: none !important;
             outline: none !important;
             box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -363,7 +359,7 @@
             left: 0;
             right: 0;
             z-index: 1002;
-            transition: all 0.4s ease;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
             overflow: visible;
         }
 
@@ -371,24 +367,16 @@
         nav a,
         nav a:visited,
         .logo,
-        .logo:visited,
-        .logo-text,
-        .logo-text a {
+        .logo:visited {
             text-decoration: none !important;
             border-bottom: none !important;
             outline: none !important;
         }
 
         nav a:focus,
-        .logo:focus,
-        .logo-text a:focus {
+        .logo:focus {
             outline: none !important;
             text-decoration: none !important;
-        }
-
-        .logo-text p {
-            text-decoration: none !important;
-            border-bottom: none !important;
         }
 
         .nav-wrapper.scrolled {
@@ -400,13 +388,6 @@
         .nav-wrapper.scrolled .logo img {
             filter: brightness(0) saturate(100%) invert(18%) sepia(75%) saturate(400%) hue-rotate(175deg) brightness(105%) contrast(100%);
         }
-
-        .nav-wrapper.scrolled .logo-text,
-        .nav-wrapper.scrolled .logo-text .logo-title,
-        .nav-wrapper.scrolled .logo-text p {
-            color: rgb(30, 55, 90) !important;
-        }
-
         .nav-wrapper.scrolled .nav-links > li > a {
             color: rgb(30, 55, 90);
             font-weight: 700;
@@ -439,10 +420,24 @@
             fill: rgb(30, 55, 90);
         }
 
+        .phone-number {
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            padding-bottom: 1px;
+            transform: translateY(3px);
+        }
+
+        .phone-btn:hover .phone-number {
+            border-bottom-color: #f5d236;
+        }
+
         .nav-wrapper.scrolled .phone-btn:hover {
             color: #2E82DC;
-            box-shadow: none;
-            outline-color: transparent;
+        }
+
+        .nav-wrapper.scrolled .phone-btn:hover .phone-number {
+            border-bottom-color: #2E82DC;
         }
 
         .nav-wrapper.scrolled .phone-btn:hover svg.phone-icon {
@@ -490,50 +485,15 @@
 
         .logo {
             display: flex;
-            align-items: flex-start;
-            gap: 1.2rem;
+            align-items: center;
         }
 
         .logo img {
-            height: 98px;
+            height: 65px;
             width: auto;
             filter: brightness(0) invert(1);
             transition: filter 0.3s ease;
-            margin-top: 3px;
         }
-
-        .logo-text {
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 98px;
-            padding: 3px 0 5px 0;
-        }
-
-        .logo-text .logo-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            color: var(--white);
-        }
-
-        .logo-text p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.165rem;
-            font-weight: 400;
-            text-transform: lowercase;
-            color: var(--white);
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            letter-spacing: 0.115em;
-        }
-
         .nav-links {
             display: flex;
             gap: 3rem;
@@ -879,46 +839,7 @@
             }
             
             /* Keep dark blue when menu is open (light header bg) */
-            body.menu-open .nav-wrapper.scrolled .mobile-phone-icon {
-                color: rgb(30, 55, 90);
-            }
-            
-            body.menu-open .nav-wrapper.scrolled .mobile-phone-icon svg {
-                fill: rgb(30, 55, 90);
-            }
-            
-            body.menu-open .nav-wrapper.scrolled .hamburger span {
-                background: rgb(30, 55, 90);
-            }
-            
             /* When menu opens, give nav the light bg */
-            body.menu-open .nav-wrapper {
-                background: rgb(245, 245, 245);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            body.menu-open .nav-wrapper .mobile-phone-icon {
-                color: rgb(30, 55, 90) !important;
-            }
-            
-            body.menu-open .nav-wrapper .mobile-phone-icon svg {
-                fill: rgb(30, 55, 90) !important;
-            }
-            
-            body.menu-open .nav-wrapper .hamburger span {
-                background: rgb(30, 55, 90) !important;
-            }
-            
-            body.menu-open .nav-wrapper .logo img {
-                filter: brightness(0) saturate(100%) invert(18%) sepia(75%) saturate(400%) hue-rotate(175deg) brightness(105%) contrast(100%);
-            }
-            
-            body.menu-open .nav-wrapper .logo-text,
-            body.menu-open .nav-wrapper .logo-text .logo-title,
-            body.menu-open .nav-wrapper .logo-text p {
-                color: rgb(30, 55, 90) !important;
-            }
-            
             .hamburger {
                 display: flex !important;
                 flex-direction: column;
@@ -968,72 +889,6 @@
             }
             
             /* Mobile Menu Header */
-            .mobile-menu-header {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1.25rem 20px 1rem 20px;
-                background: rgb(245, 245, 245);
-            }
-            
-            .mobile-menu-logo {
-                display: flex;
-                align-items: flex-start;
-                gap: 1rem;
-                text-decoration: none;
-                margin-bottom: 0.75rem;
-            }
-            
-            .mobile-menu-logo img {
-                height: 70px;
-                width: auto;
-                filter: brightness(0) saturate(100%) invert(18%) sepia(75%) saturate(400%) hue-rotate(175deg) brightness(105%) contrast(100%);
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 70px;
-                padding: 2px 0 5px 0;
-            }
-            
-            .mobile-menu .mobile-menu-logo .logo-title {
-                font-family: 'Playfair Display', serif;
-                font-size: 2.8rem;
-                font-weight: 500;
-                color: rgb(30, 55, 90);
-                letter-spacing: 0.5px;
-                line-height: 1;
-                margin: 0;
-                padding: 0;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
-                font-family: 'Inter', sans-serif;
-                font-size: 0.82rem;
-                font-weight: 400;
-                text-transform: lowercase;
-                color: rgb(30, 55, 90);
-                letter-spacing: 0.115em;
-                margin: 0;
-                padding: 0;
-                line-height: 1;
-            }
-            
-            .mobile-menu-cta {
-                display: none !important;
-            }
-            
-            .mobile-menu-cta:hover {
-                background: #2E82DC;
-                color: #fff;
-            }
-            
-            .mobile-menu-cta:active {
-                transform: none;
-            }
-            
             /* Mobile Menu Links */
             .mobile-menu-links {
                 list-style: none;
@@ -1222,33 +1077,6 @@
             .mobile-menu {
                 max-width: 100%;
             }
-            
-            .mobile-menu .mobile-menu-logo img {
-                height: 60px;
-                width: auto;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 60px;
-                padding: 3px 0 1px 0;
-            }
-            
-            .mobile-menu .mobile-menu-logo .logo-title {
-                font-size: 2.5rem;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
-                font-size: 0.73rem;
-            }
-            
-            .mobile-menu-cta {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
-            }
-            
             .mobile-menu-links > li > a {
                 padding: 16px 20px;
                 font-size: 15px;
@@ -1267,90 +1095,14 @@
         
         /* 540px and below - scale down mobile menu */
         @media (max-width: 540px) {
-            .mobile-menu .mobile-menu-logo img {
-                height: 50px;
-                width: auto;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 50px;
-                padding: 2px 0 1px 0;
-            }
-            
-            .mobile-menu .mobile-menu-logo .logo-title {
-                font-size: 2rem;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
-                font-size: 0.58rem;
-            }
-            
-            .mobile-menu-logo {
-                gap: 0.75rem;
-            }
         }
         
         /* 430px and below - smaller mobile menu */
         @media (max-width: 430px) {
-            .mobile-menu .mobile-menu-logo img {
-                height: 45px;
-                width: auto;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 45px;
-                padding: 2px 0 1px 0;
-            }
-            
-            .mobile-menu .mobile-menu-logo .logo-title {
-                font-size: 1.8rem;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
-                font-size: 0.52rem;
-            }
-            
-            .mobile-menu-logo {
-                gap: 0.6rem;
-            }
         }
         
         /* 375px and below - keep same as nav */
         @media (max-width: 375px) {
-            .mobile-menu .mobile-menu-logo img {
-                height: 45px;
-                width: auto;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 45px;
-                padding: 2px 0 1px 0;
-            }
-            
-            .mobile-menu .mobile-menu-logo .logo-title {
-                font-size: 1.8rem;
-            }
-            
-            .mobile-menu .mobile-menu-logo .mobile-logo-text p {
-                font-size: 0.52rem;
-            }
-            
-            .mobile-menu-logo {
-                gap: 0.6rem;
-            }
-            
-            .mobile-menu-header {
-                padding: 0.75rem 15px;
-            }
         }
         
         /* ========================================
@@ -1404,7 +1156,7 @@
             font-weight: 600;
             font-size: 1.65rem;
             text-decoration: none;
-            transition: box-shadow 0.3s ease;
+            
             letter-spacing: 0.3px;
             display: inline-flex;
             align-items: center;
@@ -1412,24 +1164,16 @@
             position: relative;
             z-index: 1;
             line-height: 1.2;
-            margin-right: 1.5rem;
+            margin-right: 0.5rem;
+            margin-left: 1rem;
             border-radius: 4px;
         }
-        
-        .phone-btn:hover {
-            box-shadow: inset 0 0 0 2px #f5d236;
-        }
-        
         .phone-btn svg.phone-icon {
             flex-shrink: 0;
             width: 28px;
             height: 28px;
             fill: #f5d236;
             transition: fill 0.3s ease;
-        }
-
-        .phone-btn:hover svg.phone-icon {
-            fill: #f5d236;
         }
 
         /* ========================================
@@ -1928,7 +1672,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(30, 55, 90, 0.93);
+            background: rgba(30, 55, 90, 0.82);
             z-index: 0;
         }
 
@@ -1956,42 +1700,11 @@
         }
 
         .footer-logo img {
-            height: 65px;
+            height: auto;
             width: auto;
+            max-height: 50px;
             filter: brightness(0) invert(1);
         }
-
-        .footer-logo-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 65px;
-            padding: 2px 0 3px 0;
-        }
-
-        .footer-logo-text .logo-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: 0.5px;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-        }
-
-        .footer-logo-text p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
-            text-transform: lowercase;
-            letter-spacing: 0.115em;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-        }
-
         .footer-contact-info {
             display: flex;
             flex-direction: column;
@@ -2272,21 +1985,8 @@
             }
 
             .logo img {
-                height: 85px;
+                height: 57px;
             }
-
-            .logo-text {
-                height: 85px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 3.4rem;
-            }
-
-            .logo-text p {
-                font-size: 0.989rem;
-            }
-
             .cta-nav-btn {
                 font-size: 1.05rem;
                 padding: 0.7rem 1.2rem;
@@ -2323,21 +2023,8 @@
             }
 
             .logo img {
-                height: 80px;
+                height: 53px;
             }
-
-            .logo-text {
-                height: 80px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 3.2rem;
-            }
-
-            .logo-text p {
-                font-size: 0.95rem;
-            }
-
             .cta-nav-btn {
                 font-size: 1rem;
                 padding: 0.65rem 1.1rem;
@@ -2404,21 +2091,8 @@
             }
 
             .logo img {
-                height: 65px;
+                height: 43px;
             }
-
-            .logo-text {
-                height: 65px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 2.6rem;
-            }
-
-            .logo-text p {
-                font-size: 0.757rem;
-            }
-
             .cta-nav-btn {
                 font-size: 0.92rem;
                 padding: 0.62rem 1.05rem;
@@ -2467,21 +2141,8 @@
             }
 
             .logo img {
-                height: 60px;
+                height: 40px;
             }
-
-            .logo-text {
-                height: 60px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 2.4rem;
-            }
-
-            .logo-text p {
-                font-size: 0.698rem;
-            }
-
             .cta-nav-btn {
                 font-size: 0.9rem;
                 padding: 0.6rem 1rem;
@@ -2572,19 +2233,7 @@
             }
 
             .logo img {
-                height: 55px;
-            }
-
-            .logo-text {
-                height: 55px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 2.2rem;
-            }
-
-            .logo-text p {
-                font-size: 0.640rem;
+                height: 37px;
             }
         }
 
@@ -2604,21 +2253,8 @@
             }
 
             .logo img {
-                height: 52px;
+                height: 29px;
             }
-
-            .logo-text {
-                height: 52px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 2.1rem;
-            }
-
-            .logo-text p {
-                font-size: 0.611rem;
-            }
-
             .cta-nav-btn {
                 font-size: 0.82rem;
                 padding: 0.52rem 0.85rem;
@@ -2671,21 +2307,8 @@
             }
 
             .logo img {
-                height: 50px;
+                height: 28px;
             }
-
-            .logo-text {
-                height: 50px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 2rem;
-            }
-
-            .logo-text p {
-                font-size: 0.582rem;
-            }
-
             .cta-nav-btn {
                 font-size: 0.78rem;
                 padding: 0.48rem 0.8rem;
@@ -2750,21 +2373,8 @@
             }
 
             .logo img {
-                height: 55px;
+                height: 37px;
             }
-
-            .logo-text {
-                height: 55px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 2.2rem;
-            }
-
-            .logo-text p {
-                font-size: 0.640rem;
-            }
-
             /* Show hamburger menu */
             .hamburger {
                 display: flex;
@@ -2853,54 +2463,8 @@
             }
 
             /* Mobile menu header with logo */
-            .mobile-menu-header {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.6rem;
-                padding: 1rem 20px;
-                background: rgb(245, 245, 245);
-                border-bottom: 1px solid rgb(30, 55, 90);
-                position: sticky;
-                top: 0;
-                z-index: 10;
-            }
-
             /* Logo dark blue in mobile menu header */
-            .mobile-menu-header img {
-                height: 40px;
-                width: auto;
-                margin-top: 2px;
-                filter: brightness(0) saturate(100%) invert(18%) sepia(75%) saturate(400%) hue-rotate(175deg) brightness(105%) contrast(100%);
-            }
-
             /* OLD MOBILE MENU STYLES - DISABLED - using new system
-            .mobile-menu-header .logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 40px;
-                padding: 2px 0 1px 0;
-            }
-
-            .mobile-menu-header .logo-text .logo-title {
-                font-family: 'Playfair Display', serif;
-                font-weight: 500;
-                font-size: 1.7rem;
-                color: var(--white);
-                margin: 0;
-                margin-bottom: 3px;
-                line-height: 1;
-            }
-
-            .mobile-menu-header .logo-text p {
-                font-family: 'Poppins', sans-serif;
-                font-size: 0.582rem;
-                text-transform: lowercase;
-                color: var(--white);
-                margin: 0;
-                margin-top: auto;
-                letter-spacing: 0.115em;
-            }
             */
 
             .nav-links > li {
@@ -3100,11 +2664,6 @@
             .mobile-phone-icon {
                 display: none;
             }
-
-            .mobile-menu-cta {
-                display: none !important;
-            }
-
             body.menu-open .nav-actions {
                 display: none !important;
             }
@@ -3159,45 +2718,12 @@
             }
 
             .logo img {
-                height: 75px;
-            }
-
-            .logo-text {
-                height: 75px;
-            }
-
-            .logo-text .logo-title {
-                font-size: 3rem;
-            }
-
-            .logo-text p {
-                font-size: 0.873rem;
+                height: 42px;
             }
         }
 
         /* Tablet - larger mobile menu logo */
         @media (max-width: 1280px) and (min-width: 769px) {
-            .mobile-menu-header img {
-                height: 70px;
-            }
-
-            .mobile-menu-header .logo-text {
-                height: 70px;
-            }
-
-            .mobile-menu-header .logo-text .logo-title {
-                font-size: 2.8rem;
-            }
-
-            .mobile-menu-header .logo-text p {
-                font-size: 0.815rem;
-                letter-spacing: 0.115em;
-            }
-
-            .mobile-menu-header {
-                padding: 2rem 2.5rem;
-                gap: 1rem;
-            }
         }
 
         /* 999px and below - Phone icon next to hamburger */
@@ -3364,39 +2890,9 @@
             }
 
             nav .logo img {
-                height: 55px;
+                height: 31px;
                 width: auto;
-                margin-top: 3px;
             }
-
-            nav .logo-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 55px;
-                padding: 3px 0 1px 0;
-            }
-
-            nav .logo-text .logo-title {
-                font-family: 'Playfair Display', serif;
-                font-size: 2.3rem;
-                font-weight: 500;
-                color: var(--white);
-                margin: 0;
-                margin-bottom: 4px;
-                line-height: 1;
-            }
-
-            nav .logo-text p {
-                font-family: 'Poppins', sans-serif;
-                font-size: 0.669rem;
-                text-transform: lowercase;
-                color: var(--white);
-                margin: 0;
-                margin-top: auto;
-                letter-spacing: 0.115em;
-            }
-
             .hamburger {
                 display: flex;
                 flex-direction: column;
@@ -3459,21 +2955,11 @@
             }
 
             .footer-logo img {
-                height: 38px;
-            }
-
-            .footer-logo-text {
-                height: 38px;
-            }
-
-            .footer-logo-text .logo-title {
-                font-size: 1.5rem;
-            }
-
-            .footer-logo-text p {
-                font-size: 0.44rem;
-            }
-
+            height: auto;
+            width: auto;
+            max-height: 50px;
+            filter: brightness(0) invert(1);
+        }
             .footer-contact-link {
                 font-size: 1.1rem;
             }
@@ -3549,21 +3035,8 @@
             }
 
             nav .logo img {
-                height: 45px;
+                height: 28px;
             }
-
-            nav .logo-text {
-                height: 45px;
-            }
-
-            nav .logo-text .logo-title {
-                font-size: 1.9rem;
-            }
-
-            nav .logo-text p {
-                font-size: 0.55rem;
-            }
-
             .logo {
                 gap: 0.6rem;
             }
@@ -3576,21 +3049,8 @@
             }
 
             nav .logo img {
-                height: 38px;
+                height: 25px;
             }
-
-            nav .logo-text {
-                height: 38px;
-            }
-
-            nav .logo-text .logo-title {
-                font-size: 1.6rem;
-            }
-
-            nav .logo-text p {
-                font-size: 0.5rem;
-            }
-
             .logo {
                 gap: 0.5rem;
             }
@@ -3623,22 +3083,8 @@
             }
 
             nav .logo img {
-                height: 32px;
+                height: 25px;
             }
-
-            nav .logo-text {
-                height: 32px;
-            }
-
-            nav .logo-text .logo-title {
-                font-size: 1.4rem;
-            }
-
-            nav .logo-text p {
-                font-size: 0.45rem;
-                letter-spacing: 0.08em;
-            }
-
             .logo {
                 gap: 0.4rem;
             }
@@ -3710,11 +3156,6 @@
             .nav-wrapper.scrolled .mobile-phone-icon svg {
                 fill: rgb(30, 55, 90) !important;
             }
-            
-            body.menu-open .nav-wrapper.scrolled .mobile-phone-icon svg {
-                fill: rgb(30, 55, 90) !important;
-            }
-            
             .mobile-header-actions .mobile-phone-icon {
                 display: flex !important;
                 visibility: visible !important;
@@ -3751,11 +3192,6 @@
             .nav-wrapper.scrolled .hamburger span {
                 background: rgb(30, 55, 90) !important;
             }
-            
-            body.menu-open .nav-wrapper.scrolled .hamburger span {
-                background: rgb(30, 55, 90) !important;
-            }
-            
             /* Hamburger active X state */
             .hamburger.active {
                 gap: 0 !important;
@@ -3784,12 +3220,6 @@
                 max-width: 100% !important;
                 width: 100% !important;
             }
-            
-            /* Force show CTA button in mobile menu header */
-            .mobile-menu .mobile-menu-cta {
-                display: none !important;
-                visibility: hidden !important;
-            }
         }
         
         /* Narrower menu on smaller screens */
@@ -3800,16 +3230,7 @@
             }
             
             /* Force consistent header padding to align with menu links */
-            .mobile-menu-header {
-                padding: 1rem 20px !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-            }
-            
             /* Ensure CTA stays hidden */
-            .mobile-menu-cta {
-                display: none !important;
-            }
         }
 
         /* Breadcrumb */
@@ -3854,11 +3275,7 @@
         <nav>
             <!-- Desktop logo -->
             <a href="/" class="logo">
-                <img src="brand-law-logo.png" alt="Brand Law" width="1325" height="1575">
-                <div class="logo-text">
-                    <span class="logo-title">BRAND LAW</span>
-                    <p>construction + real estate counsel</p>
-                </div>
+                <img src="All_in_One_White_Logo.png" alt="Brand Law - Construction and Real Estate Counsel" width="1775" height="300">
             </a>
             
             <!-- Desktop nav links -->
@@ -3922,7 +3339,7 @@
                     <svg class="phone-icon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" stroke="none">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    312.535.9221
+                    <span class="phone-number">312.535.9221</span>
                 </a>
             </div>
             
@@ -3946,16 +3363,7 @@
         
         <!-- Mobile Menu Panel -->
         <div class="mobile-menu">
-            <div class="mobile-menu-header">
-                <a href="/" class="mobile-menu-logo">
-                    <img src="brand-law-logo.png" alt="Brand Law" width="1325" height="1575">
-                    <div class="mobile-logo-text">
-                        <span class="logo-title">BRAND LAW</span>
-                        <p>construction + real estate counsel</p>
-                    </div>
-                </a>
-                <a href="/contact" class="mobile-menu-cta">Schedule a Free Consultation</a>
-            </div>
+            
             <ul class="mobile-menu-links">
                 <li><a href="/">HOME</a></li>
                 <li class="has-dropdown">
@@ -4218,11 +3626,7 @@
                 <!-- Top Row -->
                 <div class="footer-top-row">
                     <div class="footer-logo">
-                        <img src="brand-law-logo.png" alt="Brand Law" width="1325" height="1575">
-                        <div class="footer-logo-text">
-                            <span class="logo-title">BRAND LAW</span>
-                            <p>construction + real estate counsel</p>
-                        </div>
+                        <img src="All_in_One_White_Logo.png" alt="Brand Law - Construction and Real Estate Counsel" width="1775" height="300">
                     </div>
                     <div class="footer-contact-info">
                         <a href="tel:+13125359221" class="footer-contact-link">
@@ -4369,6 +3773,10 @@
         let savedScrollPosition = 0;
         
         function openMobileMenu() {
+            var navHeight = document.querySelector('.nav-wrapper').offsetHeight;
+            mobileMenu.style.top = navHeight + 'px';
+            mobileMenu.style.height = 'calc(100dvh - ' + navHeight + 'px)';
+            mobileMenuOverlay.style.top = navHeight + 'px';
             savedScrollPosition = window.scrollY;
             document.body.style.top = `-${savedScrollPosition}px`;
             document.body.classList.add('menu-open');
