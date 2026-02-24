@@ -3,13 +3,26 @@
 # Fixes "duplicate without user-selected canonical"
 # ============================================
 /blog/  /blog  301
-
-# Blog pretty URLs (existing rule)
-/blog/:slug  /:slug  200
-
 /about/  /about  301
 /mechanics-liens/  /mechanics-liens  301
 /faq/  /faqs  301
+
+# ============================================
+# Blog post pretty URLs (explicit rules)
+# Add a new line here for each new blog post
+# ============================================
+/blog/can-buyer-sue-seller-after-closing-illinois  /can-buyer-sue-seller-after-closing-illinois  200
+/blog/construction-dispute-resolution-illinois  /construction-dispute-resolution-illinois  200
+/blog/defective-construction-work-illinois  /defective-construction-work-illinois  200
+/blog/easements-property-values-illinois  /easements-property-values-illinois  200
+/blog/force-co-owner-sell-inherited-property-illinois  /force-co-owner-sell-inherited-property-illinois  200
+/blog/how-to-challenge-mechanics-lien-illinois  /how-to-challenge-mechanics-lien-illinois  200
+/blog/how-to-remove-mechanics-lien-illinois  /how-to-remove-mechanics-lien-illinois  200
+/blog/last-date-of-work-mechanics-lien-illinois  /last-date-of-work-mechanics-lien-illinois  200
+/blog/lien-waivers-illinois-construction  /lien-waivers-illinois-construction  200
+/blog/no-lien-clauses-illinois-construction-contracts  /no-lien-clauses-illinois-construction-contracts  200
+/blog/poorly-drafted-easements-illinois  /poorly-drafted-easements-illinois  200
+/blog/quiet-title-actions-chicago-guide  /quiet-title-actions-chicago-guide  200
 
 # ============================================
 # Old Wix pages with clear equivalents - 301 redirect
