@@ -24,6 +24,7 @@
 /blog/poorly-drafted-easements-illinois  /poorly-drafted-easements-illinois  200
 /blog/quiet-title-actions-chicago-guide  /quiet-title-actions-chicago-guide  200
 /blog/can-contractor-stop-work-nonpayment-illinois  /can-contractor-stop-work-nonpayment-illinois  200
+/blog/:slug  /:slug  200
 
 # ============================================
 # Old Wix pages with clear equivalents - 301 redirect
