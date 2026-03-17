@@ -38,6 +38,7 @@
 /news/  /blog  301
 /bcd31-contact-us/  /contact  301
 /property-damage/  /insurance-claims-restoration-disputes  301
+/home  /  301
 /home/  /  301
 
 # ============================================
@@ -52,6 +53,10 @@
 /how-we-helped-a-fashion-brand-achieve-their-goal/  /404.html  410
 /what-we-do/  /404.html  410
 /appearance-guide/  /404.html  410
+/category/uncategorized  /404.html  410
+/category/uncategorized/  /404.html  410
+/category/:slug  /404.html  410
+/category/:slug/  /404.html  410
 /improve-him-believe-opinion-offered/  /404.html  410
 /perfectly-on-furniture/  /404.html  410
 /is-influencer-marketing-still-worth-it-strategies-for-2024/  /404.html  410
