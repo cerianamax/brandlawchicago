@@ -416,4 +416,11 @@
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <url>
+        <loc>https://brandlawchicago.com/blog/illinois-contractors-more-than-signed-proposal</loc>
+        <lastmod>2026-05-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
