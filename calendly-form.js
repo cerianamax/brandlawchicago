@@ -9,7 +9,7 @@
 (function () {
 
     // ----- CONFIGURATION -----
-    var CALENDLY_URL = 'https://calendly.com/tbrand-brandlawchicago/consultation';
+    var CALENDLY_URL = 'https://calendly.com/tbrand-brandlawchicago/paid-45min-consultation';
     var THANK_YOU_MESSAGE = 'Consultation scheduled! We look forward to speaking with you.';
     var THANK_YOU_DURATION = 10000;
     var USE_POPUP = true;
